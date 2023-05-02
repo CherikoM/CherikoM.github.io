@@ -20,6 +20,65 @@
       </tags>
   </entry>
   <entry>
+    <title>Vite目录&amp;Vue单文件组件&amp;npm run dev</title>
+    <url>/web/study/vue/3.Vite%E7%9B%AE%E5%BD%95&amp;Vue%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6&amp;npm%20run%20dev.html</url>
+    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
+<h1 id="Vite目录"><a href="#Vite目录" class="headerlink" title="Vite目录"></a>Vite目录</h1><ul>
+<li>public：存放不会被Vite编译的静态资源</li>
+<li>src<ul>
+<li>assets：存放静态资源</li>
+<li>components：存放组件</li>
+<li>App.vue：Vue全局入口文件</li>
+<li>main.ts：全局TS文件，可以引入全局样式、全局API、配置等</li>
+<li>vite-env.d.ts：声明文件扩充，脚手架默认做了*.vue文件的声明扩充</li>
+<li>index.html：Vite入口文件，使用ES Module形式引入main.ts</li>
+<li>package.json：一些命令、依赖等</li>
+<li>tsconfig.json：TS配置文件</li>
+<li>vite.config.ts：Vite配置文件</li>
+</ul>
+</li>
+</ul>
+<p>Vite基于esbuild做编译；基于rollup.js做打包，性能优异。</p>
+<h1 id="单文件组件（SFC）"><a href="#单文件组件（SFC）" class="headerlink" title="单文件组件（SFC）"></a>单文件组件（SFC）</h1><p>主要由三部分组成：</p>
+<ul>
+<li>script，写JS代码，setup形式的script在一个SFC中只能存在一个，非setup形式可存在多个</li>
+<li>template，写HTML标签，在一个SFC中只能存在一个</li>
+<li>style：写CSS样式</li>
+</ul>
+<h1 id="Vue3开发插件"><a href="#Vue3开发插件" class="headerlink" title="Vue3开发插件"></a>Vue3开发插件</h1><p>Volar（Vue Language Features和TypeScript Vue Plugin）：Vue3智能提示，使用时需禁用Vue2的Vetur。</p>
+<h1 id="npm-run-dev"><a href="#npm-run-dev" class="headerlink" title="npm run dev"></a>npm run dev</h1><p>终端输入npm run dev命令后进行的全过程：</p>
+<ol>
+<li>收到命令，寻找package.json的scripts，查看对应的命令</li>
+<li>npm run dev对应的是vite命令，执行它<ul>
+<li>直接执行vite命令一般不生效，如果没做过相应配置，只能通过npm run dev执行</li>
+<li>Vite在package.json中做了一个软链接（到bin），连至bin目录，里面有三个Vite的配置<ul>
+<li>vite：主要给UNIX操作系统使用，通过shell脚本执行对应的vite.js</li>
+<li>vite.cmd：主要给Windows操作系统使用</li>
+<li>vite.ps1：跨平台，在各种操作系统都能使用</li>
+</ul>
+</li>
+<li>查找规则：<ol>
+<li>node_modules&#x2F;vite寻找bin中可执行的文件，找到则执行，找不到则到2</li>
+<li>去npm全局包找，找到则执行，找不到则到3</li>
+<li>找环境变量，找到则执行，找不到则报错</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>学习</tag>
+        <tag>Vite</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我制作了一个唱片架</title>
     <url>/web/diy/recordCase.html</url>
     <content><![CDATA[<p>因为我很喜欢听音乐（尤其是电子音乐），所以我希望我自己的博客能给浏览者安利很多很多好听的音乐。</p>
@@ -93,6 +152,154 @@
         <tag>hexo</tag>
         <tag>音乐</tag>
         <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>模板语法&amp;Vue指令</title>
+    <url>/web/study/vue/4.%20%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95&amp;Vue%E6%8C%87%E4%BB%A4.html</url>
+    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
+<h1 id="Vue3书写风格"><a href="#Vue3书写风格" class="headerlink" title="Vue3书写风格"></a>Vue3书写风格</h1><p>Vue3支持三种书写风格：</p>
+<ul>
+<li><p>选项式API（Options API），Vue2的写法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  // data() 返回的属性将会成为响应式的状态</span><br><span class="line">  // 并且暴露在 `this` 上</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // methods 是一些用来更改状态与触发更新的函数</span><br><span class="line">  // 它们可以在模板中作为事件监听器绑定</span><br><span class="line">  methods: &#123;</span><br><span class="line">    increment() &#123;</span><br><span class="line">      this.count++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 生命周期钩子会在组件生命周期的各个不同阶段被调用</span><br><span class="line">  // 例如这个函数就会在组件挂载完成后被调用</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    console.log(`The initial count is $&#123;this.count&#125;.`)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;button @click=&quot;increment&quot;&gt;Count is: &#123;&#123; count &#125;&#125;&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组合式API（Composition API）</p>
+<ul>
+<li><p>setup函数形式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; setup, ref, onMounted &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    // 响应式状态</span><br><span class="line">	const count = ref(0)</span><br><span class="line"></span><br><span class="line">	// 用来修改状态、触发更新的函数</span><br><span class="line">	function increment() &#123;</span><br><span class="line">  	  count.value++</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// 生命周期钩子</span><br><span class="line">	onMounted(() =&gt; &#123;</span><br><span class="line">      console.log(`The initial count is $&#123;count.value&#125;.`)</span><br><span class="line">	&#125;)</span><br><span class="line">	</span><br><span class="line">	// 必须将数据return出去，这样才能被展示</span><br><span class="line">	return &#123;</span><br><span class="line">	  count</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;button @click=&quot;increment&quot;&gt;Count is: &#123;&#123; count &#125;&#125;&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>setup语法糖模式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, onMounted &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 响应式状态</span><br><span class="line">// 不需要return，直接可以被展示</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 用来修改状态、触发更新的函数</span><br><span class="line">function increment() &#123;</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 生命周期钩子</span><br><span class="line">onMounted(() =&gt; &#123;</span><br><span class="line">  console.log(`The initial count is $&#123;count.value&#125;.`)</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;button @click=&quot;increment&quot;&gt;Count is: &#123;&#123; count &#125;&#125;&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h1 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h1><p>template中可以使用插值语法<code>&#123;&#123; xxx &#125;&#125;</code>，可以用变量、简单的运算、API调用等展示内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 编译成&lt;div&gt;1&lt;/div&gt; --&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123; a &#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;!-- 编译成&lt;div&gt;2&lt;/div&gt; --&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123; a + 1 &#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;!-- 编译成&lt;div&gt;true&lt;/div&gt; --&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123; a? &quot;true&quot;: &quot;false&quot; &#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;!-- 编译成&lt;div&gt;[&#123;&quot;num&quot;:1&#125;,&#123;&quot;num&quot;:2&#125;,&#123;&quot;num&quot;:3&#125;,&#123;&quot;num&quot;:4&#125;,&#123;&quot;num&quot;:5&#125;]&lt;/div&gt; --&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123; b.map(value=&gt;(&#123;num:v&#125;) &#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const a = 1</span><br><span class="line">const b = [1,2,3,4,5]</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Vue指令"><a href="#Vue指令" class="headerlink" title="Vue指令"></a>Vue指令</h1><p>“v-“开头的都是vue的（内置）指令，可以直接使用</p>
+<ul>
+<li><p><code>v-text</code>：显示文本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 编译成&lt;div&gt;我是一段文字&lt;/div&gt; --&gt;</span><br><span class="line">  &lt;div v-text=&quot;a&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const a = &quot;我是一段文字&quot;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>v-html</code>：展示富文本，但不支持组件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 编译成&lt;div&gt;&lt;section style=&#x27;color:red;&#x27;&gt;我是一段文字&lt;/section&gt;&lt;/div&gt; --&gt;</span><br><span class="line">  &lt;div v-html=&quot;a&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const a = &quot;&lt;section style=&#x27;color:red;&#x27;&gt;我是一段文字&lt;/section&gt;&quot;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>v-if</code>：控制元素的显示隐藏（切换真假DOM）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- a为真值时才是DOM节点，否则会变成注释节点 --&gt;</span><br><span class="line">  &lt;!-- 当应用在组件上时，v-if和v-show会有区别 --&gt;</span><br><span class="line">  &lt;div v-if=&quot;a&quot;&gt;true&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const a = true</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>v-else-if</code>：<code>v-if</code>的“else if块”，可以链式调用</p>
+</li>
+<li><p>v-else：v-if条件收尾语句</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 编译成&lt;div&gt;C&lt;/div&gt; --&gt;</span><br><span class="line">  &lt;div v-if=&quot;a == &#x27;A&#x27;&quot;&gt;A&lt;/div&gt;</span><br><span class="line">  &lt;div v-else-if=&quot;a == &#x27;B&#x27;&quot;&gt;B&lt;/div&gt;</span><br><span class="line">  &lt;div v-else&gt;C&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const a = &quot;C&quot;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>v-show</code>：控制元素的显示隐藏（css display none和block切换）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- a为真值时display为block，否则为none --&gt;</span><br><span class="line">  &lt;!-- 因此v-show比v-if性能更高，因为它只是切换一下css --&gt;</span><br><span class="line">  &lt;div v-show=&quot;a&quot;&gt;true&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const a = true</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>v-on</code>：简写为@，给元素添加事件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 这两种写法是等价的 --&gt;</span><br><span class="line">  &lt;button v-on:click=&quot;a&quot;&gt;click me&lt;/button&gt;</span><br><span class="line">  &lt;button @click=&quot;a&quot;&gt;click me&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 支持动态事件名 --&gt;</span><br><span class="line">  &lt;button @[event]=&quot;a&quot;&gt;click me&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 支持修饰符 --&gt;</span><br><span class="line">  &lt;div @click=&quot;parent&quot;&gt;</span><br><span class="line">    &lt;!-- 阻止冒泡 --&gt;</span><br><span class="line">    &lt;button @[event].stop=&quot;a&quot;&gt;click me&lt;/button&gt;</span><br><span class="line">    &lt;!-- 开启事件捕获 --&gt;</span><br><span class="line">    &lt;button @[event].capture=&quot;a&quot;&gt;click me&lt;/button&gt;</span><br><span class="line">    &lt;!-- 阻止默认事件 --&gt;</span><br><span class="line">    &lt;button @[event].prevent=&quot;a&quot;&gt;click me&lt;/button&gt;</span><br><span class="line">    &lt;!-- 只能发生一次 --&gt;</span><br><span class="line">    &lt;button @[event].once=&quot;a&quot;&gt;click me&lt;/button&gt;</span><br><span class="line">    &lt;!-- 当event.target为元素本身时才触发 --&gt;</span><br><span class="line">    &lt;button @[event].self=&quot;a&quot;&gt;click me&lt;/button&gt;</span><br><span class="line">    &lt;!-- 永不阻止默认事件 --&gt;</span><br><span class="line">    &lt;button @scroll.self=&quot;b&quot;&gt;scroll me&lt;/button&gt;</span><br><span class="line">    &lt;!-- 可以链式调用，需要注意顺序 --&gt;</span><br><span class="line">    &lt;button @[event].prevent.self=&quot;a&quot;&gt;click me&lt;/button&gt;</span><br><span class="line">    &lt;button @[event].self.prevent=&quot;a&quot;&gt;click me&lt;/button&gt;</span><br><span class="line">    &lt;!-- 还有很多别的修饰符，https://cn.vuejs.org/guide/essentials/event-handling.html#event-modifiers --&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const a = ()=&gt; &#123;</span><br><span class="line">  console.log(&quot;click&quot;)</span><br><span class="line">&#125;</span><br><span class="line">const b = ()=&gt; &#123;</span><br><span class="line">  console.log(&quot;scroll&quot;)</span><br><span class="line">&#125;</span><br><span class="line">const event = &quot;click&quot;</span><br><span class="line">const parent = ()=&gt; &#123;</span><br><span class="line">  console.log(&quot;click parent&quot;)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>v-bind</code>：简写为:，绑定元素的属性</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 这两种写法是等价的 --&gt;</span><br><span class="line">  &lt;div v-bind:id=&quot;a&quot;&gt;演示v-bind:id&lt;/div&gt;</span><br><span class="line">  &lt;div :id=&quot;a&quot;&gt;演示:id&lt;/div&gt;</span><br><span class="line">  &lt;!-- 这两种写法是等价的 --&gt;</span><br><span class="line">  &lt;div :style=&quot;style&quot;&gt;演示:style&lt;/div&gt;</span><br><span class="line">  &lt;div :class=&quot;[&#x27;a&#x27;,&#x27;b&#x27;]&quot;&gt;演示:style&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 可以使用表达式 --&gt;</span><br><span class="line">  &lt;div :class=&quot;[b? &#x27;a&#x27;: &#x27;b&#x27;]&quot;&gt;演示:style&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 可以同时支持一个动态、一个静态 --&gt;</span><br><span class="line">  &lt;!-- 不能支持多个动态或多个静态 --&gt;</span><br><span class="line">  &lt;div :class=&quot;[b? &#x27;a&#x27;: &#x27;b&#x27;]&quot; class=&quot;c&quot;&gt;演示:style&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const a = 114514</span><br><span class="line">const b = true</span><br><span class="line">const style = &#123;</span><br><span class="line">  color:&quot;red&quot;;</span><br><span class="line">  border:&quot;1px solid black&quot;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .a &#123;</span><br><span class="line">    color: red;</span><br><span class="line">  &#125;</span><br><span class="line">  .b &#123;</span><br><span class="line">    border: 1px solid black;</span><br><span class="line">  &#125;</span><br><span class="line">  .c &#123;</span><br><span class="line">    background-color: pink;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>v-model</code>：双向绑定表单元素</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;input v-model=&quot;name&quot; type=&quot;text&quot; /&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123; name &#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">// 使用ref或reactive包裹的变量才具有响应式</span><br><span class="line">import &#123; ref &#125; from &quot;vue&quot;</span><br><span class="line">    </span><br><span class="line">const name = ref(&quot;野兽先辈&quot;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>v-for</code>：遍历元素</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;!-- item：数组元素 index：元素下标 --&gt;</span><br><span class="line">    &lt;!-- v-for可以嵌套 --&gt;</span><br><span class="line">    &lt;!-- 需要给v-for提供一个key（唯一值） --&gt;</span><br><span class="line">    &lt;div :key=&quot;index&quot; v-for=&quot;(item, index) in name&quot;&gt;&#123;&#123; index &#125;&#125; - &#123;&#123; item &#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const name = [&quot;野兽先辈&quot;, &quot;MUR&quot;, &quot;KMR&quot;, &quot;远野&quot;, &quot;野兽妹&quot;]</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>v-once</code>：性能优化，只渲染一次</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 改变a的值也不会发生变化 --&gt;</span><br><span class="line">  &lt;div v-once&gt;&#123;&#123; a &#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;a++&quot;&gt;+&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &quot;vue&quot;</span><br><span class="line">    </span><br><span class="line">const a = ref(1)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>v-memo</code>：大型项目性能优化</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 写一个空数组时，效果就和v-once一样 --&gt;</span><br><span class="line">  &lt;div v-memo=&quot;[]&quot;&gt;&#123;&#123; a &#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;a++&quot;&gt;+&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 常配合v-for使用，条件成立时才会更新，节省小部分性能 --&gt;</span><br><span class="line">  &lt;div @click=&quot;select(item.id)&quot; :key=&quot;item.id&quot; v-for=&quot;(item) in arr&quot; v-memo=&quot;[item.id === active]&quot;&gt;</span><br><span class="line">      &#123;&#123; item.id &#125;&#125; - selected： &#123;&#123; item.id == active &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &quot;vue&quot;</span><br><span class="line">    </span><br><span class="line">const a = ref(1)</span><br><span class="line"></span><br><span class="line">import &#123; ref, reactive &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const arr = reactive&lt;any[]&gt;([])</span><br><span class="line">for (let i = 0; i &lt; 10000; i++) &#123;</span><br><span class="line">  arr.push(&#123;</span><br><span class="line">    id: i + 1,</span><br><span class="line">    name: &quot;test&quot;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const active = ref(1)</span><br><span class="line"></span><br><span class="line">const select = async (index: number) =&gt; &#123;</span><br><span class="line">  active.value = index;</span><br><span class="line">  console.time()</span><br><span class="line">  await Promise.resolve()</span><br><span class="line">  console.timeEnd()</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>学习</tag>
+        <tag>Vite</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node.js底层原理</title>
+    <url>/web/study/vue/2.nodejs%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.html</url>
+    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
+<p>图片全部搬运自<a href="https://xiaoman.blog.csdn.net/article/details/122769982">学习Vue3 第二章（配置环境）</a><del>自己懒得做图了</del>。</p>
+<h1 id="Node-js的构成"><a href="#Node-js的构成" class="headerlink" title="Node.js的构成"></a>Node.js的构成</h1><p>Node.js主要由V8、Libuv和第三方库组成。</p>
+<ul>
+<li>Libuv：跨平台异步IO库（处理事件循环），除了IO功能还提供线程、进程、信号、定时器、进程间通信、线程池等功能。</li>
+<li>第三方库<ul>
+<li>异步DNS解析（cares）</li>
+<li>HTTP解析器（旧版：http_parser；新版：llhttp）</li>
+<li>HTTP2解析器（nghttp2）</li>
+<li>解压压缩库（zlib）</li>
+<li>加密解密库（openssl）</li>
+<li>等等等等</li>
+</ul>
+</li>
+<li>V8：实现JS解析（把js编译成机器码）、执行和自定义拓展</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012242595.png"></p>
+<p>从上到下分为三层：</p>
+<ul>
+<li>应用层：Node.js API各种模块，基于Libuv，因为可能涉及IO流操作</li>
+<li>桥梁层：与底层C或C++通信</li>
+<li>底层（C++或C）：处理底层机制</li>
+</ul>
+<h1 id="Libuv"><a href="#Libuv" class="headerlink" title="Libuv"></a>Libuv</h1><p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012253451.png"></p>
+<ul>
+<li><p>loop参数：事件循环结构的结构体</p>
+</li>
+<li><p>uv_loop_alive：用于注册loop，判断loop里有无任务（是否还有活动），有就开始循环，没有就退出</p>
+<blockquote>
+<p>loop还在活动的情况：</p>
+<ol>
+<li>有被引用的活动句柄或活动请求</li>
+<li>有正在关闭的句柄</li>
+</ol>
+</blockquote>
+</li>
+<li><p>uv_update_time：执行setTimeOut（过段时间后执行回调）</p>
+</li>
+<li><p>uv_run_timers：执行setInterval（每隔一段时间都执行回调）</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012303489.png"></p>
+<ul>
+<li>数据结构：链表+二叉堆</li>
+<li>把最快过期的节点放到上面，判断是否过期<ul>
+<li>如果过期就执行回调</li>
+<li>如果没有过期，查看repeat，区分setTimeOut和setInterval<ul>
+<li>如果是setTimeOut，任务过期后就结束了</li>
+<li>如果是setInterval，进行重复执行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>uv_run_pending：处理IO流的回调</p>
+</li>
+<li><p>uv_run_idle&amp;uv_run_prepare：处理其他各种队列</p>
+</li>
+<li><p>uv_io_poll：处理网络相关</p>
+</li>
+<li><p>uv_run_closing_handles：结束，关闭服务器</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>学习</tag>
+        <tag>Node.js</tag>
       </tags>
   </entry>
   <entry>
@@ -210,83 +417,6 @@
         <tag>前端</tag>
         <tag>Vue.js</tag>
         <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Node.js底层原理</title>
-    <url>/web/study/vue/2.nodejs%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.html</url>
-    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
-<p>图片全部搬运自<a href="https://xiaoman.blog.csdn.net/article/details/122769982">学习Vue3 第二章（配置环境）</a><del>自己懒得做图了</del>。</p>
-<h1 id="Node-js的构成"><a href="#Node-js的构成" class="headerlink" title="Node.js的构成"></a>Node.js的构成</h1><p>Node.js主要由V8、Libuv和第三方库组成。</p>
-<ul>
-<li>Libuv：跨平台异步IO库（处理事件循环），除了IO功能还提供线程、进程、信号、定时器、进程间通信、线程池等功能。</li>
-<li>第三方库<ul>
-<li>异步DNS解析（cares）</li>
-<li>HTTP解析器（旧版：http_parser；新版：llhttp）</li>
-<li>HTTP2解析器（nghttp2）</li>
-<li>解压压缩库（zlib）</li>
-<li>加密解密库（openssl）</li>
-<li>等等等等</li>
-</ul>
-</li>
-<li>V8：实现JS解析（把js编译成机器码）、执行和自定义拓展</li>
-</ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012242595.png"></p>
-<p>从上到下分为三层：</p>
-<ul>
-<li>应用层：Node.js API各种模块，基于Libuv，因为可能涉及IO流操作</li>
-<li>桥梁层：与底层C或C++通信</li>
-<li>底层（C++或C）：处理底层机制</li>
-</ul>
-<h1 id="Libuv"><a href="#Libuv" class="headerlink" title="Libuv"></a>Libuv</h1><p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012253451.png"></p>
-<ul>
-<li><p>loop参数：事件循环结构的结构体</p>
-</li>
-<li><p>uv_loop_alive：用于注册loop，判断loop里有无任务（是否还有活动），有就开始循环，没有就退出</p>
-<blockquote>
-<p>loop还在活动的情况：</p>
-<ol>
-<li>有被引用的活动句柄或活动请求</li>
-<li>有正在关闭的句柄</li>
-</ol>
-</blockquote>
-</li>
-<li><p>uv_update_time：执行setTimeOut（过段时间后执行回调）</p>
-</li>
-<li><p>uv_run_timers：执行setInterval（每隔一段时间都执行回调）</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012303489.png"></p>
-<ul>
-<li>数据结构：链表+二叉堆</li>
-<li>把最快过期的节点放到上面，判断是否过期<ul>
-<li>如果过期就执行回调</li>
-<li>如果没有过期，查看repeat，区分setTimeOut和setInterval<ul>
-<li>如果是setTimeOut，任务过期后就结束了</li>
-<li>如果是setInterval，进行重复执行</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>uv_run_pending：处理IO流的回调</p>
-</li>
-<li><p>uv_run_idle&amp;uv_run_prepare：处理其他各种队列</p>
-</li>
-<li><p>uv_io_poll：处理网络相关</p>
-</li>
-<li><p>uv_run_closing_handles：结束，关闭服务器</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>Vue.js</tag>
-        <tag>学习</tag>
-        <tag>Node.js</tag>
       </tags>
   </entry>
 </search>
