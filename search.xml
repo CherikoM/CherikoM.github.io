@@ -96,123 +96,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue3概述</title>
-    <url>/web/study/vue/1.Vue3%E6%A6%82%E8%BF%B0.html</url>
-    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
-<h1 id="介绍Vue"><a href="#介绍Vue" class="headerlink" title="介绍Vue"></a>介绍Vue</h1><ul>
-<li><p>Vue是一套用于构建用户界面的渐进式框架</p>
-</li>
-<li><p>Vue的优点</p>
-<ul>
-<li>自底向上逐层运用</li>
-<li>只关注视图层，易上手</li>
-<li>易与第三方库或现有项目整合</li>
-<li>能驱动复杂的单页面项目</li>
-</ul>
-</li>
-<li><p>Vue是MVVM（Model-View-ViewModel）架构</p>
-<ul>
-<li>View：视图层（UI用户界面）</li>
-<li>ViewModel：业务逻辑层（一切JS可视为业务逻辑）</li>
-<li>Model：数据层（存储数据、对数据的处理）</li>
-</ul>
-</li>
-</ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714208.png" alt="MVVM架构"></p>
-<h1 id="Vue2-vs-Vue3"><a href="#Vue2-vs-Vue3" class="headerlink" title="Vue2 vs Vue3"></a>Vue2 vs Vue3</h1><ul>
-<li>声明式API（Options API）写的比较分散，Vue2的写法</li>
-<li>组合式API（Composition API）可以把连贯的逻辑写在一起，或者封装成hook</li>
-</ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714210.png" alt="声明式API &amp; 组合式API"></p>
-<h1 id="Vue3新特性"><a href="#Vue3新特性" class="headerlink" title="Vue3新特性"></a>Vue3新特性</h1><ul>
-<li><p>重写双向数据绑定</p>
-<ul>
-<li><p>Vue2：基于<code>Object.defineProperty()</code>实现</p>
-<ul>
-<li><p>需要使用一个备份对象</p>
-</li>
-<li><p>需要for in循环，才能给原对象每个属性都加响应式</p>
-</li>
-<li><p>无法监听数组变化，需要重写数组方法才能实现响应式（但实现的不完全）</p>
-</li>
-<li><p>代码复杂</p>
-</li>
-<li><p>原数据新增的属性不带响应式</p>
-</li>
-<li><p>原数据删除属性时不删除对应响应式</p>
-</li>
-<li><p>无法处理索引和length属性</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">property</span>: <span class="number">114514</span>&#125;</span><br><span class="line"><span class="keyword">const</span> _obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(_obj, <span class="string">&#x27;property&#x27;</span>, &#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人读取property属性了&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> property <span class="keyword">in</span> obj? obj.<span class="property">property</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">value</span>) &#123;</span><br><span class="line">       	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人修改property属性了，且值是&#x27;</span>+value)</span><br><span class="line">        obj.<span class="property">property</span> = value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>Vue3：基于Proxy实现（ES6新增）</p>
-<ul>
-<li><p>丢掉麻烦的备份数据</p>
-</li>
-<li><p>省去for in循环</p>
-</li>
-<li><p>监听数组变化</p>
-</li>
-<li><p>代码简化</p>
-</li>
-<li><p>监听动态新增的属性</p>
-</li>
-<li><p>监听删除的属性</p>
-</li>
-<li><p>监听数据的索引和length属性</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> proxyObj = <span class="keyword">new</span> <span class="title class_">Proxy</span>(obj, &#123;</span><br><span class="line">	<span class="attr">get</span>: <span class="keyword">function</span>(<span class="params">target, property</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人读取property属性了&#x27;</span>)</span><br><span class="line">		<span class="keyword">return</span> prop <span class="keyword">in</span> target? target[prop]: <span class="number">0</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">set</span>: <span class="keyword">function</span>(<span class="params">target, property, value</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人修改property属性了，且值是&#x27;</span>+value)</span><br><span class="line">		target[prop] = value</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>VDOM性能瓶颈的解决</p>
-<ul>
-<li><p>Vue2中，每次更新diff都是全量对比</p>
-</li>
-<li><p>Vue3中只对比带有标记的，减少了非动态内容的对比消耗（<a href="https://template-explorer.vuejs.org/">能感受diff优化的工具</a>）</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714211.png" alt="diff的优化"></p>
-</li>
-</ul>
-</li>
-<li><p>支持Fragments</p>
-<blockquote>
-<p>文档碎片，表示一个没有父级文件的最小文档对象，被视作轻量版Document。</p>
-</blockquote>
-<blockquote>
-<p>它不是真实DOM树的一部分，变化不触发DOM重绘、不导致性能问题。</p>
-</blockquote>
-<blockquote>
-<p>主要解决DOM元素的插入问题，例如需插入多个节点时，先创建一个Fragment，把节点依次添加到Fragment上，再把Fragment添加到页面Document上，这样只会产生一次重绘；而如果直接把DOM节点依次添加到Document，就会引发多次重绘。</p>
-</blockquote>
-<ul>
-<li>Vue2：Template中只能有一个父节点，其他节点要被包在里面</li>
-<li>Vue3：Template里可以有多个节点，并支持了tsx和jsx写法（类似react），还新增了Suspense和teleport两个内置组件，和多v-model用法</li>
-</ul>
-</li>
-<li><p>支持Tree-shaking</p>
-<blockquote>
-<p>代码运行结果保持不变的前提下，去掉无用代码。</p>
-</blockquote>
-<ul>
-<li>Vue2：无论使用什么功能，最终都会出现在生产代码中，Vue实例在项目中是单例的，捆绑程序无法检测到该对象的哪些属性在代码中被使用到</li>
-<li>Vue3：将全局API进行分块，如果不使用某些功能，就不会被包含在基础包中（不会被打包）</li>
-</ul>
-</li>
-<li><p>新增Composition API（Setup语法糖式编程）</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>Vue.js</tag>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>模板语法&amp;Vue指令</title>
     <url>/web/study/vue/4.%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95&amp;Vue%E6%8C%87%E4%BB%A4.html</url>
     <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
@@ -360,6 +243,123 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue3概述</title>
+    <url>/web/study/vue/1.Vue3%E6%A6%82%E8%BF%B0.html</url>
+    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
+<h1 id="介绍Vue"><a href="#介绍Vue" class="headerlink" title="介绍Vue"></a>介绍Vue</h1><ul>
+<li><p>Vue是一套用于构建用户界面的渐进式框架</p>
+</li>
+<li><p>Vue的优点</p>
+<ul>
+<li>自底向上逐层运用</li>
+<li>只关注视图层，易上手</li>
+<li>易与第三方库或现有项目整合</li>
+<li>能驱动复杂的单页面项目</li>
+</ul>
+</li>
+<li><p>Vue是MVVM（Model-View-ViewModel）架构</p>
+<ul>
+<li>View：视图层（UI用户界面）</li>
+<li>ViewModel：业务逻辑层（一切JS可视为业务逻辑）</li>
+<li>Model：数据层（存储数据、对数据的处理）</li>
+</ul>
+</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714208.png" alt="MVVM架构"></p>
+<h1 id="Vue2-vs-Vue3"><a href="#Vue2-vs-Vue3" class="headerlink" title="Vue2 vs Vue3"></a>Vue2 vs Vue3</h1><ul>
+<li>声明式API（Options API）写的比较分散，Vue2的写法</li>
+<li>组合式API（Composition API）可以把连贯的逻辑写在一起，或者封装成hook</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714210.png" alt="声明式API &amp; 组合式API"></p>
+<h1 id="Vue3新特性"><a href="#Vue3新特性" class="headerlink" title="Vue3新特性"></a>Vue3新特性</h1><ul>
+<li><p>重写双向数据绑定</p>
+<ul>
+<li><p>Vue2：基于<code>Object.defineProperty()</code>实现</p>
+<ul>
+<li><p>需要使用一个备份对象</p>
+</li>
+<li><p>需要for in循环，才能给原对象每个属性都加响应式</p>
+</li>
+<li><p>无法监听数组变化，需要重写数组方法才能实现响应式（但实现的不完全）</p>
+</li>
+<li><p>代码复杂</p>
+</li>
+<li><p>原数据新增的属性不带响应式</p>
+</li>
+<li><p>原数据删除属性时不删除对应响应式</p>
+</li>
+<li><p>无法处理索引和length属性</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">property</span>: <span class="number">114514</span>&#125;</span><br><span class="line"><span class="keyword">const</span> _obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(_obj, <span class="string">&#x27;property&#x27;</span>, &#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人读取property属性了&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> property <span class="keyword">in</span> obj? obj.<span class="property">property</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">value</span>) &#123;</span><br><span class="line">       	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人修改property属性了，且值是&#x27;</span>+value)</span><br><span class="line">        obj.<span class="property">property</span> = value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Vue3：基于Proxy实现（ES6新增）</p>
+<ul>
+<li><p>丢掉麻烦的备份数据</p>
+</li>
+<li><p>省去for in循环</p>
+</li>
+<li><p>监听数组变化</p>
+</li>
+<li><p>代码简化</p>
+</li>
+<li><p>监听动态新增的属性</p>
+</li>
+<li><p>监听删除的属性</p>
+</li>
+<li><p>监听数据的索引和length属性</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> proxyObj = <span class="keyword">new</span> <span class="title class_">Proxy</span>(obj, &#123;</span><br><span class="line">	<span class="attr">get</span>: <span class="keyword">function</span>(<span class="params">target, property</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人读取property属性了&#x27;</span>)</span><br><span class="line">		<span class="keyword">return</span> prop <span class="keyword">in</span> target? target[prop]: <span class="number">0</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">set</span>: <span class="keyword">function</span>(<span class="params">target, property, value</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人修改property属性了，且值是&#x27;</span>+value)</span><br><span class="line">		target[prop] = value</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>VDOM性能瓶颈的解决</p>
+<ul>
+<li><p>Vue2中，每次更新diff都是全量对比</p>
+</li>
+<li><p>Vue3中只对比带有标记的，减少了非动态内容的对比消耗（<a href="https://template-explorer.vuejs.org/">能感受diff优化的工具</a>）</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714211.png" alt="diff的优化"></p>
+</li>
+</ul>
+</li>
+<li><p>支持Fragments</p>
+<blockquote>
+<p>文档碎片，表示一个没有父级文件的最小文档对象，被视作轻量版Document。</p>
+</blockquote>
+<blockquote>
+<p>它不是真实DOM树的一部分，变化不触发DOM重绘、不导致性能问题。</p>
+</blockquote>
+<blockquote>
+<p>主要解决DOM元素的插入问题，例如需插入多个节点时，先创建一个Fragment，把节点依次添加到Fragment上，再把Fragment添加到页面Document上，这样只会产生一次重绘；而如果直接把DOM节点依次添加到Document，就会引发多次重绘。</p>
+</blockquote>
+<ul>
+<li>Vue2：Template中只能有一个父节点，其他节点要被包在里面</li>
+<li>Vue3：Template里可以有多个节点，并支持了tsx和jsx写法（类似react），还新增了Suspense和teleport两个内置组件，和多v-model用法</li>
+</ul>
+</li>
+<li><p>支持Tree-shaking</p>
+<blockquote>
+<p>代码运行结果保持不变的前提下，去掉无用代码。</p>
+</blockquote>
+<ul>
+<li>Vue2：无论使用什么功能，最终都会出现在生产代码中，Vue实例在项目中是单例的，捆绑程序无法检测到该对象的哪些属性在代码中被使用到</li>
+<li>Vue3：将全局API进行分块，如果不使用某些功能，就不会被包含在基础包中（不会被打包）</li>
+</ul>
+</li>
+<li><p>新增Composition API（Setup语法糖式编程）</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vite目录&amp;Vue单文件组件&amp;npm run dev</title>
     <url>/web/study/vue/3.Vite%E7%9B%AE%E5%BD%95&amp;Vue%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6&amp;npm%20run%20dev.html</url>
     <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
@@ -480,6 +480,36 @@
 <p>这里属于reactive的源码，位于<code>/package/reactivity/src/reactive.ts</code>。</p>
 <figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Returns a reactive proxy of the given value (if possible).</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * If the given value is not an object, the original value itself is returned.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">value</span> - The value for which a reactive proxy shall be created.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// 判断传入的value是否为引用类型（数组或对象），是则调用reactive，否则返回value本身</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> toReactive = &lt;T <span class="keyword">extends</span> <span class="built_in">unknown</span>&gt;(<span class="attr">value</span>: T): <span class="function"><span class="params">T</span> =&gt;</span></span><br><span class="line">  <span class="title function_">isObject</span>(value) ? <span class="title function_">reactive</span>(value) : value</span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reactive全家桶</title>
+    <url>/web/study/vue/7.Reactive%E5%85%A8%E5%AE%B6%E6%A1%B6.html</url>
+    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
+<h1 id="reactive"><a href="#reactive" class="headerlink" title="reactive"></a>reactive</h1><p>reactive和ref的区别：</p>
+<ul>
+<li>ref支持传入所有类型，reactive只支持引用类型（Array、Object、Map、Set、WeakSet、WeakMap等）</li>
+<li>ref取值和赋值都要加.value，reactive不需要</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;form&gt;</span><br><span class="line">      &lt;input v-model=&quot;form.name&quot; type=&quot;text&quot;&gt;</span><br><span class="line">      &lt;br&gt;</span><br><span class="line">      &lt;input v-model=&quot;form.age&quot; type=&quot;text&quot;&gt;</span><br><span class="line">      &lt;br&gt;</span><br><span class="line">      &lt;button @click.prevent=&quot;submit&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">    &lt;/form&gt;  </span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- --------------------------------------------------------- --&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li v-for=&quot;(item, index) in list&quot; :key=&quot;index&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt;</span><br><span class="line">      &lt;!-- &lt;li v-for=&quot;(item, index) in list.arr&quot; :key=&quot;index&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt; --&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;button @click=&quot;add&quot;&gt;&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; reactive &#125; from &quot;vue&quot;</span><br><span class="line">    </span><br><span class="line">type P = &#123;</span><br><span class="line">  name: string;</span><br><span class="line">  age: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 只支持引用类型的参数，用基本类型就报错</span><br><span class="line">// let form = reactive(&quot;&quot;)</span><br><span class="line"></span><br><span class="line">// 和ref一样可以进行类型推断，也可以自己定义</span><br><span class="line">// let form = reactive&lt;P&gt;(&#123;</span><br><span class="line">//   name: &quot;yajue&quot;,</span><br><span class="line">//   age: 24</span><br><span class="line">// &#125;)</span><br><span class="line">    </span><br><span class="line">let form = reactive(&#123;</span><br><span class="line">  name: &quot;yajue&quot;,</span><br><span class="line">  age: 24</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 不需要.value</span><br><span class="line">// form.age = 114514</span><br><span class="line">    </span><br><span class="line">const submit = ()=&gt; &#123;</span><br><span class="line">  console.log(form)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// --------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">// reactive是proxy代理的对象，直接赋值会覆盖掉它</span><br><span class="line">let list = reactive&lt;string[]&gt;([])</span><br><span class="line"></span><br><span class="line">// let list = reactive&lt;&#123;</span><br><span class="line">//   arr: string[]</span><br><span class="line">// &#125;&gt;(&#123;</span><br><span class="line">//   arr: []</span><br><span class="line">// &#125;)</span><br><span class="line"></span><br><span class="line">const add = ()=&gt; &#123;</span><br><span class="line">  // 假设它是接口返回的数据</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    let res = [&quot;www&quot;, &quot;草&quot;, &quot;kusa&quot;]</span><br><span class="line">    // 会破坏响应式对象，不能直接赋值</span><br><span class="line">    // list = res</span><br><span class="line"></span><br><span class="line">    // 解决方案1：可以用数组方法</span><br><span class="line">    list.push(...res)</span><br><span class="line"></span><br><span class="line">    // 解决方案2：把数组作为一个对象属性，并把对象赋给reactive</span><br><span class="line">    // list.arr = res</span><br><span class="line"></span><br><span class="line">    console.log(list)</span><br><span class="line">  &#125;, 2000)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="readonly"><a href="#readonly" class="headerlink" title="readonly"></a>readonly</h1><p>拷贝一份proxy对象，并将其设为只读。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;show&quot;&gt;&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; reactive, readonly &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">let form = reactive(&#123;</span><br><span class="line">  name: &quot;yajue&quot;,</span><br><span class="line">  age: 24</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 把reactive所有属性变成只读</span><br><span class="line">// 实际生产中用得不多，但源码里用得很多</span><br><span class="line">const read = readonly(form)</span><br><span class="line"></span><br><span class="line">const show = ()=&gt; &#123;</span><br><span class="line">  // 会报错，因为read是只读的</span><br><span class="line">  // read.name = &quot;野兽&quot;</span><br><span class="line">  // console.log(form, read)    // -&gt; &#123;name:&quot;yajue&quot;,age:24&#125;, &#123;name:&quot;yajue&quot;,age:24&#125;</span><br><span class="line"></span><br><span class="line">  // 不会报错，因为form不是只读的</span><br><span class="line">  // read会受原始对象影响</span><br><span class="line">  form.name = &quot;野兽&quot;</span><br><span class="line">  console.log(form, read)   // -&gt; &#123;name:&quot;野兽&quot;,age:24&#125;, &#123;name:&quot;野兽&quot;,age:24&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="shallowReactive"><a href="#shallowReactive" class="headerlink" title="shallowReactive"></a>shallowReactive</h1><p>只有浅层的数据（第一层）才会变成响应式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;div&gt;reactive: &#123;&#123; form &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;shallowReactive: &#123;&#123; obj &#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;button @click=&quot;edit&quot;&gt;&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; reactive, readonly, shallowReactive &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">let form = reactive(&#123;</span><br><span class="line">  name: &quot;yajue&quot;,</span><br><span class="line">  age: 24</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// shallowReactive 作浅层响应式</span><br><span class="line">const obj = shallowReactive&lt;any&gt;(&#123;</span><br><span class="line">  foo: &#123;</span><br><span class="line">    bar: &#123;</span><br><span class="line">      num: 114514</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const edit = ()=&gt; &#123;</span><br><span class="line">  // 改变第一层的属性可以响应</span><br><span class="line">  // obj.foo = &#123; num = 1919810 &#125;</span><br><span class="line"></span><br><span class="line">  // 改变深层嵌套的属性就不会引起视图的更新</span><br><span class="line">  // obj.foo.bar.num = 1919810</span><br><span class="line">  // console.log(obj)</span><br><span class="line"></span><br><span class="line">  // 和ref&amp;shallowRef一样，reactive和shallowReactive同时写也会出现问题</span><br><span class="line">  form.name = &quot;野兽&quot;</span><br><span class="line">  obj.foo.bar.num = 1919810</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>在Vue源码（<code>/package/reactivity/src/reactive.ts</code>）中可以看到reactive的源码。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// reactive使用了泛型约束，只支持引用类型的参数，所以用基本类型就报错</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> reactive&lt;T <span class="keyword">extends</span> <span class="built_in">object</span>&gt;(<span class="attr">target</span>: T): <span class="title class_">UnwrapNestedRefs</span>&lt;T&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">reactive</span>(<span class="params">target: <span class="built_in">object</span></span>) &#123;</span><br><span class="line">  <span class="comment">// if trying to observe a readonly proxy, return the readonly version.</span></span><br><span class="line">  <span class="comment">// 如果对象是只读的，就直接返回</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="title function_">isReadonly</span>(target)) &#123;</span><br><span class="line">    <span class="keyword">return</span> target</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 否则调用createReactiveObject</span></span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">createReactiveObject</span>(</span><br><span class="line">    target,</span><br><span class="line">    <span class="literal">false</span>,		<span class="comment">// isReadonly</span></span><br><span class="line">    mutableHandlers,		<span class="comment">// 用于给Array类型创建proxy</span></span><br><span class="line">    mutableCollectionHandlers,		<span class="comment">// 用于给Set Map WeakSet WeakMap类型创建proxy</span></span><br><span class="line">    reactiveMap</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// --------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createReactiveObject</span>(<span class="params"></span></span><br><span class="line"><span class="params">  target: Target,</span></span><br><span class="line"><span class="params">  isReadonly: <span class="built_in">boolean</span>,</span></span><br><span class="line"><span class="params">  baseHandlers: ProxyHandler&lt;<span class="built_in">any</span>&gt;,</span></span><br><span class="line"><span class="params">  collectionHandlers: ProxyHandler&lt;<span class="built_in">any</span>&gt;,</span></span><br><span class="line"><span class="params">  proxyMap: <span class="built_in">WeakMap</span>&lt;Target, <span class="built_in">any</span>&gt;</span></span><br><span class="line"><span class="params">  <span class="comment">// WeakMap（弱映射），主要实现值与对象的关联而不导致内存泄漏</span></span></span><br><span class="line"><span class="params">  <span class="comment">// WeakMap的键只能是Object类型的数据（null除外），且WeakMap的键名所指的对象不计入垃圾回收机制</span></span></span><br><span class="line"><span class="params">  <span class="comment">// WeakMap的值可以是任意的</span></span></span><br><span class="line"><span class="params">  <span class="comment">// 它的键名所引用的对象都是弱引用，即垃圾回收机制不将该引用考虑在内</span></span></span><br><span class="line"><span class="params">  <span class="comment">// 因此，只要所引用的对象的其他引用都被清除，垃圾回收机制就会释放该对象所占的内存</span></span></span><br><span class="line"><span class="params">  <span class="comment">// 即，一旦不再需要，WeakMap里的键名对象和所对应的键值对会自动删除，不用手动删除引用</span></span></span><br><span class="line"><span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 如果传入基本类型，报错</span></span><br><span class="line">  <span class="keyword">if</span> (!<span class="title function_">isObject</span>(target)) &#123;</span><br><span class="line">    <span class="keyword">if</span> (__DEV__) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">`value cannot be made reactive: <span class="subst">$&#123;<span class="built_in">String</span>(target)&#125;</span>`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> target</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// target is already a Proxy, return it.</span></span><br><span class="line">  <span class="comment">// exception: calling readonly() on a reactive object</span></span><br><span class="line">  <span class="comment">// 如果target已经被代理了，且程序员的目的不是将响应式对象变成只读，则直接返回</span></span><br><span class="line">  <span class="keyword">if</span> (</span><br><span class="line">    target[<span class="title class_">ReactiveFlags</span>.<span class="property">RAW</span>] &amp;&amp;</span><br><span class="line">    !(isReadonly &amp;&amp; target[<span class="title class_">ReactiveFlags</span>.<span class="property">IS_REACTIVE</span>])</span><br><span class="line">  ) &#123;</span><br><span class="line">    <span class="keyword">return</span> target</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// target already has corresponding Proxy</span></span><br><span class="line">  <span class="comment">// 从缓存(readonlyMap, reactiveMap)中查找，如果已经被代理就直接返回</span></span><br><span class="line">  <span class="keyword">const</span> existingProxy = proxyMap.<span class="title function_">get</span>(target)</span><br><span class="line">  <span class="keyword">if</span> (existingProxy) &#123;</span><br><span class="line">    <span class="keyword">return</span> existingProxy</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// only specific value types can be observed.</span></span><br><span class="line">  <span class="comment">// 如果目标在白名单里直接返回，例如__skip__</span></span><br><span class="line">  <span class="comment">// 通过markRaw函数处理的数据会加上__skip__，即跳过代理</span></span><br><span class="line">  <span class="keyword">const</span> targetType = <span class="title function_">getTargetType</span>(target)</span><br><span class="line">  <span class="keyword">if</span> (targetType === <span class="title class_">TargetType</span>.<span class="property">INVALID</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> target</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//以上条件都没触发，开始做proxy代理</span></span><br><span class="line">  <span class="keyword">const</span> proxy = <span class="keyword">new</span> <span class="title class_">Proxy</span>(</span><br><span class="line">    target,</span><br><span class="line">    targetType === <span class="title class_">TargetType</span>.<span class="property">COLLECTION</span> ? collectionHandlers : baseHandlers</span><br><span class="line">  )</span><br><span class="line">  <span class="comment">// 缓存新代理后的对象</span></span><br><span class="line">  proxyMap.<span class="title function_">set</span>(target, proxy)</span><br><span class="line">  <span class="keyword">return</span> proxy</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>前端</category>
