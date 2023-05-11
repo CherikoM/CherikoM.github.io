@@ -290,6 +290,65 @@
       </tags>
   </entry>
   <entry>
+    <title>Vite目录&amp;Vue单文件组件&amp;npm run dev</title>
+    <url>/web/study/vue/3.Vite%E7%9B%AE%E5%BD%95&amp;Vue%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6&amp;npm%20run%20dev.html</url>
+    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
+<h1 id="Vite目录"><a href="#Vite目录" class="headerlink" title="Vite目录"></a>Vite目录</h1><ul>
+<li>public：存放不会被Vite编译的静态资源</li>
+<li>src<ul>
+<li>assets：存放静态资源</li>
+<li>components：存放组件</li>
+<li>App.vue：Vue全局入口文件</li>
+<li>main.ts：全局TS文件，可以引入全局样式、全局API、配置等</li>
+<li>vite-env.d.ts：声明文件扩充，脚手架默认做了*.vue文件的声明扩充</li>
+<li>index.html：Vite入口文件，使用ES Module形式引入main.ts</li>
+<li>package.json：一些命令、依赖等</li>
+<li>tsconfig.json：TS配置文件</li>
+<li>vite.config.ts：Vite配置文件</li>
+</ul>
+</li>
+</ul>
+<p>Vite基于esbuild做编译；基于rollup.js做打包，性能优异。</p>
+<h1 id="单文件组件（SFC）"><a href="#单文件组件（SFC）" class="headerlink" title="单文件组件（SFC）"></a>单文件组件（SFC）</h1><p>主要由三部分组成：</p>
+<ul>
+<li>script，写JS代码，setup形式的script在一个SFC中只能存在一个，非setup形式可存在多个</li>
+<li>template，写HTML标签，在一个SFC中只能存在一个</li>
+<li>style：写CSS样式</li>
+</ul>
+<h1 id="Vue3开发插件"><a href="#Vue3开发插件" class="headerlink" title="Vue3开发插件"></a>Vue3开发插件</h1><p>Volar（Vue Language Features和TypeScript Vue Plugin）：Vue3智能提示，使用时需禁用Vue2的Vetur。</p>
+<h1 id="npm-run-dev"><a href="#npm-run-dev" class="headerlink" title="npm run dev"></a>npm run dev</h1><p>终端输入npm run dev命令后进行的全过程：</p>
+<ol>
+<li>收到命令，寻找package.json的scripts，查看对应的命令</li>
+<li>npm run dev对应的是vite命令，执行它<ul>
+<li>直接执行vite命令一般不生效，如果没做过相应配置，只能通过npm run dev执行</li>
+<li>Vite在package.json中做了一个软链接（到bin），连至bin目录，里面有三个Vite的配置<ul>
+<li>vite：主要给UNIX操作系统使用，通过shell脚本执行对应的vite.js</li>
+<li>vite.cmd：主要给Windows操作系统使用</li>
+<li>vite.ps1：跨平台，在各种操作系统都能使用</li>
+</ul>
+</li>
+<li>查找规则：<ol>
+<li>node_modules&#x2F;vite寻找bin中可执行的文件，找到则执行，找不到则到2</li>
+<li>去npm全局包找，找到则执行，找不到则到3</li>
+<li>找环境变量，找到则执行，找不到则报错</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>学习</tag>
+        <tag>Vite</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>模板语法&amp;Vue指令</title>
     <url>/web/study/vue/4.%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95&amp;Vue%E6%8C%87%E4%BB%A4.html</url>
     <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
@@ -357,65 +416,6 @@
         <tag>前端</tag>
         <tag>Vue.js</tag>
         <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vite目录&amp;Vue单文件组件&amp;npm run dev</title>
-    <url>/web/study/vue/3.Vite%E7%9B%AE%E5%BD%95&amp;Vue%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6&amp;npm%20run%20dev.html</url>
-    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
-<h1 id="Vite目录"><a href="#Vite目录" class="headerlink" title="Vite目录"></a>Vite目录</h1><ul>
-<li>public：存放不会被Vite编译的静态资源</li>
-<li>src<ul>
-<li>assets：存放静态资源</li>
-<li>components：存放组件</li>
-<li>App.vue：Vue全局入口文件</li>
-<li>main.ts：全局TS文件，可以引入全局样式、全局API、配置等</li>
-<li>vite-env.d.ts：声明文件扩充，脚手架默认做了*.vue文件的声明扩充</li>
-<li>index.html：Vite入口文件，使用ES Module形式引入main.ts</li>
-<li>package.json：一些命令、依赖等</li>
-<li>tsconfig.json：TS配置文件</li>
-<li>vite.config.ts：Vite配置文件</li>
-</ul>
-</li>
-</ul>
-<p>Vite基于esbuild做编译；基于rollup.js做打包，性能优异。</p>
-<h1 id="单文件组件（SFC）"><a href="#单文件组件（SFC）" class="headerlink" title="单文件组件（SFC）"></a>单文件组件（SFC）</h1><p>主要由三部分组成：</p>
-<ul>
-<li>script，写JS代码，setup形式的script在一个SFC中只能存在一个，非setup形式可存在多个</li>
-<li>template，写HTML标签，在一个SFC中只能存在一个</li>
-<li>style：写CSS样式</li>
-</ul>
-<h1 id="Vue3开发插件"><a href="#Vue3开发插件" class="headerlink" title="Vue3开发插件"></a>Vue3开发插件</h1><p>Volar（Vue Language Features和TypeScript Vue Plugin）：Vue3智能提示，使用时需禁用Vue2的Vetur。</p>
-<h1 id="npm-run-dev"><a href="#npm-run-dev" class="headerlink" title="npm run dev"></a>npm run dev</h1><p>终端输入npm run dev命令后进行的全过程：</p>
-<ol>
-<li>收到命令，寻找package.json的scripts，查看对应的命令</li>
-<li>npm run dev对应的是vite命令，执行它<ul>
-<li>直接执行vite命令一般不生效，如果没做过相应配置，只能通过npm run dev执行</li>
-<li>Vite在package.json中做了一个软链接（到bin），连至bin目录，里面有三个Vite的配置<ul>
-<li>vite：主要给UNIX操作系统使用，通过shell脚本执行对应的vite.js</li>
-<li>vite.cmd：主要给Windows操作系统使用</li>
-<li>vite.ps1：跨平台，在各种操作系统都能使用</li>
-</ul>
-</li>
-<li>查找规则：<ol>
-<li>node_modules&#x2F;vite寻找bin中可执行的文件，找到则执行，找不到则到2</li>
-<li>去npm全局包找，找到则执行，找不到则到3</li>
-<li>找环境变量，找到则执行，找不到则报错</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>Vue.js</tag>
-        <tag>学习</tag>
-        <tag>Vite</tag>
       </tags>
   </entry>
   <entry>
