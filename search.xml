@@ -96,6 +96,83 @@
       </tags>
   </entry>
   <entry>
+    <title>Node.js底层原理</title>
+    <url>/web/study/vue/2.nodejs%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.html</url>
+    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
+<p>图片全部搬运自<a href="https://xiaoman.blog.csdn.net/article/details/122769982">学习Vue3 第二章（配置环境）</a><del>自己懒得做图了</del>。</p>
+<h1 id="Node-js的构成"><a href="#Node-js的构成" class="headerlink" title="Node.js的构成"></a>Node.js的构成</h1><p>Node.js主要由V8、Libuv和第三方库组成。</p>
+<ul>
+<li>Libuv：跨平台异步IO库（处理事件循环），除了IO功能还提供线程、进程、信号、定时器、进程间通信、线程池等功能。</li>
+<li>第三方库<ul>
+<li>异步DNS解析（cares）</li>
+<li>HTTP解析器（旧版：http_parser；新版：llhttp）</li>
+<li>HTTP2解析器（nghttp2）</li>
+<li>解压压缩库（zlib）</li>
+<li>加密解密库（openssl）</li>
+<li>等等等等</li>
+</ul>
+</li>
+<li>V8：实现JS解析（把js编译成机器码）、执行和自定义拓展</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012242595.png"></p>
+<p>从上到下分为三层：</p>
+<ul>
+<li>应用层：Node.js API各种模块，基于Libuv，因为可能涉及IO流操作</li>
+<li>桥梁层：与底层C或C++通信</li>
+<li>底层（C++或C）：处理底层机制</li>
+</ul>
+<h1 id="Libuv"><a href="#Libuv" class="headerlink" title="Libuv"></a>Libuv</h1><p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012253451.png"></p>
+<ul>
+<li><p>loop参数：事件循环结构的结构体</p>
+</li>
+<li><p>uv_loop_alive：用于注册loop，判断loop里有无任务（是否还有活动），有就开始循环，没有就退出</p>
+<blockquote>
+<p>loop还在活动的情况：</p>
+<ol>
+<li>有被引用的活动句柄或活动请求</li>
+<li>有正在关闭的句柄</li>
+</ol>
+</blockquote>
+</li>
+<li><p>uv_update_time：执行setTimeOut（过段时间后执行回调）</p>
+</li>
+<li><p>uv_run_timers：执行setInterval（每隔一段时间都执行回调）</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012303489.png"></p>
+<ul>
+<li>数据结构：链表+二叉堆</li>
+<li>把最快过期的节点放到上面，判断是否过期<ul>
+<li>如果过期就执行回调</li>
+<li>如果没有过期，查看repeat，区分setTimeOut和setInterval<ul>
+<li>如果是setTimeOut，任务过期后就结束了</li>
+<li>如果是setInterval，进行重复执行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>uv_run_pending：处理IO流的回调</p>
+</li>
+<li><p>uv_run_idle&amp;uv_run_prepare：处理其他各种队列</p>
+</li>
+<li><p>uv_io_poll：处理网络相关</p>
+</li>
+<li><p>uv_run_closing_handles：结束，关闭服务器</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>学习</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue3概述</title>
     <url>/web/study/vue/1.Vue3%E6%A6%82%E8%BF%B0.html</url>
     <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
@@ -213,142 +290,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Node.js底层原理</title>
-    <url>/web/study/vue/2.nodejs%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.html</url>
-    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
-<p>图片全部搬运自<a href="https://xiaoman.blog.csdn.net/article/details/122769982">学习Vue3 第二章（配置环境）</a><del>自己懒得做图了</del>。</p>
-<h1 id="Node-js的构成"><a href="#Node-js的构成" class="headerlink" title="Node.js的构成"></a>Node.js的构成</h1><p>Node.js主要由V8、Libuv和第三方库组成。</p>
-<ul>
-<li>Libuv：跨平台异步IO库（处理事件循环），除了IO功能还提供线程、进程、信号、定时器、进程间通信、线程池等功能。</li>
-<li>第三方库<ul>
-<li>异步DNS解析（cares）</li>
-<li>HTTP解析器（旧版：http_parser；新版：llhttp）</li>
-<li>HTTP2解析器（nghttp2）</li>
-<li>解压压缩库（zlib）</li>
-<li>加密解密库（openssl）</li>
-<li>等等等等</li>
-</ul>
-</li>
-<li>V8：实现JS解析（把js编译成机器码）、执行和自定义拓展</li>
-</ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012242595.png"></p>
-<p>从上到下分为三层：</p>
-<ul>
-<li>应用层：Node.js API各种模块，基于Libuv，因为可能涉及IO流操作</li>
-<li>桥梁层：与底层C或C++通信</li>
-<li>底层（C++或C）：处理底层机制</li>
-</ul>
-<h1 id="Libuv"><a href="#Libuv" class="headerlink" title="Libuv"></a>Libuv</h1><p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012253451.png"></p>
-<ul>
-<li><p>loop参数：事件循环结构的结构体</p>
-</li>
-<li><p>uv_loop_alive：用于注册loop，判断loop里有无任务（是否还有活动），有就开始循环，没有就退出</p>
-<blockquote>
-<p>loop还在活动的情况：</p>
-<ol>
-<li>有被引用的活动句柄或活动请求</li>
-<li>有正在关闭的句柄</li>
-</ol>
-</blockquote>
-</li>
-<li><p>uv_update_time：执行setTimeOut（过段时间后执行回调）</p>
-</li>
-<li><p>uv_run_timers：执行setInterval（每隔一段时间都执行回调）</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305012303489.png"></p>
-<ul>
-<li>数据结构：链表+二叉堆</li>
-<li>把最快过期的节点放到上面，判断是否过期<ul>
-<li>如果过期就执行回调</li>
-<li>如果没有过期，查看repeat，区分setTimeOut和setInterval<ul>
-<li>如果是setTimeOut，任务过期后就结束了</li>
-<li>如果是setInterval，进行重复执行</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>uv_run_pending：处理IO流的回调</p>
-</li>
-<li><p>uv_run_idle&amp;uv_run_prepare：处理其他各种队列</p>
-</li>
-<li><p>uv_io_poll：处理网络相关</p>
-</li>
-<li><p>uv_run_closing_handles：结束，关闭服务器</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>Vue.js</tag>
-        <tag>学习</tag>
-        <tag>Node.js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vite目录&amp;Vue单文件组件&amp;npm run dev</title>
-    <url>/web/study/vue/3.Vite%E7%9B%AE%E5%BD%95&amp;Vue%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6&amp;npm%20run%20dev.html</url>
-    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
-<h1 id="Vite目录"><a href="#Vite目录" class="headerlink" title="Vite目录"></a>Vite目录</h1><ul>
-<li>public：存放不会被Vite编译的静态资源</li>
-<li>src<ul>
-<li>assets：存放静态资源</li>
-<li>components：存放组件</li>
-<li>App.vue：Vue全局入口文件</li>
-<li>main.ts：全局TS文件，可以引入全局样式、全局API、配置等</li>
-<li>vite-env.d.ts：声明文件扩充，脚手架默认做了*.vue文件的声明扩充</li>
-<li>index.html：Vite入口文件，使用ES Module形式引入main.ts</li>
-<li>package.json：一些命令、依赖等</li>
-<li>tsconfig.json：TS配置文件</li>
-<li>vite.config.ts：Vite配置文件</li>
-</ul>
-</li>
-</ul>
-<p>Vite基于esbuild做编译；基于rollup.js做打包，性能优异。</p>
-<h1 id="单文件组件（SFC）"><a href="#单文件组件（SFC）" class="headerlink" title="单文件组件（SFC）"></a>单文件组件（SFC）</h1><p>主要由三部分组成：</p>
-<ul>
-<li>script，写JS代码，setup形式的script在一个SFC中只能存在一个，非setup形式可存在多个</li>
-<li>template，写HTML标签，在一个SFC中只能存在一个</li>
-<li>style：写CSS样式</li>
-</ul>
-<h1 id="Vue3开发插件"><a href="#Vue3开发插件" class="headerlink" title="Vue3开发插件"></a>Vue3开发插件</h1><p>Volar（Vue Language Features和TypeScript Vue Plugin）：Vue3智能提示，使用时需禁用Vue2的Vetur。</p>
-<h1 id="npm-run-dev"><a href="#npm-run-dev" class="headerlink" title="npm run dev"></a>npm run dev</h1><p>终端输入npm run dev命令后进行的全过程：</p>
-<ol>
-<li>收到命令，寻找package.json的scripts，查看对应的命令</li>
-<li>npm run dev对应的是vite命令，执行它<ul>
-<li>直接执行vite命令一般不生效，如果没做过相应配置，只能通过npm run dev执行</li>
-<li>Vite在package.json中做了一个软链接（到bin），连至bin目录，里面有三个Vite的配置<ul>
-<li>vite：主要给UNIX操作系统使用，通过shell脚本执行对应的vite.js</li>
-<li>vite.cmd：主要给Windows操作系统使用</li>
-<li>vite.ps1：跨平台，在各种操作系统都能使用</li>
-</ul>
-</li>
-<li>查找规则：<ol>
-<li>node_modules&#x2F;vite寻找bin中可执行的文件，找到则执行，找不到则到2</li>
-<li>去npm全局包找，找到则执行，找不到则到3</li>
-<li>找环境变量，找到则执行，找不到则报错</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>Vue.js</tag>
-        <tag>学习</tag>
-        <tag>Vite</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>模板语法&amp;Vue指令</title>
     <url>/web/study/vue/4.%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95&amp;Vue%E6%8C%87%E4%BB%A4.html</url>
     <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
@@ -416,6 +357,65 @@
         <tag>前端</tag>
         <tag>Vue.js</tag>
         <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vite目录&amp;Vue单文件组件&amp;npm run dev</title>
+    <url>/web/study/vue/3.Vite%E7%9B%AE%E5%BD%95&amp;Vue%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6&amp;npm%20run%20dev.html</url>
+    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
+<h1 id="Vite目录"><a href="#Vite目录" class="headerlink" title="Vite目录"></a>Vite目录</h1><ul>
+<li>public：存放不会被Vite编译的静态资源</li>
+<li>src<ul>
+<li>assets：存放静态资源</li>
+<li>components：存放组件</li>
+<li>App.vue：Vue全局入口文件</li>
+<li>main.ts：全局TS文件，可以引入全局样式、全局API、配置等</li>
+<li>vite-env.d.ts：声明文件扩充，脚手架默认做了*.vue文件的声明扩充</li>
+<li>index.html：Vite入口文件，使用ES Module形式引入main.ts</li>
+<li>package.json：一些命令、依赖等</li>
+<li>tsconfig.json：TS配置文件</li>
+<li>vite.config.ts：Vite配置文件</li>
+</ul>
+</li>
+</ul>
+<p>Vite基于esbuild做编译；基于rollup.js做打包，性能优异。</p>
+<h1 id="单文件组件（SFC）"><a href="#单文件组件（SFC）" class="headerlink" title="单文件组件（SFC）"></a>单文件组件（SFC）</h1><p>主要由三部分组成：</p>
+<ul>
+<li>script，写JS代码，setup形式的script在一个SFC中只能存在一个，非setup形式可存在多个</li>
+<li>template，写HTML标签，在一个SFC中只能存在一个</li>
+<li>style：写CSS样式</li>
+</ul>
+<h1 id="Vue3开发插件"><a href="#Vue3开发插件" class="headerlink" title="Vue3开发插件"></a>Vue3开发插件</h1><p>Volar（Vue Language Features和TypeScript Vue Plugin）：Vue3智能提示，使用时需禁用Vue2的Vetur。</p>
+<h1 id="npm-run-dev"><a href="#npm-run-dev" class="headerlink" title="npm run dev"></a>npm run dev</h1><p>终端输入npm run dev命令后进行的全过程：</p>
+<ol>
+<li>收到命令，寻找package.json的scripts，查看对应的命令</li>
+<li>npm run dev对应的是vite命令，执行它<ul>
+<li>直接执行vite命令一般不生效，如果没做过相应配置，只能通过npm run dev执行</li>
+<li>Vite在package.json中做了一个软链接（到bin），连至bin目录，里面有三个Vite的配置<ul>
+<li>vite：主要给UNIX操作系统使用，通过shell脚本执行对应的vite.js</li>
+<li>vite.cmd：主要给Windows操作系统使用</li>
+<li>vite.ps1：跨平台，在各种操作系统都能使用</li>
+</ul>
+</li>
+<li>查找规则：<ol>
+<li>node_modules&#x2F;vite寻找bin中可执行的文件，找到则执行，找不到则到2</li>
+<li>去npm全局包找，找到则执行，找不到则到3</li>
+<li>找环境变量，找到则执行，找不到则报错</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>学习</tag>
+        <tag>Vite</tag>
       </tags>
   </entry>
   <entry>
