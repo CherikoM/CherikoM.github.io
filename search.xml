@@ -20,123 +20,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue3概述</title>
-    <url>/web/study/vue/1.Vue3%E6%A6%82%E8%BF%B0.html</url>
-    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
-<h1 id="介绍Vue"><a href="#介绍Vue" class="headerlink" title="介绍Vue"></a>介绍Vue</h1><ul>
-<li><p>Vue是一套用于构建用户界面的渐进式框架</p>
-</li>
-<li><p>Vue的优点</p>
-<ul>
-<li>自底向上逐层运用</li>
-<li>只关注视图层，易上手</li>
-<li>易与第三方库或现有项目整合</li>
-<li>能驱动复杂的单页面项目</li>
-</ul>
-</li>
-<li><p>Vue是MVVM（Model-View-ViewModel）架构</p>
-<ul>
-<li>View：视图层（UI用户界面）</li>
-<li>ViewModel：业务逻辑层（一切JS可视为业务逻辑）</li>
-<li>Model：数据层（存储数据、对数据的处理）</li>
-</ul>
-</li>
-</ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714208.png" alt="MVVM架构"></p>
-<h1 id="Vue2-vs-Vue3"><a href="#Vue2-vs-Vue3" class="headerlink" title="Vue2 vs Vue3"></a>Vue2 vs Vue3</h1><ul>
-<li>声明式API（Options API）写的比较分散，Vue2的写法</li>
-<li>组合式API（Composition API）可以把连贯的逻辑写在一起，或者封装成hook</li>
-</ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714210.png" alt="声明式API &amp; 组合式API"></p>
-<h1 id="Vue3新特性"><a href="#Vue3新特性" class="headerlink" title="Vue3新特性"></a>Vue3新特性</h1><ul>
-<li><p>重写双向数据绑定</p>
-<ul>
-<li><p>Vue2：基于<code>Object.defineProperty()</code>实现</p>
-<ul>
-<li><p>需要使用一个备份对象</p>
-</li>
-<li><p>需要for in循环，才能给原对象每个属性都加响应式</p>
-</li>
-<li><p>无法监听数组变化，需要重写数组方法才能实现响应式（但实现的不完全）</p>
-</li>
-<li><p>代码复杂</p>
-</li>
-<li><p>原数据新增的属性不带响应式</p>
-</li>
-<li><p>原数据删除属性时不删除对应响应式</p>
-</li>
-<li><p>无法处理索引和length属性</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">property</span>: <span class="number">114514</span>&#125;</span><br><span class="line"><span class="keyword">const</span> _obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(_obj, <span class="string">&#x27;property&#x27;</span>, &#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人读取property属性了&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> property <span class="keyword">in</span> obj? obj.<span class="property">property</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">value</span>) &#123;</span><br><span class="line">       	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人修改property属性了，且值是&#x27;</span>+value)</span><br><span class="line">        obj.<span class="property">property</span> = value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>Vue3：基于Proxy实现（ES6新增）</p>
-<ul>
-<li><p>丢掉麻烦的备份数据</p>
-</li>
-<li><p>省去for in循环</p>
-</li>
-<li><p>监听数组变化</p>
-</li>
-<li><p>代码简化</p>
-</li>
-<li><p>监听动态新增的属性</p>
-</li>
-<li><p>监听删除的属性</p>
-</li>
-<li><p>监听数据的索引和length属性</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> proxyObj = <span class="keyword">new</span> <span class="title class_">Proxy</span>(obj, &#123;</span><br><span class="line">	<span class="attr">get</span>: <span class="keyword">function</span>(<span class="params">target, property</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人读取property属性了&#x27;</span>)</span><br><span class="line">		<span class="keyword">return</span> prop <span class="keyword">in</span> target? target[prop]: <span class="number">0</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">set</span>: <span class="keyword">function</span>(<span class="params">target, property, value</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人修改property属性了，且值是&#x27;</span>+value)</span><br><span class="line">		target[prop] = value</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>VDOM性能瓶颈的解决</p>
-<ul>
-<li><p>Vue2中，每次更新diff都是全量对比</p>
-</li>
-<li><p>Vue3中只对比带有标记的，减少了非动态内容的对比消耗（<a href="https://template-explorer.vuejs.org/">能感受diff优化的工具</a>）</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714211.png" alt="diff的优化"></p>
-</li>
-</ul>
-</li>
-<li><p>支持Fragments</p>
-<blockquote>
-<p>文档碎片，表示一个没有父级文件的最小文档对象，被视作轻量版Document。</p>
-</blockquote>
-<blockquote>
-<p>它不是真实DOM树的一部分，变化不触发DOM重绘、不导致性能问题。</p>
-</blockquote>
-<blockquote>
-<p>主要解决DOM元素的插入问题，例如需插入多个节点时，先创建一个Fragment，把节点依次添加到Fragment上，再把Fragment添加到页面Document上，这样只会产生一次重绘；而如果直接把DOM节点依次添加到Document，就会引发多次重绘。</p>
-</blockquote>
-<ul>
-<li>Vue2：Template中只能有一个父节点，其他节点要被包在里面</li>
-<li>Vue3：Template里可以有多个节点，并支持了tsx和jsx写法（类似react），还新增了Suspense和teleport两个内置组件，和多v-model用法</li>
-</ul>
-</li>
-<li><p>支持Tree-shaking</p>
-<blockquote>
-<p>代码运行结果保持不变的前提下，去掉无用代码。</p>
-</blockquote>
-<ul>
-<li>Vue2：无论使用什么功能，最终都会出现在生产代码中，Vue实例在项目中是单例的，捆绑程序无法检测到该对象的哪些属性在代码中被使用到</li>
-<li>Vue3：将全局API进行分块，如果不使用某些功能，就不会被包含在基础包中（不会被打包）</li>
-</ul>
-</li>
-<li><p>新增Composition API（Setup语法糖式编程）</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>Vue.js</tag>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我制作了一个唱片架</title>
     <url>/web/diy/recordCase.html</url>
     <content><![CDATA[<p>因为我很喜欢听音乐（尤其是电子音乐），所以我希望我自己的博客能给浏览者安利很多很多好听的音乐。</p>
@@ -382,33 +265,111 @@
       </tags>
   </entry>
   <entry>
-    <title>Ref全家桶</title>
-    <url>/web/study/vue/6.Ref%E5%85%A8%E5%AE%B6%E6%A1%B6.html</url>
+    <title>Vue3概述</title>
+    <url>/web/study/vue/1.Vue3%E6%A6%82%E8%BF%B0.html</url>
     <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
-<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p>接收一个内部值并返回响应式且可变的ref对象，ref对象仅有一个<code>.value</code>属性，指向该内部值。</p>
+<h1 id="介绍Vue"><a href="#介绍Vue" class="headerlink" title="介绍Vue"></a>介绍Vue</h1><ul>
+<li><p>Vue是一套用于构建用户界面的渐进式框架</p>
+</li>
+<li><p>Vue的优点</p>
+<ul>
+<li>自底向上逐层运用</li>
+<li>只关注视图层，易上手</li>
+<li>易与第三方库或现有项目整合</li>
+<li>能驱动复杂的单页面项目</li>
+</ul>
+</li>
+<li><p>Vue是MVVM（Model-View-ViewModel）架构</p>
+<ul>
+<li>View：视图层（UI用户界面）</li>
+<li>ViewModel：业务逻辑层（一切JS可视为业务逻辑）</li>
+<li>Model：数据层（存储数据、对数据的处理）</li>
+</ul>
+</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714208.png" alt="MVVM架构"></p>
+<h1 id="Vue2-vs-Vue3"><a href="#Vue2-vs-Vue3" class="headerlink" title="Vue2 vs Vue3"></a>Vue2 vs Vue3</h1><ul>
+<li>声明式API（Options API）写的比较分散，Vue2的写法</li>
+<li>组合式API（Composition API）可以把连贯的逻辑写在一起，或者封装成hook</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714210.png" alt="声明式API &amp; 组合式API"></p>
+<h1 id="Vue3新特性"><a href="#Vue3新特性" class="headerlink" title="Vue3新特性"></a>Vue3新特性</h1><ul>
+<li><p>重写双向数据绑定</p>
+<ul>
+<li><p>Vue2：基于<code>Object.defineProperty()</code>实现</p>
+<ul>
+<li><p>需要使用一个备份对象</p>
+</li>
+<li><p>需要for in循环，才能给原对象每个属性都加响应式</p>
+</li>
+<li><p>无法监听数组变化，需要重写数组方法才能实现响应式（但实现的不完全）</p>
+</li>
+<li><p>代码复杂</p>
+</li>
+<li><p>原数据新增的属性不带响应式</p>
+</li>
+<li><p>原数据删除属性时不删除对应响应式</p>
+</li>
+<li><p>无法处理索引和length属性</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">property</span>: <span class="number">114514</span>&#125;</span><br><span class="line"><span class="keyword">const</span> _obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(_obj, <span class="string">&#x27;property&#x27;</span>, &#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人读取property属性了&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> property <span class="keyword">in</span> obj? obj.<span class="property">property</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">set</span>(<span class="params">value</span>) &#123;</span><br><span class="line">       	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人修改property属性了，且值是&#x27;</span>+value)</span><br><span class="line">        obj.<span class="property">property</span> = value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Vue3：基于Proxy实现（ES6新增）</p>
+<ul>
+<li><p>丢掉麻烦的备份数据</p>
+</li>
+<li><p>省去for in循环</p>
+</li>
+<li><p>监听数组变化</p>
+</li>
+<li><p>代码简化</p>
+</li>
+<li><p>监听动态新增的属性</p>
+</li>
+<li><p>监听删除的属性</p>
+</li>
+<li><p>监听数据的索引和length属性</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> proxyObj = <span class="keyword">new</span> <span class="title class_">Proxy</span>(obj, &#123;</span><br><span class="line">	<span class="attr">get</span>: <span class="keyword">function</span>(<span class="params">target, property</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人读取property属性了&#x27;</span>)</span><br><span class="line">		<span class="keyword">return</span> prop <span class="keyword">in</span> target? target[prop]: <span class="number">0</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">set</span>: <span class="keyword">function</span>(<span class="params">target, property, value</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;有人修改property属性了，且值是&#x27;</span>+value)</span><br><span class="line">		target[prop] = value</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>VDOM性能瓶颈的解决</p>
+<ul>
+<li><p>Vue2中，每次更新diff都是全量对比</p>
+</li>
+<li><p>Vue3中只对比带有标记的，减少了非动态内容的对比消耗（<a href="https://template-explorer.vuejs.org/">能感受diff优化的工具</a>）</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202305011714211.png" alt="diff的优化"></p>
+</li>
+</ul>
+</li>
+<li><p>支持Fragments</p>
 <blockquote>
-<p>浏览器控制台设置里，勾选“启动自定义格式化程序”并刷新，控制台就能看格式化后整齐的ref，reactive也是如此。</p>
+<p>文档碎片，表示一个没有父级文件的最小文档对象，被视作轻量版Document。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;person&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;change&quot;&gt;修改&lt;/button&gt;</span><br><span class="line">  &lt;div ref=&quot;dom&quot;&gt;我是个DOM&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref &#125; from &quot;vue&quot;</span><br><span class="line">import type &#123; Ref &#125; from &quot;vue&quot;</span><br><span class="line">    </span><br><span class="line">type P = &#123;</span><br><span class="line">  name: string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ref 作深层响应式</span><br><span class="line">// 也可以不写类型定义或泛型，ref会做类型推断</span><br><span class="line">// const person = ref&lt;P&gt;(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line">// const person: Ref&lt;P&gt; = ref(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line">const person = ref(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line">    </span><br><span class="line">// 不用ref包裹就没有响应式</span><br><span class="line">const person2 = &#123; name: &quot;pinky&quot; &#125;</span><br><span class="line"></span><br><span class="line">// ref还可以取得DOM元素，变量名需要和元素的ref属性值一致</span><br><span class="line">const dom = ref&lt;HTMLDivElement&gt;()</span><br><span class="line"></span><br><span class="line">// 在setup语法糖里只能读到undefined，因为在这个阶段，DOM还没有被渲染</span><br><span class="line">console.log(dom.value?.innerText)</span><br><span class="line"></span><br><span class="line">const change = ()=&gt; &#123;</span><br><span class="line">  // person.name = &quot;野兽先辈&quot;</span><br><span class="line">  // ref函数返回一个类，其中有一个属性value，修改或取值时必须带上value</span><br><span class="line">  person.value.name = &quot;野兽先辈&quot;</span><br><span class="line">  console.log(person)</span><br><span class="line">  console.log(dom.value?.innerText)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="isRef"><a href="#isRef" class="headerlink" title="isRef"></a>isRef</h1><p>判断是否为ref对象</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;person&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;change&quot;&gt;修改&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref, isRef &#125; from &quot;vue&quot;</span><br><span class="line"></span><br><span class="line">const person = ref(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line">    </span><br><span class="line">const person2 = &#123; name: &quot;pinky&quot; &#125;</span><br><span class="line"></span><br><span class="line">const change = ()=&gt; &#123;</span><br><span class="line">  // 判断对象是不是ref对象</span><br><span class="line">  // 实际生产中用得不多，但源码里用得很多</span><br><span class="line">  console.log(isRef(person))	// -&gt; true</span><br><span class="line">  console.log(isRef(person2))	// -&gt; false</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="shallowRef"><a href="#shallowRef" class="headerlink" title="shallowRef"></a>shallowRef</h1><p>创建一个跟踪<code>.value</code>变化的ref，但它的值不会变成响应式（浅层响应式）。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;ref: &#123;&#123;person&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;div&gt;shallowRef: &#123;&#123;person2&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;button @click=&quot;change&quot;&gt;修改&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref, shallowRef &#125; from &quot;vue&quot;</span><br><span class="line">    </span><br><span class="line">type P = &#123;</span><br><span class="line">  name: string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const person = ref(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line"></span><br><span class="line">// shallowRef 作浅层响应式</span><br><span class="line">const person2 = shallowRef(&#123; name: &quot;MUR&quot; &#125;)</span><br><span class="line"></span><br><span class="line">const change = ()=&gt; &#123;</span><br><span class="line">  // 点击后数据改变，但视图不会变化，因为它是浅层响应式</span><br><span class="line">  // person2.value.name = &quot;三浦&quot;</span><br><span class="line">    </span><br><span class="line">  // 直接从value赋值才会变成响应式</span><br><span class="line">  // person2.value = &#123;</span><br><span class="line">  //   name: &quot;三浦&quot;</span><br><span class="line">  // &#125;</span><br><span class="line">    </span><br><span class="line">  // ref和shallowRef不能同时写，因为会影响shallowRef，造成视图的更新</span><br><span class="line">  person.value.name = &quot;我是ref&quot;</span><br><span class="line">  person2.value.name = &quot;我是shallowRef&quot;</span><br><span class="line">  console.log(person2)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="triggerRef"><a href="#triggerRef" class="headerlink" title="triggerRef"></a>triggerRef</h1><p>强制页面视图更新。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;ref: &#123;&#123;person&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;div&gt;shallowRef: &#123;&#123;person2&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;change&quot;&gt;修改&lt;/button&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref, shallowRef, triggerRef &#125; from &quot;vue&quot;</span><br><span class="line"></span><br><span class="line">const person = ref(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line"></span><br><span class="line">const person2 = shallowRef(&#123; name: &quot;MUR&quot; &#125;)</span><br><span class="line"></span><br><span class="line">const change = ()=&gt; &#123;</span><br><span class="line">  person2.value.name = &quot;我被影响了&quot;</span><br><span class="line">  // triggerRef强制更新收集的依赖，直接调用它也能更新shallowRef</span><br><span class="line">  // ref底层更新视图的逻辑中会调用triggerRef函数，所以ref和shallowRef不能同时写在一起</span><br><span class="line">  triggerRef(person2)</span><br><span class="line">  console.log(person2)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="customRef"><a href="#customRef" class="headerlink" title="customRef"></a>customRef</h1><p>自定义ref。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;obj&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;change&quot;&gt;修改&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref, shallowRef, triggerRef, customRef &#125; from &quot;vue&quot;</span><br><span class="line"></span><br><span class="line">// 自定义ref，要求返回一个customRef的返回值</span><br><span class="line">function myRef&lt;T&gt;(value: T) &#123;</span><br><span class="line">  // customRef接收一个回调函数，回调函数接收两个参数</span><br><span class="line">  return customRef((track, trigger)=&gt; &#123;</span><br><span class="line">    </span><br><span class="line">    // 可以使用自定义ref实现额外的逻辑</span><br><span class="line">    let timer</span><br><span class="line">      </span><br><span class="line">    // 回调函数要求返回一个对象，对象需要实现get和set方法</span><br><span class="line">    return &#123;</span><br><span class="line">      get() &#123;</span><br><span class="line">        // track用来收集依赖</span><br><span class="line">        track()</span><br><span class="line">        return value</span><br><span class="line">      &#125;,</span><br><span class="line">      set(newVal) &#123;</span><br><span class="line">        //比如用户输入值时，调用接口并做个防抖</span><br><span class="line">        clearTimeout(timer)</span><br><span class="line">        setTimeout(()=&gt; &#123;</span><br><span class="line">          console.log(&quot;我调用了一个接口&quot;)</span><br><span class="line">          value = newVal</span><br><span class="line">          timer = null</span><br><span class="line">          // trigger用来触发依赖更新</span><br><span class="line">          trigger()</span><br><span class="line">        &#125;, 500)</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">const obj = myRef&lt;string&gt;(&quot;cheriko&quot;)</span><br><span class="line"></span><br><span class="line">const change = ()=&gt; &#123;</span><br><span class="line">  obj.value = &quot;meruko&quot;</span><br><span class="line">  console.log(obj)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>在Vue源码（<code>/package/reactivity/src/ref.ts</code>）中可以看到ref的源码。</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Takes an inner value and returns a reactive and mutable ref object, which</span></span><br><span class="line"><span class="comment"> * has a single property `.value` that points to the inner value.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">value</span> - The object to wrap in the ref.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> &#123;<span class="type">@link https://vuejs.org/api/reactivity-core.html#ref</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// 进行函数重载，支持多种传入的类型</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> ref&lt;T <span class="keyword">extends</span> <span class="title class_">Ref</span>&gt;(<span class="attr">value</span>: T): T</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> ref&lt;T&gt;(<span class="attr">value</span>: T): <span class="title class_">Ref</span>&lt;<span class="title class_">UnwrapRef</span>&lt;T&gt;&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> ref&lt;T = <span class="built_in">any</span>&gt;(): <span class="title class_">Ref</span>&lt;T | <span class="literal">undefined</span>&gt;</span><br><span class="line"><span class="comment">// value就是程序员传进ref的值</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">ref</span>(<span class="params">value?: <span class="built_in">unknown</span></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">createRef</span>(value, <span class="literal">false</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ----------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> shallowRef&lt;T <span class="keyword">extends</span> <span class="built_in">object</span>&gt;(</span><br><span class="line">  <span class="attr">value</span>: T</span><br><span class="line">): T <span class="keyword">extends</span> <span class="title class_">Ref</span> ? T : <span class="title class_">ShallowRef</span>&lt;T&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> shallowRef&lt;T&gt;(<span class="attr">value</span>: T): <span class="title class_">ShallowRef</span>&lt;T&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> shallowRef&lt;T = <span class="built_in">any</span>&gt;(): <span class="title class_">ShallowRef</span>&lt;T | <span class="literal">undefined</span>&gt;</span><br><span class="line"><span class="comment">// shallowRef，和ref的不同就是它把__v_isShallow设为true，所以它的响应只到.value</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">shallowRef</span>(<span class="params">value?: <span class="built_in">unknown</span></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">createRef</span>(value, <span class="literal">true</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ----------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createRef</span>(<span class="params">rawValue: <span class="built_in">unknown</span>, shallow: <span class="built_in">boolean</span></span>) &#123;</span><br><span class="line">  <span class="comment">// 判断传进的值，如果已经是ref对象就不用再变了</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="title function_">isRef</span>(rawValue)) &#123;</span><br><span class="line">    <span class="keyword">return</span> rawValue</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 创建ref对象</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">RefImpl</span>(rawValue, shallow)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ----------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RefImpl</span>&lt;T&gt; &#123;</span><br><span class="line">  <span class="comment">// 这个_value就是真正要读取的东西</span></span><br><span class="line">  <span class="keyword">private</span> <span class="attr">_value</span>: T</span><br><span class="line">  <span class="keyword">private</span> <span class="attr">_rawValue</span>: T</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> dep?: <span class="title class_">Dep</span> = <span class="literal">undefined</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">readonly</span> __v_isRef = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 构造函数</span></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">value: T, <span class="keyword">public</span> <span class="keyword">readonly</span> __v_isShallow: <span class="built_in">boolean</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_rawValue</span> = __v_isShallow ? value : <span class="title function_">toRaw</span>(value)</span><br><span class="line">    <span class="comment">// 判断isShallow，如果为true就赋值value，为false就赋值toReactive(value)</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_value</span> = __v_isShallow ? value : <span class="title function_">toReactive</span>(value)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">get</span> <span class="title function_">value</span>() &#123;</span><br><span class="line">    <span class="comment">// 进行依赖收集</span></span><br><span class="line">    <span class="title function_">trackRefValue</span>(<span class="variable language_">this</span>)</span><br><span class="line">    <span class="comment">// 读取的是_value</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_value</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">set</span> <span class="title function_">value</span>(<span class="params">newVal</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> useDirectValue =</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">__v_isShallow</span> || <span class="title function_">isShallow</span>(newVal) || <span class="title function_">isReadonly</span>(newVal)</span><br><span class="line">    newVal = useDirectValue ? newVal : <span class="title function_">toRaw</span>(newVal)</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">hasChanged</span>(newVal, <span class="variable language_">this</span>.<span class="property">_rawValue</span>)) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">_rawValue</span> = newVal</span><br><span class="line">      <span class="comment">// 修改的也是_value</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">_value</span> = useDirectValue ? newVal : <span class="title function_">toReactive</span>(newVal)</span><br><span class="line">      <span class="comment">// 进行依赖更新</span></span><br><span class="line">      <span class="title function_">triggerRefValue</span>(<span class="variable language_">this</span>, newVal)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ----------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// triggerRef，可以强制更新shallowRef的值</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">triggerRef</span>(<span class="params">ref: Ref</span>) &#123;</span><br><span class="line">  <span class="title function_">triggerRefValue</span>(ref, __DEV__ ? ref.<span class="property">value</span> : <span class="built_in">void</span> <span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// triggerRefValue会接着调用triggerEffects，它会进行依赖的更新</span></span><br></pre></td></tr></table></figure>
-
-<p>这里属于reactive的源码，位于<code>/package/reactivity/src/reactive.ts</code>。</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Returns a reactive proxy of the given value (if possible).</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * If the given value is not an object, the original value itself is returned.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">value</span> - The value for which a reactive proxy shall be created.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// 判断传入的value是否为引用类型（数组或对象），是则调用reactive，否则返回value本身</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> toReactive = &lt;T <span class="keyword">extends</span> <span class="built_in">unknown</span>&gt;(<span class="attr">value</span>: T): <span class="function"><span class="params">T</span> =&gt;</span></span><br><span class="line">  <span class="title function_">isObject</span>(value) ? <span class="title function_">reactive</span>(value) : value</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>它不是真实DOM树的一部分，变化不触发DOM重绘、不导致性能问题。</p>
+</blockquote>
+<blockquote>
+<p>主要解决DOM元素的插入问题，例如需插入多个节点时，先创建一个Fragment，把节点依次添加到Fragment上，再把Fragment添加到页面Document上，这样只会产生一次重绘；而如果直接把DOM节点依次添加到Document，就会引发多次重绘。</p>
+</blockquote>
+<ul>
+<li>Vue2：Template中只能有一个父节点，其他节点要被包在里面</li>
+<li>Vue3：Template里可以有多个节点，并支持了tsx和jsx写法（类似react），还新增了Suspense和teleport两个内置组件，和多v-model用法</li>
+</ul>
+</li>
+<li><p>支持Tree-shaking</p>
+<blockquote>
+<p>代码运行结果保持不变的前提下，去掉无用代码。</p>
+</blockquote>
+<ul>
+<li>Vue2：无论使用什么功能，最终都会出现在生产代码中，Vue实例在项目中是单例的，捆绑程序无法检测到该对象的哪些属性在代码中被使用到</li>
+<li>Vue3：将全局API进行分块，如果不使用某些功能，就不会被包含在基础包中（不会被打包）</li>
+</ul>
+</li>
+<li><p>新增Composition API（Setup语法糖式编程）</p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -479,6 +440,45 @@
 <li><p><code>v-memo</code>：大型项目性能优化</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;!-- 写一个空数组时，效果就和v-once一样 --&gt;</span><br><span class="line">  &lt;div v-memo=&quot;[]&quot;&gt;&#123;&#123; a &#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;a++&quot;&gt;+&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 常配合v-for使用，条件成立时才会更新，节省小部分性能 --&gt;</span><br><span class="line">  &lt;div @click=&quot;select(item.id)&quot; :key=&quot;item.id&quot; v-for=&quot;(item) in arr&quot; v-memo=&quot;[item.id === active]&quot;&gt;</span><br><span class="line">      &#123;&#123; item.id &#125;&#125; - selected： &#123;&#123; item.id == active &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &quot;vue&quot;</span><br><span class="line">    </span><br><span class="line">const a = ref(1)</span><br><span class="line"></span><br><span class="line">import &#123; ref, reactive &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const arr = reactive&lt;any[]&gt;([])</span><br><span class="line">for (let i = 0; i &lt; 10000; i++) &#123;</span><br><span class="line">  arr.push(&#123;</span><br><span class="line">    id: i + 1,</span><br><span class="line">    name: &quot;test&quot;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const active = ref(1)</span><br><span class="line"></span><br><span class="line">const select = async (index: number) =&gt; &#123;</span><br><span class="line">  active.value = index;</span><br><span class="line">  console.time()</span><br><span class="line">  await Promise.resolve()</span><br><span class="line">  console.timeEnd()</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ref全家桶</title>
+    <url>/web/study/vue/6.Ref%E5%85%A8%E5%AE%B6%E6%A1%B6.html</url>
+    <content><![CDATA[<p>本系列为视频课程的学习笔记。原课程：<a href="https://www.bilibili.com/video/BV1dS4y1y7vd?p=3&vd_source=abff2190dd215e2033f2ec57123dd1d6">Vue3 + vite + Ts + pinia + 实战 + 源码 +electron</a></p>
+<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p>接收一个内部值并返回响应式且可变的ref对象，ref对象仅有一个<code>.value</code>属性，指向该内部值。</p>
+<blockquote>
+<p>浏览器控制台设置里，勾选“启动自定义格式化程序”并刷新，控制台就能看格式化后整齐的ref，reactive也是如此。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;person&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;change&quot;&gt;修改&lt;/button&gt;</span><br><span class="line">  &lt;div ref=&quot;dom&quot;&gt;我是个DOM&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref &#125; from &quot;vue&quot;</span><br><span class="line">import type &#123; Ref &#125; from &quot;vue&quot;</span><br><span class="line">    </span><br><span class="line">type P = &#123;</span><br><span class="line">  name: string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ref 作深层响应式</span><br><span class="line">// 也可以不写类型定义或泛型，ref会做类型推断</span><br><span class="line">// const person = ref&lt;P&gt;(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line">// const person: Ref&lt;P&gt; = ref(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line">const person = ref(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line">    </span><br><span class="line">// 不用ref包裹就没有响应式</span><br><span class="line">const person2 = &#123; name: &quot;pinky&quot; &#125;</span><br><span class="line"></span><br><span class="line">// ref还可以取得DOM元素，变量名需要和元素的ref属性值一致</span><br><span class="line">const dom = ref&lt;HTMLDivElement&gt;()</span><br><span class="line"></span><br><span class="line">// 在setup语法糖里只能读到undefined，因为在这个阶段，DOM还没有被渲染</span><br><span class="line">console.log(dom.value?.innerText)</span><br><span class="line"></span><br><span class="line">const change = ()=&gt; &#123;</span><br><span class="line">  // person.name = &quot;野兽先辈&quot;</span><br><span class="line">  // ref函数返回一个类，其中有一个属性value，修改或取值时必须带上value</span><br><span class="line">  person.value.name = &quot;野兽先辈&quot;</span><br><span class="line">  console.log(person)</span><br><span class="line">  console.log(dom.value?.innerText)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="isRef"><a href="#isRef" class="headerlink" title="isRef"></a>isRef</h1><p>判断是否为ref对象</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;person&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;change&quot;&gt;修改&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref, isRef &#125; from &quot;vue&quot;</span><br><span class="line"></span><br><span class="line">const person = ref(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line">    </span><br><span class="line">const person2 = &#123; name: &quot;pinky&quot; &#125;</span><br><span class="line"></span><br><span class="line">const change = ()=&gt; &#123;</span><br><span class="line">  // 判断对象是不是ref对象</span><br><span class="line">  // 实际生产中用得不多，但源码里用得很多</span><br><span class="line">  console.log(isRef(person))	// -&gt; true</span><br><span class="line">  console.log(isRef(person2))	// -&gt; false</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="shallowRef"><a href="#shallowRef" class="headerlink" title="shallowRef"></a>shallowRef</h1><p>创建一个跟踪<code>.value</code>变化的ref，但它的值不会变成响应式（浅层响应式）。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;ref: &#123;&#123;person&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;div&gt;shallowRef: &#123;&#123;person2&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;button @click=&quot;change&quot;&gt;修改&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref, shallowRef &#125; from &quot;vue&quot;</span><br><span class="line">    </span><br><span class="line">type P = &#123;</span><br><span class="line">  name: string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const person = ref(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line"></span><br><span class="line">// shallowRef 作浅层响应式</span><br><span class="line">const person2 = shallowRef(&#123; name: &quot;MUR&quot; &#125;)</span><br><span class="line"></span><br><span class="line">const change = ()=&gt; &#123;</span><br><span class="line">  // 点击后数据改变，但视图不会变化，因为它是浅层响应式</span><br><span class="line">  // person2.value.name = &quot;三浦&quot;</span><br><span class="line">    </span><br><span class="line">  // 直接从value赋值才会变成响应式</span><br><span class="line">  // person2.value = &#123;</span><br><span class="line">  //   name: &quot;三浦&quot;</span><br><span class="line">  // &#125;</span><br><span class="line">    </span><br><span class="line">  // ref和shallowRef不能同时写，因为会影响shallowRef，造成视图的更新</span><br><span class="line">  person.value.name = &quot;我是ref&quot;</span><br><span class="line">  person2.value.name = &quot;我是shallowRef&quot;</span><br><span class="line">  console.log(person2)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="triggerRef"><a href="#triggerRef" class="headerlink" title="triggerRef"></a>triggerRef</h1><p>强制页面视图更新。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;ref: &#123;&#123;person&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;div&gt;shallowRef: &#123;&#123;person2&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;change&quot;&gt;修改&lt;/button&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref, shallowRef, triggerRef &#125; from &quot;vue&quot;</span><br><span class="line"></span><br><span class="line">const person = ref(&#123; name: &quot;yajue&quot; &#125;)</span><br><span class="line"></span><br><span class="line">const person2 = shallowRef(&#123; name: &quot;MUR&quot; &#125;)</span><br><span class="line"></span><br><span class="line">const change = ()=&gt; &#123;</span><br><span class="line">  person2.value.name = &quot;我被影响了&quot;</span><br><span class="line">  // triggerRef强制更新收集的依赖，直接调用它也能更新shallowRef</span><br><span class="line">  // ref底层更新视图的逻辑中会调用triggerRef函数，所以ref和shallowRef不能同时写在一起</span><br><span class="line">  triggerRef(person2)</span><br><span class="line">  console.log(person2)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="customRef"><a href="#customRef" class="headerlink" title="customRef"></a>customRef</h1><p>自定义ref。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;obj&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;change&quot;&gt;修改&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref, shallowRef, triggerRef, customRef &#125; from &quot;vue&quot;</span><br><span class="line"></span><br><span class="line">// 自定义ref，要求返回一个customRef的返回值</span><br><span class="line">function myRef&lt;T&gt;(value: T) &#123;</span><br><span class="line">  // customRef接收一个回调函数，回调函数接收两个参数</span><br><span class="line">  return customRef((track, trigger)=&gt; &#123;</span><br><span class="line">    </span><br><span class="line">    // 可以使用自定义ref实现额外的逻辑</span><br><span class="line">    let timer</span><br><span class="line">      </span><br><span class="line">    // 回调函数要求返回一个对象，对象需要实现get和set方法</span><br><span class="line">    return &#123;</span><br><span class="line">      get() &#123;</span><br><span class="line">        // track用来收集依赖</span><br><span class="line">        track()</span><br><span class="line">        return value</span><br><span class="line">      &#125;,</span><br><span class="line">      set(newVal) &#123;</span><br><span class="line">        //比如用户输入值时，调用接口并做个防抖</span><br><span class="line">        clearTimeout(timer)</span><br><span class="line">        setTimeout(()=&gt; &#123;</span><br><span class="line">          console.log(&quot;我调用了一个接口&quot;)</span><br><span class="line">          value = newVal</span><br><span class="line">          timer = null</span><br><span class="line">          // trigger用来触发依赖更新</span><br><span class="line">          trigger()</span><br><span class="line">        &#125;, 500)</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">const obj = myRef&lt;string&gt;(&quot;cheriko&quot;)</span><br><span class="line"></span><br><span class="line">const change = ()=&gt; &#123;</span><br><span class="line">  obj.value = &quot;meruko&quot;</span><br><span class="line">  console.log(obj)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>在Vue源码（<code>/package/reactivity/src/ref.ts</code>）中可以看到ref的源码。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Takes an inner value and returns a reactive and mutable ref object, which</span></span><br><span class="line"><span class="comment"> * has a single property `.value` that points to the inner value.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">value</span> - The object to wrap in the ref.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> &#123;<span class="type">@link https://vuejs.org/api/reactivity-core.html#ref</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// 进行函数重载，支持多种传入的类型</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> ref&lt;T <span class="keyword">extends</span> <span class="title class_">Ref</span>&gt;(<span class="attr">value</span>: T): T</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> ref&lt;T&gt;(<span class="attr">value</span>: T): <span class="title class_">Ref</span>&lt;<span class="title class_">UnwrapRef</span>&lt;T&gt;&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> ref&lt;T = <span class="built_in">any</span>&gt;(): <span class="title class_">Ref</span>&lt;T | <span class="literal">undefined</span>&gt;</span><br><span class="line"><span class="comment">// value就是程序员传进ref的值</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">ref</span>(<span class="params">value?: <span class="built_in">unknown</span></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">createRef</span>(value, <span class="literal">false</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ----------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> shallowRef&lt;T <span class="keyword">extends</span> <span class="built_in">object</span>&gt;(</span><br><span class="line">  <span class="attr">value</span>: T</span><br><span class="line">): T <span class="keyword">extends</span> <span class="title class_">Ref</span> ? T : <span class="title class_">ShallowRef</span>&lt;T&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> shallowRef&lt;T&gt;(<span class="attr">value</span>: T): <span class="title class_">ShallowRef</span>&lt;T&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> shallowRef&lt;T = <span class="built_in">any</span>&gt;(): <span class="title class_">ShallowRef</span>&lt;T | <span class="literal">undefined</span>&gt;</span><br><span class="line"><span class="comment">// shallowRef，和ref的不同就是它把__v_isShallow设为true，所以它的响应只到.value</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">shallowRef</span>(<span class="params">value?: <span class="built_in">unknown</span></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">createRef</span>(value, <span class="literal">true</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ----------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createRef</span>(<span class="params">rawValue: <span class="built_in">unknown</span>, shallow: <span class="built_in">boolean</span></span>) &#123;</span><br><span class="line">  <span class="comment">// 判断传进的值，如果已经是ref对象就不用再变了</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="title function_">isRef</span>(rawValue)) &#123;</span><br><span class="line">    <span class="keyword">return</span> rawValue</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 创建ref对象</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">RefImpl</span>(rawValue, shallow)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ----------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RefImpl</span>&lt;T&gt; &#123;</span><br><span class="line">  <span class="comment">// 这个_value就是真正要读取的东西</span></span><br><span class="line">  <span class="keyword">private</span> <span class="attr">_value</span>: T</span><br><span class="line">  <span class="keyword">private</span> <span class="attr">_rawValue</span>: T</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> dep?: <span class="title class_">Dep</span> = <span class="literal">undefined</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">readonly</span> __v_isRef = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 构造函数</span></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">value: T, <span class="keyword">public</span> <span class="keyword">readonly</span> __v_isShallow: <span class="built_in">boolean</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_rawValue</span> = __v_isShallow ? value : <span class="title function_">toRaw</span>(value)</span><br><span class="line">    <span class="comment">// 判断isShallow，如果为true就赋值value，为false就赋值toReactive(value)</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_value</span> = __v_isShallow ? value : <span class="title function_">toReactive</span>(value)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">get</span> <span class="title function_">value</span>() &#123;</span><br><span class="line">    <span class="comment">// 进行依赖收集</span></span><br><span class="line">    <span class="title function_">trackRefValue</span>(<span class="variable language_">this</span>)</span><br><span class="line">    <span class="comment">// 读取的是_value</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_value</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">set</span> <span class="title function_">value</span>(<span class="params">newVal</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> useDirectValue =</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">__v_isShallow</span> || <span class="title function_">isShallow</span>(newVal) || <span class="title function_">isReadonly</span>(newVal)</span><br><span class="line">    newVal = useDirectValue ? newVal : <span class="title function_">toRaw</span>(newVal)</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">hasChanged</span>(newVal, <span class="variable language_">this</span>.<span class="property">_rawValue</span>)) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">_rawValue</span> = newVal</span><br><span class="line">      <span class="comment">// 修改的也是_value</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">_value</span> = useDirectValue ? newVal : <span class="title function_">toReactive</span>(newVal)</span><br><span class="line">      <span class="comment">// 进行依赖更新</span></span><br><span class="line">      <span class="title function_">triggerRefValue</span>(<span class="variable language_">this</span>, newVal)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ----------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// triggerRef，可以强制更新shallowRef的值</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">triggerRef</span>(<span class="params">ref: Ref</span>) &#123;</span><br><span class="line">  <span class="title function_">triggerRefValue</span>(ref, __DEV__ ? ref.<span class="property">value</span> : <span class="built_in">void</span> <span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// triggerRefValue会接着调用triggerEffects，它会进行依赖的更新</span></span><br></pre></td></tr></table></figure>
+
+<p>这里属于reactive的源码，位于<code>/package/reactivity/src/reactive.ts</code>。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Returns a reactive proxy of the given value (if possible).</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * If the given value is not an object, the original value itself is returned.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">value</span> - The value for which a reactive proxy shall be created.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// 判断传入的value是否为引用类型（数组或对象），是则调用reactive，否则返回value本身</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> toReactive = &lt;T <span class="keyword">extends</span> <span class="built_in">unknown</span>&gt;(<span class="attr">value</span>: T): <span class="function"><span class="params">T</span> =&gt;</span></span><br><span class="line">  <span class="title function_">isObject</span>(value) ? <span class="title function_">reactive</span>(value) : value</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>前端</category>
