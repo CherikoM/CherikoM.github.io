@@ -19,17 +19,19 @@ window.addEventListener("click", async (event) => {
 
   // 点击操作按钮
   if (tagName.toUpperCase() == "BUTTON" && target.classList.contains("music-play-btn")) {
+   
     // 获得音乐列表
     const res = await getMusicList({
       server: dataset.server,
       type: dataset.type,
-      id: dataset.id
+      id: dataset.id,
     })
 
     const ap = window.fixedap
 
     if (ap) {
       if (target.classList.contains("play-album")) {
+        // debugger
         // 清空并添加
         ap.list.clear()
         ap.list.add(res)
@@ -73,15 +75,15 @@ window.addEventListener("click", async (event) => {
   else if (target.classList.contains("music-to-site")) {
     let href
 
-    switch(dataset.server) {
-      case("netease"):
+    switch (dataset.server) {
+      case ("netease"):
         href = `https://music.163.com/#/${dataset.type}?id=${dataset.id}`
         break
-      case("tencent"):
+      case ("tencent"):
         let type
-        if(dataset.type === "song") {
+        if (dataset.type === "song") {
           type = "songDetail"
-        } else if(dataset.type === "album") {
+        } else if (dataset.type === "album") {
           type = "albumDetail"
         } else type = "playlist"
 
@@ -89,9 +91,7 @@ window.addEventListener("click", async (event) => {
         break
     }
 
-    console.log(href)
-
-    if(href) {
+    if (href) {
       window.open(href)
     }
   }
@@ -165,7 +165,11 @@ const getMusicList = async (options) => {
         type: options.type || 'auto',
       }
 
-      result = addCoverColor(res)
+      try {
+        result = await addCoverColor(res)
+      } catch {
+
+      }
 
       return
     }
@@ -182,15 +186,15 @@ const getMusicList = async (options) => {
 
     const r = await fetch(url)
     const res = await r.json()
-    // res.artist=res.author
-    // res.cover=res.pic
-    // res.name=res.title
 
     result = res
   }
 
-  addCoverColor(result)
+  try {
+    await addCoverColor(result)
+  } catch {
+
+  }
 
   return result
 }
-

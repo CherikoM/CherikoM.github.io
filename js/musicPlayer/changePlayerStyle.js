@@ -16,7 +16,6 @@ export default () => {
     const playList = ap.list
     const playIndex = playList.index
     const nowStyle = playList.audios[playIndex].theme
-    console.log(nowStyle)
     if(nowStyle) {
       changeStyle(nowStyle)
     } else {

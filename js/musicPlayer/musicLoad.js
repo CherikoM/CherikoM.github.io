@@ -17,7 +17,7 @@ window.onload = async () => {
 
   let timer = setInterval(async () => {
     // 为初始播放列表增加配色
-    if(window.fixedap.list?.audios?.length>0) {
+    if(window.fixedap?.list?.audios?.length>0) {
       await addCoverColor(window.fixedap.list.audios)
 
       // 初始化播放器样式

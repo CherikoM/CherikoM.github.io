@@ -13,10 +13,10 @@ export default () => {
   })
 
   // 点击夜晚模式按钮时刷新样式
-  document.addEventListener("click", (e)=> {
+  document.addEventListener("click", (e) => {
     const target = e.target
     const btn = document.getElementById("darkmode")
-    if(target === btn || target.parentNode === btn) {
+    if (target === btn || target.parentNode === btn) {
       changePlayerStyle()
       changeBlockStyle()
     }

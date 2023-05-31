@@ -16,11 +16,11 @@ export default async (audios) => {
       if (cache) {
         audios[i].theme = cache
       } else {
-        const rgba = await getColor(cover)
-        const hsl = rgbToShl(rgba[0], rgba[1], rgba[2])
-        audios[i].theme = hsl
-        // 缓存颜色值
-        window.coverCacheMap.set(cover, hsl)
+          const rgba = await getColor(cover)
+          const hsl = rgbToShl(rgba[0], rgba[1], rgba[2])
+          audios[i].theme = hsl
+          // 缓存颜色值
+          window.coverCacheMap.set(cover, hsl)
       }
     }
   }
