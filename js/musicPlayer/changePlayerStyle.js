@@ -16,9 +16,10 @@ export default () => {
     const playList = ap.list
     const playIndex = playList.index
     const nowStyle = playList.audios[playIndex].theme
-    try {
+    console.log(nowStyle)
+    if(nowStyle) {
       changeStyle(nowStyle)
-    } catch {
+    } else {
       new Promise((resolve)=> {
         setTimeout(() => {
           useSnackbar("因不可抗力因素没得到封面颜色w(ﾟДﾟ)w，但至少不影响你收听啦.....((/- -)/")
