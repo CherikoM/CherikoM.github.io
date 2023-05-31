@@ -1,46 +1,103 @@
+/**
+ * 配合标签外挂music食用~
+ */
 
+import useSnackbar from "../Tools/useSnackbar.js"
+import addCoverColor from "./addCoverColor.js"
 
+// 播放事件委托（
 window.addEventListener("click", async (event) => {
   const target = event.target
   const tagName = target.tagName
+
+  const dataset = target.dataset
+
+  // 参数有误
+  if (dataset.server == "undefined" || dataset.type == "undefined" || dataset.id == "undefined") {
+    return
+  }
+
+  // 点击操作按钮
   if (tagName.toUpperCase() == "BUTTON" && target.classList.contains("music-play-btn")) {
-
-    const dataset = target.dataset
-
-    if (dataset.server == "undefined" || dataset.type == "undefined" || dataset.id == "undefined") {
-      console.log("param err")
-      return
-    }
-
+    // 获得音乐列表
     const res = await getMusicList({
       server: dataset.server,
       type: dataset.type,
       id: dataset.id
     })
 
-    let vol = 0.7
-    const metingStr = localStorage.getItem("metingjs")
-    const metingjs = JSON.parse(metingStr)
-    if (metingjs && typeof (metingjs.volume) == "number") {
-      vol = metingjs.volume
-    }
-    const ap = new APlayer({
-      container: document.getElementById("bottom-aplayer"),
-      volume: vol
-    })
+    const ap = window.fixedap
 
     if (ap) {
-      ap.list.clear()
-      ap.list.add(res)
-      ap.setMode("normal")
-      ap.play()
+      if (target.classList.contains("play-album")) {
+        // 清空并添加
+        ap.list.clear()
+        ap.list.add(res)
+        ap.setMode("normal")
+        ap.play()
+        useSnackbar("让你见识见识我珍藏已久的好曲子（〃｀ 3′〃）")
+      } else if (target.classList.contains("add-album")) {
+        // 目前的播放列表
+        const nowList = ap.list.audios
+        // 去重
+        const res2 = res.filter(r => {
+          return !nowList.some(n => {
+            return n.url === r.url
+          })
+        })
+
+        // 全是重复
+        if (res2.length === 0) {
+          useSnackbar("添加过的就不要再加啦w(ﾟДﾟ)w")
+          return
+        }
+
+        // 添加
+        ap.list.add(res2)
+        ap.setMode("normal")
+
+        // 滚动音乐列表
+        const apDOM = ap.options.container
+        const apolDOM = apDOM.querySelector("ol")
+        const scrollHeight = apolDOM.scrollHeight
+        apolDOM.scrollTo({ top: scrollHeight, behavior: "smooth" })
+
+        useSnackbar("加到播放列表里啦，慢慢听ᕕ( ᐛ )ᕗ")
+      }
     } else {
       return
     }
   }
+
+  // 点击标题
+  else if (target.classList.contains("music-to-site")) {
+    let href
+
+    switch(dataset.server) {
+      case("netease"):
+        href = `https://music.163.com/#/${dataset.type}?id=${dataset.id}`
+        break
+      case("tencent"):
+        let type
+        if(dataset.type === "song") {
+          type = "songDetail"
+        } else if(dataset.type === "album") {
+          type = "albumDetail"
+        } else type = "playlist"
+
+        href = `https://y.qq.com/n/ryqq/${type}/${dataset.id}`
+        break
+    }
+
+    console.log(href)
+
+    if(href) {
+      window.open(href)
+    }
+  }
 }, true)
 
-
+// 获得音乐列表
 const getMusicList = async (options) => {
   if (typeof (options) !== "object") {
     return
@@ -108,13 +165,7 @@ const getMusicList = async (options) => {
         type: options.type || 'auto',
       }
 
-      result = res
-
-      // if (!res.lrc) {
-      //   options.lrcType = 0
-      // }
-
-      // this._loadPlayer([result])
+      result = addCoverColor(res)
 
       return
     }
@@ -138,5 +189,8 @@ const getMusicList = async (options) => {
     result = res
   }
 
+  addCoverColor(result)
+
   return result
 }
+
