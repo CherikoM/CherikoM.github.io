@@ -7,15 +7,24 @@ import changeBlockStyle from "./changeBlockStyle.js"
 window.onload = async () => {
   const aps = window.aplayers
   // 获得全局吸底aplayer（有fixed配置的那个）
-  aps.some(a => {
-    if (a.options.fixed) {
-      window.fixedap = a
-      return true
-    }
-    return false
+
+  await new Promise(resolve=> {
+    let timer1 = setInterval(() => {
+      aps.some(a => {
+        if (a.options.fixed) {
+          window.fixedap = a
+          return true
+        }
+        return false
+      })
+      if(window.fixedap) {
+        clearInterval(timer1)
+        resolve()
+      }
+    }, 500)
   })
 
-  let timer = setInterval(async () => {
+  let timer2 = setInterval(async () => {
     // 为初始播放列表增加配色
     if(window.fixedap.list?.audios?.length>0) {
       await addCoverColor(window.fixedap.list.audios)
@@ -26,7 +35,7 @@ window.onload = async () => {
       // 绑定使播放器样式变化的事件
       changePlay()
 
-      clearInterval(timer)
+      clearInterval(timer2)
     }
   },500)
 
