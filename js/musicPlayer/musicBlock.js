@@ -114,7 +114,7 @@ const getMusicList = async (options) => {
     api =
       options.api ||
       window.meting_api ||
-      'https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r'
+      'https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&auth=:auth&r=:r'
 
     if (options.auto) _parse_link()
 
