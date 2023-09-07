@@ -6,7 +6,12 @@ window.addEventListener("load", ()=> {
     if(window.fixedap) {
       const audio = window.fixedap.audio
       const canvas = document.getElementById("music-visualization")
-      makeVisual(canvas,audio)
+
+      const canplay = ()=> {
+        makeVisual(canvas,audio)
+        window.removeEventListener("click", canplay)
+      }
+      window.addEventListener("click", canplay)
       clearInterval(timer)
     }
   }, 500)

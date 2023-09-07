@@ -11,6 +11,7 @@ export default (canvas, audio) => {
 
   // 实例化AudioContext音频上下文对象
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+
   // 创建AnalyserNode节点
   const analyser = audioCtx.createAnalyser()
   // 减小fft的大小（使每个频率条有宽度
