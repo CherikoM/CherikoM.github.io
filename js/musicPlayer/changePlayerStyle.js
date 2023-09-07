@@ -1,4 +1,5 @@
 import useSnackbar from "../Tools/useSnackbar.js"
+import setTheme from "../Tools/setTheme.js"
 
 /**
  * 播放器颜色自适应
@@ -34,13 +35,12 @@ const hslToStr = (hsl) => {
 }
 
 const changeStyle = (hsl) => {
-  const htmlEl = document.documentElement
-  const mode = htmlEl.dataset.theme
+  const mode = document.documentElement.dataset.theme
 
   const hue = hsl[0]
 
-  // 每10为一个取色点，如果太黑了就直接gray
-  const hueKey = Math.round(hue * 100) / 100
+  // 每4为一个取色点（总共(25+1)*2色），如果太黑了就直接gray
+  const hueKey = Math.round(hue * 25) / 25
 
   let keyName
   if (hsl[1] < 0.05) {
@@ -49,17 +49,26 @@ const changeStyle = (hsl) => {
     keyName = hueKey
   }
 
-  let darkChange = mode === "dark"
+  // 是否为夜晚模式
+  let darkChange = (mode === "dark")
 
   // 判断夜晚模式
   if (darkChange) {
-    htmlEl.style.setProperty("--music-border-color", "hsl(0, 0%, 20%)")
-    htmlEl.style.setProperty("--music-console-border-color", "hsl(0, 0%, 40%)")
+    // htmlEl.style.setProperty("--music-border-color", "hsl(0, 0%, 20%)")
+    // htmlEl.style.setProperty("--music-console-border-color", "hsl(0, 0%, 40%)")
 
+    setTheme({
+      "--music-border-color": "hsl(0, 0%, 20%)",
+      "--music-console-border-color": "hsl(0, 0%, 40%)"
+    })
     keyName = mode + keyName
   } else {
-    htmlEl.style.setProperty("--music-border-color", "hsl(0, 0%, 93%)")
-    htmlEl.style.setProperty("--music-console-border-color", "hsl(0, 0%, 91%)")
+    // htmlEl.style.setProperty("--music-border-color", "hsl(0, 0%, 93%)")
+    // htmlEl.style.setProperty("--music-console-border-color", "hsl(0, 0%, 91%)")
+    setTheme({
+      "--music-border-color": "hsl(0, 0%, 93%)",
+      "--music-console-border-color": "hsl(0, 0%, 91%)"
+    })
   }
 
   // 切换的key和上一首的key一样，那就不调整样式了
@@ -148,20 +157,34 @@ const changeStyle = (hsl) => {
     }
 
     // 更改css变量从而改变配色
-    htmlEl.style.setProperty("--bg-color", colors.bgColor)
-    htmlEl.style.setProperty("--bg-color-choose", colors.bgColorChoose)
-    htmlEl.style.setProperty("--scroll-bar-bg-color", colors.scrollBarBgColor)
-    htmlEl.style.setProperty("--scroll-bar-bg-color-hover", colors.scrollBarBgColorHover)
-    htmlEl.style.setProperty("--music-list-cur-color", colors.musicListCurColor)
-    htmlEl.style.setProperty("--music-words-color", colors.musicWordsColor)
-    htmlEl.style.setProperty("--music-words-color-lighter", colors.musicWordsColorLighter)
-    htmlEl.style.setProperty("--music-words-color-lightest", colors.musicWordsColorLightest)
-    htmlEl.style.setProperty("--music-icon-color-hover", colors.musicIconColorHover)
-    htmlEl.style.setProperty("--music-player-bar", colors.musicPlayerBar)
-    htmlEl.style.setProperty("--music-player-bar-load", colors.musicPlayerBarLoad)
-    htmlEl.style.setProperty("--music-player-bar-played", colors.musicPlayerBarPlayed)
+    // htmlEl.style.setProperty("--bg-color", colors.bgColor)
+    // htmlEl.style.setProperty("--bg-color-choose", colors.bgColorChoose)
+    // htmlEl.style.setProperty("--scroll-bar-bg-color", colors.scrollBarBgColor)
+    // htmlEl.style.setProperty("--scroll-bar-bg-color-hover", colors.scrollBarBgColorHover)
+    // htmlEl.style.setProperty("--music-list-cur-color", colors.musicListCurColor)
+    // htmlEl.style.setProperty("--music-words-color", colors.musicWordsColor)
+    // htmlEl.style.setProperty("--music-words-color-lighter", colors.musicWordsColorLighter)
+    // htmlEl.style.setProperty("--music-words-color-lightest", colors.musicWordsColorLightest)
+    // htmlEl.style.setProperty("--music-icon-color-hover", colors.musicIconColorHover)
+    // htmlEl.style.setProperty("--music-player-bar", colors.musicPlayerBar)
+    // htmlEl.style.setProperty("--music-player-bar-load", colors.musicPlayerBarLoad)
+    // htmlEl.style.setProperty("--music-player-bar-played", colors.musicPlayerBarPlayed)
+    setTheme({
+      "--bg-color": colors.bgColor,
+      "--bg-color-choose": colors.bgColorChoose,
+      "--scroll-bar-bg-color": colors.scrollBarBgColor,
+      "--scroll-bar-bg-color-hover": colors.scrollBarBgColorHover,
+      "--music-list-cur-color": colors.musicListCurColor,
+      "--music-words-color": colors.musicWordsColor,
+      "--music-words-color-lighter": colors.musicWordsColorLighter,
+      "--music-words-color-lightest": colors.musicWordsColorLightest,
+      "--music-icon-color-hover": colors.musicIconColorHover,
+      "--music-player-bar": colors.musicPlayerBar,
+      "--music-player-bar-load": colors.musicPlayerBarLoad,
+      "--music-player-bar-played": colors.musicPlayerBarPlayed
+    })
 
-    // 某几个DOM被设了行内样式，所以这么改
+    // 某几个DOM被设了行内样式，所以得这么改
     const apDOM = window.fixedap.container
     const dot = apDOM.querySelector(".aplayer-thumb")
     const bar = apDOM.querySelector(".aplayer-played")

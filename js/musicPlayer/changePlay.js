@@ -1,9 +1,10 @@
 /**
- * 音乐切换时发起事件~
+ * 音乐/模式切换时发起事件~
  */
 
 import changeBlockStyle from "./changeBlockStyle.js"
 import changePlayerStyle from "./changePlayerStyle.js"
+import changeOnThemeSwitch from "../Tools/changeOnThemeSwitch.js"
 
 export default () => {
   const ap = window.fixedap
@@ -12,13 +13,15 @@ export default () => {
     changePlayerStyle()
   })
 
-  // 点击夜晚模式按钮时刷新样式
-  document.addEventListener("click", (e) => {
-    const target = e.target
-    const btn = document.getElementById("darkmode")
-    if (target === btn || target.parentNode === btn) {
-      changePlayerStyle()
-      changeBlockStyle()
-    }
-  })
+  // // 点击夜晚模式按钮时刷新样式
+  // document.addEventListener("click", (e) => {
+  //   const target = e.target
+  //   const btn = document.getElementById("darkmode")
+  //   if (target === btn || target.parentNode === btn) {
+  //     changePlayerStyle()
+  //     changeBlockStyle()
+  //   }
+  // })
+  changeOnThemeSwitch(changePlayerStyle)
+  changeOnThemeSwitch(changeBlockStyle)
 }
