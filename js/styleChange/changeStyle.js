@@ -9,13 +9,13 @@ export default ()=> {
     // 夜晚模式
     setTheme({
       "--card-bg": "rgba(0,0,0,.5)",
-      "--music-visual": "0.3"
+      "--scrollbar-color": "#267677"
     })
   } else {
     // 白天模式
     setTheme({
       "--card-bg": "rgba(255,255,255,.5)",
-      "--music-visual": "0.5"
+      "--scrollbar-color": "#00ced1"
     })
   }
 }

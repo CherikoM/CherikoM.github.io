@@ -2,7 +2,7 @@ import debounce from "../Tools/debounce.js"
 
 export default (canvas, audio) => {
 
-  if (/(iPhone|iPod|iOSAndroid)/i.test(navigator.userAgent)) {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     return
   }
 
@@ -29,13 +29,13 @@ export default (canvas, audio) => {
 
   // -------------------------------------
 
-  const canvasResize = ()=> {
+  const canvasResize = () => {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
   }
-  
+
   canvasResize()
-  window.addEventListener("resize", debounce(canvasResize,100))
+  window.addEventListener("resize", debounce(canvasResize, 100))
 
   if (canvas.getContext) {
     const ctx = canvas.getContext("2d")

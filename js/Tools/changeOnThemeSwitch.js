@@ -3,7 +3,6 @@
  */
 export default (fn) => {
   const html = document.documentElement
-  console.log(html.dataset.theme)
 
   // 观察器的配置（需要观察什么变动）
   const config = { attributes: true };
