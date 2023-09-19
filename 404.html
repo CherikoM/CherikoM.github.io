@@ -38,7 +38,7 @@
     toc: true,
     rightside: false,
   }
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE={title:"页面没有找到",isPost:!1,isHome:!1,isHighlightShrink:!1,isToc:!1,postUpdate:"2023-09-09 18:49:06"}</script><noscript><style type="text/css">#nav{opacity:1}.justified-gallery img{opacity:1}#post-meta time,#recent-posts time{display:inline!important}</style></noscript><script>(win=>{
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE={title:"页面没有找到",isPost:!1,isHome:!1,isHighlightShrink:!1,isToc:!1,postUpdate:"2023-09-19 13:09:18"}</script><noscript><style type="text/css">#nav{opacity:1}.justified-gallery img{opacity:1}#post-meta time,#recent-posts time{display:inline!important}</style></noscript><script>(win=>{
     win.saveToLocal = {
       set: function setWithExpiry(key, value, ttl) {
         if (ttl === 0) return
@@ -129,7 +129,7 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/style.css?1"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4045863_6g0lt4fqnyq.css"><link rel="stylesheet" href="/css/change/aplayer.css"> <canvas id="music-visualization" style="position:fixed;opacity:.4;z-index:-900"></canvas><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+    })(window)</script><link rel="stylesheet" href="/css/style.css?1"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4045863_6g0lt4fqnyq.css"> <canvas id="music-visualization" style="position:fixed;opacity:.4;z-index:-900"></canvas><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
     document.getElementById('loading-box').classList.add("loaded")
@@ -170,7 +170,7 @@ function panguInit () {
   }
 }
 
-document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script>window.addEventListener('load', () => {
   const changeContent = (content) => {
     if (content === '') return content
 
@@ -183,13 +183,6 @@ document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-
       content = content.substring(0,150) + '...'
     }
     return content
-  }
-
-  const getIcon = (icon, mail) => {
-    if (icon) return icon
-    let defaultIcon = '?d=retro'
-    let iconUrl = `https://cravatar.cn/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
-    return iconUrl
   }
 
   const generateHtml = array => {
@@ -220,40 +213,35 @@ document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-
   }
 
   const getComment = () => {
-    const serverURL = 'https://txfl8apw.lc-cn-n1-shared.com'
-
-    var settings = {
-      "method": "GET",
-      "headers": {
-        "X-LC-Id": 'TXFl8aPwIK9JxDepucCigssG-gzGzoHsz',
-        "X-LC-Key": 'cLSG7K1iInnLJuU15DMJ8EJl',
-        "Content-Type": "application/json"
-      },
-    }
-
-    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
-      .then(response => response.json())
-      .then(data => {
-        const valineArray = data.results.map(function (e) {
+    const loadWaline = () => {
+      Waline.RecentComments({
+        serverURL: 'https://comment.cheriko.fun',
+        count: 6
+      }).then(({comments}) => {
+        const walineArray = comments.map(e => {
           return {
-            'avatar': getIcon(e.QQAvatar, e.mail),
             'content': changeContent(e.comment),
+            'avatar': e.avatar,
             'nick': e.nick,
             'url': e.url + '#' + e.objectId,
-            'date': e.updatedAt,
+            'date': e.insertedAt,
           }
         })
-        saveToLocal.set('valine-newest-comments', JSON.stringify(valineArray), 10/(60*24))
-        generateHtml(valineArray)
+        saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 10/(60*24))
+        generateHtml(walineArray)
       }).catch(e => {
         const $dom = document.querySelector('#card-newest-comments .aside-list')
         $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
       }) 
+    }
+
+    if (typeof Waline === 'object') loadWaline()
+    else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js').then(loadWaline)
   }
 
   const newestCommentInit = () => {
     if (document.querySelector('#card-newest-comments .aside-list')) {
-      const data = saveToLocal.get('valine-newest-comments')
+      const data = saveToLocal.get('waline-newest-comments')
       if (data) {
         generateHtml(JSON.parse(data))
       } else {
@@ -264,7 +252,7 @@ document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-
 
   newestCommentInit()
   document.addEventListener('pjax:complete', newestCommentInit)
-})</script><div id="bottom-ip" class="aplayer no-destroy" data-id="8387086795" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" id="bottom-aplayer"></div><script crossorigin type="module" src="/js/index.js?v1"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful=!0,POWERMODE.shake=!0,POWERMODE.mobile=!1,document.body.addEventListener("input",POWERMODE)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload='this.media="all"'><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://image.cheriko.fun/code/MyMeting.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+})</script><div id="bottom-ip" class="aplayer no-destroy" data-id="8387086795" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" id="bottom-aplayer"></div><script data-pjax crossorigin type="module" src="/js/index.js?v1"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful=!0,POWERMODE.shake=!0,POWERMODE.mobile=!1,document.body.addEventListener("input",POWERMODE)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload='this.media="all"'><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://image.cheriko.fun/code/MyMeting.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
 
 var pjax = new Pjax({
   elements: 'a:not([target="_blank"])',

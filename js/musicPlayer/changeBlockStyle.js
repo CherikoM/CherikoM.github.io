@@ -17,7 +17,7 @@ export default ()=> {
     // htmlEl.style.setProperty("--music-item-hover-shadow-1", "rgba(50,50,93,0.25)")
     // htmlEl.style.setProperty("--music-item-hover-shadow-2", "rgba(255,255,255,0.4)")
     setTheme({
-      "--music-item-bg": "white",
+      // "--music-item-bg": "white",
       "--music-item-words": "black",
       "--music-item-shadow": "rgba(0,0,0,0.1)",
       "--music-item-hover-shadow-1": "rgba(50,50,93,0.25)",
@@ -30,7 +30,7 @@ export default ()=> {
     // htmlEl.style.setProperty("--music-item-hover-shadow-1", "rgba(50,50,93,0.25)")
     // htmlEl.style.setProperty("--music-item-hover-shadow-2", "rgba(255,255,255,0.4)")
     setTheme({
-      "--music-item-bg": "#444444",
+      // "--music-item-bg": "#444444",
       "--music-item-words": "white",
       "--music-item-shadow": "rgba(255,255,255,0.1)",
       "--music-item-hover-shadow-1": "rgba(50,50,93,0.25)",
