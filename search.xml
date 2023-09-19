@@ -580,49 +580,6 @@
       </tags>
   </entry>
   <entry>
-    <title>简评《格调》</title>
-    <url>/evaluate/books/%E7%AE%80%E8%AF%84%E3%80%8A%E6%A0%BC%E8%B0%83%E3%80%8B.html</url>
-    <content><![CDATA[<h2 id="梗概"><a href="#梗概" class="headerlink" title="梗概"></a>梗概</h2><p>副标题：社会等级与生活品味</p>
-<p>有人的地方就有江湖，至少以目前的社会先进程度而言，还没到能撼动阶级体系的程度，所以无论你信不信服，即使法律白纸黑字地写着“人生而平等”，阶级仍然存在。</p>
-<p>如果以财富占有情况来划分，阶级会被分成富人（有产者）和穷人（无产者）。但如果不谈财富，找一找另一种评价尺度，就会发现，生活趣味（格调）更能用于归纳人所处阶级的普遍生活情况，以格调这一尺度分层，能将阶级分为三大类，若干小类：</p>
-<ul>
-<li>上层阶级<ul>
-<li>看不见的顶层</li>
-<li>上层阶级</li>
-<li>中上层阶级</li>
-</ul>
-</li>
-<li>中层阶级<ul>
-<li>中产阶级</li>
-<li>上层贫民</li>
-<li>中层贫民</li>
-<li>下层贫民</li>
-</ul>
-</li>
-<li>下层阶级<ul>
-<li>赤贫阶层</li>
-<li>看不见的底层</li>
-</ul>
-</li>
-</ul>
-<p>格调几乎是人出生时就受到的烙印，它深深影响你的行为准则、审美偏好。拥有相似习惯的人往往更能聚到一起，因此，格调才更是决定阶级的决定性因素。占有情况通常能反映阶级，但不一定总能反映，比如一个贫民出身的暴发户，他即使变得再有钱，也几乎无法真正的挤进上流社会。</p>
-<p>书中从非常多的角度，揭示了这些常见的日常生活场景中，各个阶层通常的表现。总而言之，多数群体都有着自己的困境和缺陷，尤其体现为中下层人士（特别是中产阶级，中产阶级可以说是书中描写最多的群体）因欲望和嫉妒作祟，总是想挤破头地提升阶级，于是开始扮演假想的上层阶级的模样。总之，许多人深陷阶级的泥潭中，即使他们本人不一定会意识到这一点。</p>
-<p>如果想要脱离这一阶级泥潭，作者给出了一个方向：成为一个异类。异类并非先天是异类，他们一般是通过学习和思考，最终决定成为异类的。他们的天赋、才干和学识通常能支撑他们成为是自由职业者或艺术家（脱离了传统的雇佣关系），并在日常生活中顺从本心，达到了从心所欲不逾矩的状态。</p>
-<h2 id="简评"><a href="#简评" class="headerlink" title="简评"></a>简评</h2><p>本书的表达（只指中译本，原文我不太清楚）清晰易懂<del>我这种文盲也能无压力阅读</del>，使用幽默且锐利的语言就为冒犯每一个群体。如果你是幽默爱好者，可以期待它带来的捧腹大笑；如果你不太喜欢开玩笑，可以选择不看。</p>
-<p>阶级问题一定是一个大问题，但本书深入浅出：用讲现象的方式含沙射影。作者通过统计观察，使用贴标签的形式制造群体画像，让你在阅读过程中，时不时感觉”膝盖中了一箭“，时不时又让你想”清算“一下身边的人，代入感很强。原来，这本书描述的几十年前的美国现象，在如今的拆那也能找到极其相似的版本。</p>
-<p>它作为一个描述现象的书，可能并没有非常多的深入讨论（因为这样分析每一个现象会导致篇幅非常多？），但这些现象都很有意思，可以把它们作为切入点，进行后续的思考。</p>
-<p>需要注意的是，tag是较为静态的，实际情况可能会因时间的推移而改变，这些tag只能概括作者写作时期的社会状况，不一定能全盘对应现在的美国或拆那。同时群体的tag不能决断性地等同于个人，人和人的差距比群体和群体的差距大。但即使部分现象归纳出现过时，只要阶级仍然存在，就仍然可以借鉴本书的内容主旨。</p>
-]]></content>
-      <categories>
-        <category>评论</category>
-      </categories>
-      <tags>
-        <tag>评论</tag>
-        <tag>书籍</tag>
-        <tag>简评</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我制作了一个唱片架</title>
     <url>/web/diy/1.%E6%88%91%E5%88%B6%E4%BD%9C%E4%BA%86%E4%B8%80%E4%B8%AA%E5%94%B1%E7%89%87%E6%9E%B6.html</url>
     <content><![CDATA[<p>因为我很喜欢听音乐（尤其是电子音乐），所以我希望我自己的博客能给浏览者安利很多很多好听的音乐。</p>
@@ -686,38 +643,6 @@
 <p>确实hexo博客不是单页面应用，这样其实也挺正常的。但全局吸底aplayer托了pjax的福，即便页面连续跳转，播放也不间断。</p>
 <p>经观察，上面的代码本质上是给原本全局aplayer的位置新建了一个aplayer实例，如果我只想末尾插入曲目，我可能需要获得原本的aplayer实例。</p>
 <p>到底该怎么做呢（我不知道pjax的运行机制）。</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>DIY</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>hexo</tag>
-        <tag>音乐</tag>
-        <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>可视化音频背景</title>
-    <url>/web/diy/3.%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9F%B3%E9%A2%91%E8%83%8C%E6%99%AF.html</url>
-    <content><![CDATA[<p>书又接上文，感觉逼格不够大，所以鼓捣了个音频可视化</p>
-<h2 id="Web-Audio-API"><a href="#Web-Audio-API" class="headerlink" title="Web Audio API"></a>Web Audio API</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API">Web Audio API</a>可以获取音频的包括频率、波形的信息，能用于选频、加特效、做可视化、添加空间效果等，就像是音频版的canvas</p>
-<p>MDN网站已经给出<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API">音频可视化案例</a>了，我只需魔改一下就行了</p>
-<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>在MDN的案例基础上加了点自己的个性化需求</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> debounce <span class="keyword">from</span> <span class="string">&quot;../Tools/debounce.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (canvas, audio) =&gt; &#123;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">// 快速傅立叶变换（Fast Fourier Transform），一定要是2的倍数，默认为2048</span></span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">FFT</span> = <span class="number">512</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 实例化AudioContext音频上下文对象</span></span><br><span class="line">  <span class="keyword">const</span> audioCtx = <span class="keyword">new</span> (<span class="variable language_">window</span>.<span class="property">AudioContext</span> || <span class="variable language_">window</span>.<span class="property">webkitAudioContext</span>)()</span><br><span class="line">  <span class="comment">// 创建AnalyserNode节点</span></span><br><span class="line">  <span class="keyword">const</span> analyser = audioCtx.<span class="title function_">createAnalyser</span>()</span><br><span class="line">  <span class="comment">// 让fft变小可以使每个频率条有一定宽度</span></span><br><span class="line">  analyser.<span class="property">fftSize</span> = <span class="variable constant_">FFT</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将AnalyserNode节点和声源连接</span></span><br><span class="line">  <span class="comment">// 从audio中获取声音源文件</span></span><br><span class="line">  <span class="keyword">const</span> audioSrc = audioCtx.<span class="title function_">createMediaElementSource</span>(audio)</span><br><span class="line">  audioSrc.<span class="title function_">connect</span>(analyser)</span><br><span class="line">  analyser.<span class="title function_">connect</span>(audioCtx.<span class="property">destination</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// AnalyserNode数据解析，获得瞬时音频数据</span></span><br><span class="line">  <span class="keyword">const</span> bufferLength = analyser.<span class="property">frequencyBinCount</span></span><br><span class="line">  <span class="keyword">const</span> dataArray = <span class="keyword">new</span> <span class="title class_">Uint8Array</span>(bufferLength)</span><br><span class="line">  analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// -------------------------------------</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 画布大小响应（因为要铺满整个背景）</span></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">canvasResize</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">    canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span></span><br><span class="line">    canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">canvasResize</span>()</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, <span class="title function_">debounce</span>(canvasResize,<span class="number">100</span>))</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (canvas.<span class="property">getContext</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 开画</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">draw</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="comment">// 动画帧</span></span><br><span class="line">      <span class="title function_">requestAnimationFrame</span>(draw)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 获取该帧的音频信息</span></span><br><span class="line">      analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 每一帧都要先清空画布，不然旧内容会保留</span></span><br><span class="line">      ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 设置条的宽高</span></span><br><span class="line">      <span class="keyword">const</span> barWidth = (canvas.<span class="property">width</span> / bufferLength)</span><br><span class="line">      <span class="keyword">let</span> barHeight</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 记录条当前位置</span></span><br><span class="line">      <span class="keyword">let</span> x = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 遍历每一条（每一个音频信息）</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; bufferLength; i++) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 给条高赋值</span></span><br><span class="line">        barHeight = ((dataArray[i] * <span class="number">3</span>) / (<span class="variable constant_">FFT</span>)) * canvas.<span class="property">height</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 给条上喜欢的颜色，因为我是人类所以使用hsl颜色</span></span><br><span class="line">        ctx.<span class="property">fillStyle</span> = <span class="string">`hsl(<span class="subst">$&#123;<span class="number">120</span> + (x / canvas.width) * <span class="number">120</span>&#125;</span>,<span class="subst">$&#123;<span class="number">10</span> + (barHeight / canvas.height) * <span class="number">90</span>&#125;</span>%,60%)`</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将条绘制到画布伤</span></span><br><span class="line">        ctx.<span class="title function_">fillRect</span>(x, canvas.<span class="property">height</span> - barHeight / <span class="number">2</span>, barWidth, barHeight)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 每个条之间留个间距</span></span><br><span class="line">        x += barWidth + <span class="number">3</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">draw</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后是笨办法之轮询等播放器初始化（</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> makeVisual <span class="keyword">from</span> <span class="string">&quot;./makeVisual.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;load&quot;</span>, <span class="function">()=&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> timer = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">fixedap</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> audio = <span class="variable language_">window</span>.<span class="property">fixedap</span>.<span class="property">audio</span></span><br><span class="line">      <span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;music-visualization&quot;</span>)</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 浏览器策略不准自动播放音频，总之音频解析行为必须放在用户确认之后</span></span><br><span class="line">      <span class="keyword">const</span> <span class="title function_">canplay</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">        <span class="title function_">makeVisual</span>(canvas,audio)</span><br><span class="line">        <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      <span class="built_in">clearInterval</span>(timer)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">500</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>在Meting.js中的恰当位置加一句，否则不能跨域获取音频信息</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">aplayers.<span class="title function_">forEach</span>(<span class="function"><span class="params">ap</span>=&gt;</span> &#123;ap.<span class="property">audio</span>.<span class="property">crossOrigin</span>=<span class="string">&quot;anonymous&quot;</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>最后就是把canvas标签加进butterfly inject配置项</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="comment"># ......省略</span></span><br><span class="line">    <span class="string">&lt;canvas</span> <span class="string">id=&quot;music-visualization&quot;</span> <span class="string">style=&quot;position:fixed;z-index:-900&quot;&gt;&lt;/canvas&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>为了让可视化效果更好看，我顺便把原本页面上纯色的内容块改成了半透明，感觉还不错~</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202309071817861.png"></p>
 ]]></content>
       <categories>
         <category>前端</category>
@@ -797,6 +722,81 @@
         <tag>hexo</tag>
         <tag>音乐</tag>
         <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>可视化音频背景</title>
+    <url>/web/diy/3.%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9F%B3%E9%A2%91%E8%83%8C%E6%99%AF.html</url>
+    <content><![CDATA[<p>书又接上文，感觉逼格不够大，所以鼓捣了个音频可视化</p>
+<h2 id="Web-Audio-API"><a href="#Web-Audio-API" class="headerlink" title="Web Audio API"></a>Web Audio API</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API">Web Audio API</a>可以获取音频的包括频率、波形的信息，能用于选频、加特效、做可视化、添加空间效果等，就像是音频版的canvas</p>
+<p>MDN网站已经给出<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API">音频可视化案例</a>了，我只需魔改一下就行了</p>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>在MDN的案例基础上加了点自己的个性化需求</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> debounce <span class="keyword">from</span> <span class="string">&quot;../Tools/debounce.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (canvas, audio) =&gt; &#123;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">// 快速傅立叶变换（Fast Fourier Transform），一定要是2的倍数，默认为2048</span></span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">FFT</span> = <span class="number">512</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 实例化AudioContext音频上下文对象</span></span><br><span class="line">  <span class="keyword">const</span> audioCtx = <span class="keyword">new</span> (<span class="variable language_">window</span>.<span class="property">AudioContext</span> || <span class="variable language_">window</span>.<span class="property">webkitAudioContext</span>)()</span><br><span class="line">  <span class="comment">// 创建AnalyserNode节点</span></span><br><span class="line">  <span class="keyword">const</span> analyser = audioCtx.<span class="title function_">createAnalyser</span>()</span><br><span class="line">  <span class="comment">// 让fft变小可以使每个频率条有一定宽度</span></span><br><span class="line">  analyser.<span class="property">fftSize</span> = <span class="variable constant_">FFT</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将AnalyserNode节点和声源连接</span></span><br><span class="line">  <span class="comment">// 从audio中获取声音源文件</span></span><br><span class="line">  <span class="keyword">const</span> audioSrc = audioCtx.<span class="title function_">createMediaElementSource</span>(audio)</span><br><span class="line">  audioSrc.<span class="title function_">connect</span>(analyser)</span><br><span class="line">  analyser.<span class="title function_">connect</span>(audioCtx.<span class="property">destination</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// AnalyserNode数据解析，获得瞬时音频数据</span></span><br><span class="line">  <span class="keyword">const</span> bufferLength = analyser.<span class="property">frequencyBinCount</span></span><br><span class="line">  <span class="keyword">const</span> dataArray = <span class="keyword">new</span> <span class="title class_">Uint8Array</span>(bufferLength)</span><br><span class="line">  analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// -------------------------------------</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 画布大小响应（因为要铺满整个背景）</span></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">canvasResize</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">    canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span></span><br><span class="line">    canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">canvasResize</span>()</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, <span class="title function_">debounce</span>(canvasResize,<span class="number">100</span>))</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (canvas.<span class="property">getContext</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 开画</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">draw</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="comment">// 动画帧</span></span><br><span class="line">      <span class="title function_">requestAnimationFrame</span>(draw)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 获取该帧的音频信息</span></span><br><span class="line">      analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 每一帧都要先清空画布，不然旧内容会保留</span></span><br><span class="line">      ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 设置条的宽高</span></span><br><span class="line">      <span class="keyword">const</span> barWidth = (canvas.<span class="property">width</span> / bufferLength)</span><br><span class="line">      <span class="keyword">let</span> barHeight</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 记录条当前位置</span></span><br><span class="line">      <span class="keyword">let</span> x = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 遍历每一条（每一个音频信息）</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; bufferLength; i++) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 给条高赋值</span></span><br><span class="line">        barHeight = ((dataArray[i] * <span class="number">3</span>) / (<span class="variable constant_">FFT</span>)) * canvas.<span class="property">height</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 给条上喜欢的颜色，因为我是人类所以使用hsl颜色</span></span><br><span class="line">        ctx.<span class="property">fillStyle</span> = <span class="string">`hsl(<span class="subst">$&#123;<span class="number">120</span> + (x / canvas.width) * <span class="number">120</span>&#125;</span>,<span class="subst">$&#123;<span class="number">10</span> + (barHeight / canvas.height) * <span class="number">90</span>&#125;</span>%,60%)`</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将条绘制到画布伤</span></span><br><span class="line">        ctx.<span class="title function_">fillRect</span>(x, canvas.<span class="property">height</span> - barHeight / <span class="number">2</span>, barWidth, barHeight)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 每个条之间留个间距</span></span><br><span class="line">        x += barWidth + <span class="number">3</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">draw</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后是笨办法之轮询等播放器初始化（</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> makeVisual <span class="keyword">from</span> <span class="string">&quot;./makeVisual.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;load&quot;</span>, <span class="function">()=&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> timer = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">fixedap</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> audio = <span class="variable language_">window</span>.<span class="property">fixedap</span>.<span class="property">audio</span></span><br><span class="line">      <span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;music-visualization&quot;</span>)</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 浏览器策略不准自动播放音频，总之音频解析行为必须放在用户确认之后</span></span><br><span class="line">      <span class="keyword">const</span> <span class="title function_">canplay</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">        <span class="title function_">makeVisual</span>(canvas,audio)</span><br><span class="line">        <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      <span class="built_in">clearInterval</span>(timer)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">500</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在Meting.js中的恰当位置加一句，否则不能跨域获取音频信息</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">aplayers.<span class="title function_">forEach</span>(<span class="function"><span class="params">ap</span>=&gt;</span> &#123;ap.<span class="property">audio</span>.<span class="property">crossOrigin</span>=<span class="string">&quot;anonymous&quot;</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>最后就是把canvas标签加进butterfly inject配置项</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="comment"># ......省略</span></span><br><span class="line">    <span class="string">&lt;canvas</span> <span class="string">id=&quot;music-visualization&quot;</span> <span class="string">style=&quot;position:fixed;z-index:-900&quot;&gt;&lt;/canvas&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>为了让可视化效果更好看，我顺便把原本页面上纯色的内容块改成了半透明，感觉还不错~</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202309071817861.png"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>DIY</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>hexo</tag>
+        <tag>音乐</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简评《格调》</title>
+    <url>/evaluate/books/%E7%AE%80%E8%AF%84%E3%80%8A%E6%A0%BC%E8%B0%83%E3%80%8B.html</url>
+    <content><![CDATA[<h2 id="梗概"><a href="#梗概" class="headerlink" title="梗概"></a>梗概</h2><p>副标题：社会等级与生活品味</p>
+<p>有人的地方就有江湖，至少以目前的社会先进程度而言，还没到能撼动阶级体系的程度，所以无论你信不信服，即使法律白纸黑字地写着“人生而平等”，阶级仍然存在。</p>
+<p>如果以财富占有情况来划分，阶级会被分成富人（有产者）和穷人（无产者）。但如果不谈财富，找一找另一种评价尺度，就会发现，生活趣味（格调）更能用于归纳人所处阶级的普遍生活情况，以格调这一尺度分层，能将阶级分为三大类，若干小类：</p>
+<ul>
+<li>上层阶级<ul>
+<li>看不见的顶层</li>
+<li>上层阶级</li>
+<li>中上层阶级</li>
+</ul>
+</li>
+<li>中层阶级<ul>
+<li>中产阶级</li>
+<li>上层贫民</li>
+<li>中层贫民</li>
+<li>下层贫民</li>
+</ul>
+</li>
+<li>下层阶级<ul>
+<li>赤贫阶层</li>
+<li>看不见的底层</li>
+</ul>
+</li>
+</ul>
+<p>格调几乎是人出生时就受到的烙印，它深深影响你的行为准则、审美偏好。拥有相似习惯的人往往更能聚到一起，因此，格调才更是决定阶级的决定性因素。占有情况通常能反映阶级，但不一定总能反映，比如一个贫民出身的暴发户，他即使变得再有钱，也几乎无法真正的挤进上流社会。</p>
+<p>书中从非常多的角度，揭示了这些常见的日常生活场景中，各个阶层通常的表现。总而言之，多数群体都有着自己的困境和缺陷，尤其体现为中下层人士（特别是中产阶级，中产阶级可以说是书中描写最多的群体）因欲望和嫉妒作祟，总是想挤破头地提升阶级，于是开始扮演假想的上层阶级的模样。总之，许多人深陷阶级的泥潭中，即使他们本人不一定会意识到这一点。</p>
+<p>如果想要脱离这一阶级泥潭，作者给出了一个方向：成为一个异类。异类并非先天是异类，他们一般是通过学习和思考，最终决定成为异类的。他们的天赋、才干和学识通常能支撑他们成为是自由职业者或艺术家（脱离了传统的雇佣关系），并在日常生活中顺从本心，达到了从心所欲不逾矩的状态。</p>
+<h2 id="简评"><a href="#简评" class="headerlink" title="简评"></a>简评</h2><p>本书的表达（只指中译本，原文我不太清楚）清晰易懂<del>我这种文盲也能无压力阅读</del>，使用幽默且锐利的语言就为冒犯每一个群体。如果你是幽默爱好者，可以期待它带来的捧腹大笑；如果你不太喜欢开玩笑，可以选择不看。</p>
+<p>阶级问题一定是一个大问题，但本书深入浅出：用讲现象的方式含沙射影。作者通过统计观察，使用贴标签的形式制造群体画像，让你在阅读过程中，时不时感觉”膝盖中了一箭“，时不时又让你想”清算“一下身边的人，代入感很强。原来，这本书描述的几十年前的美国现象，在如今的拆那也能找到极其相似的版本。</p>
+<p>它作为一个描述现象的书，可能并没有非常多的深入讨论（因为这样分析每一个现象会导致篇幅非常多？），但这些现象都很有意思，可以把它们作为切入点，进行后续的思考。</p>
+<p>需要注意的是，tag是较为静态的，实际情况可能会因时间的推移而改变，这些tag只能概括作者写作时期的社会状况，不一定能全盘对应现在的美国或拆那。同时群体的tag不能决断性地等同于个人，人和人的差距比群体和群体的差距大。但即使部分现象归纳出现过时，只要阶级仍然存在，就仍然可以借鉴本书的内容主旨。</p>
+]]></content>
+      <categories>
+        <category>评论</category>
+      </categories>
+      <tags>
+        <tag>评论</tag>
+        <tag>书籍</tag>
+        <tag>简评</tag>
       </tags>
   </entry>
 </search>

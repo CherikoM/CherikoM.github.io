@@ -30,7 +30,7 @@ window.addEventListener("load", async() => {
       await addCoverColor(window.fixedap.list.audios)
 
       // 初始化播放器样式
-      changePlayerStyle()   
+      const hueKey = changePlayerStyle()
       
       // 绑定使播放器样式变化的事件
       changePlay()

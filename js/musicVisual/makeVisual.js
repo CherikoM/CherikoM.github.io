@@ -6,7 +6,6 @@ export default (canvas, audio) => {
     return
   }
 
-
   const FFT = 512
 
   // 实例化AudioContext音频上下文对象
@@ -46,9 +45,6 @@ export default (canvas, audio) => {
 
       analyser.getByteFrequencyData(dataArray)
 
-      // 给背景着色
-      // ctx.fillStyle = 'rgb(0, 0, 0)';
-      // ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       // 设置条的宽度
@@ -57,14 +53,36 @@ export default (canvas, audio) => {
       // 记录条当前位置
       let x = 0
 
-      for (var i = 0; i < bufferLength; i++) {
-        barHeight = ((dataArray[i] * 3) / (FFT)) * canvas.height
+      // 默认色值
+      let hueStart = 120
+      if (typeof (window.barColor) == "number") {
+        // 获取当前色值并填充，如果没有就使用默认色值
+        hueStart = (window.barColor * 360) - 30
 
-        ctx.fillStyle = `hsl(${120 + (x / canvas.width) * 120},${10 + (barHeight / canvas.height) * 90}%,60%)`
+        // 上色
+        for (let i = 0; i < bufferLength; i++) {
+          barHeight = ((dataArray[i] * 3) / (FFT)) * canvas.height
 
-        ctx.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight)
+          ctx.fillStyle = `hsl(${hueStart + (x / canvas.width) * 120},${10 + (barHeight / canvas.height) * 90}%,60%)`
 
-        x += barWidth + 3
+          ctx.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight)
+
+          x += barWidth + 3
+        }
+
+
+      } else if (window.barColor = "gray") {
+        // 灰色，所以只填充灰色
+        // 上色
+        for (let i = 0; i < bufferLength; i++) {
+          barHeight = ((dataArray[i] * 3) / (FFT)) * canvas.height
+
+          ctx.fillStyle = `hsl(0,0%,${50 + (x / canvas.width) * 50}%)`
+
+          ctx.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight)
+
+          x += barWidth + 3
+        }
       }
     }
     draw()

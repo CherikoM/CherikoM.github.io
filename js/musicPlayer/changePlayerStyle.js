@@ -9,6 +9,8 @@ import setTheme from "../Tools/setTheme.js"
 window.hueColors = new Map()
 // 当前使用的缓存key
 window.nowHue
+// 给可视化参考用的色值
+window.barColor
 
 export default () => {
   const ap = window.fixedap
@@ -35,18 +37,21 @@ const hslToStr = (hsl) => {
 }
 
 const changeStyle = (hsl) => {
+
   const mode = document.documentElement.dataset.theme
 
   const hue = hsl[0]
 
-  // 每4为一个取色点（总共(25+1)*2色），如果太黑了就直接gray
+  // 每4为一个取色点（总共(25+1)*2=52色），如果太黑了就直接gray
   const hueKey = Math.round(hue * 25) / 25
 
   let keyName
   if (hsl[1] < 0.05) {
     keyName = "gray"
+    window.barColor = "gray"
   } else {
     keyName = hueKey
+    window.barColor = hueKey
   }
 
   // 是否为夜晚模式
@@ -69,12 +74,11 @@ const changeStyle = (hsl) => {
       "--music-border-color": "hsl(0, 0%, 93%)",
       "--music-console-border-color": "hsl(0, 0%, 91%)"
     })
+    window.nowHue = "darkgray"
   }
 
   // 切换的key和上一首的key一样，那就不调整样式了
-  if (window.nowHue === keyName) {
-    return
-  } else {
+  if (window.nowHue !== keyName) {
     // 从缓存中获取样式
     let colors = window.hueColors.get(keyName)
     // 缓存中没有样式，生成
@@ -192,8 +196,8 @@ const changeStyle = (hsl) => {
     dot.style.backgroundColor = colors.musicPlayerBarPlayed
     bar.style.backgroundColor = colors.musicPlayerBarPlayed
     vol.style.backgroundColor = colors.musicPlayerBarPlayed
-
-    // 保存当前使用key
-    window.nowHue = keyName
   }
+
+  // 保存当前使用key
+  window.nowHue = keyName
 }
