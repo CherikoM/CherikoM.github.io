@@ -57,13 +57,13 @@ export default (canvas, audio) => {
       let hueStart = 120
       if (typeof (window.barColor) == "number") {
         // 获取当前色值并填充，如果没有就使用默认色值
-        hueStart = (window.barColor * 360) - 30
+        hueStart = (window.barColor * 360) - 60
 
         // 上色
         for (let i = 0; i < bufferLength; i++) {
           barHeight = ((dataArray[i] * 3) / (FFT)) * canvas.height
 
-          ctx.fillStyle = `hsl(${hueStart + (x / canvas.width) * 120},${10 + (barHeight / canvas.height) * 90}%,60%)`
+          ctx.fillStyle = `hsl(${hueStart + (x / canvas.width) * 120},${10 + (barHeight / canvas.height) * 90}%,50%)`
 
           ctx.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight)
 

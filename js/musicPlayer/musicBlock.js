@@ -28,6 +28,7 @@ window.addEventListener("click", async (event) => {
     })
 
     const ap = window.fixedap
+    ap.options.order = dataset.order
 
     if (ap) {
       if (target.classList.contains("play-album")) {

@@ -6,6 +6,7 @@ import changeBlockStyle from "./changeBlockStyle.js"
 // 保存所有aplayer实例到全局上（butterfly本身为什么切换页面就失去window.aplayers了？）
 window.addEventListener("load", async() => {
   const aps = window.aplayers
+  console.log(aps)
   // 获得全局吸底aplayer（有fixed配置的那个）
 
   await new Promise(resolve=> {
