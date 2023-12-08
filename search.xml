@@ -819,6 +819,38 @@
       </tags>
   </entry>
   <entry>
+    <title>可视化音频背景</title>
+    <url>/web/diy/%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9F%B3%E9%A2%91%E8%83%8C%E6%99%AF.html</url>
+    <content><![CDATA[<p>书又接上文，感觉逼格不够大，所以鼓捣了个音频可视化</p>
+<h2 id="Web-Audio-API"><a href="#Web-Audio-API" class="headerlink" title="Web Audio API"></a>Web Audio API</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API">Web Audio API</a>可以获取音频的包括频率、波形的信息，能用于选频、加特效、做可视化、添加空间效果等，就像是音频版的canvas</p>
+<p>MDN网站已经给出<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API">音频可视化案例</a>了，我只需魔改一下就行了</p>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>在MDN的案例基础上加了点自己的个性化需求</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> debounce <span class="keyword">from</span> <span class="string">&quot;../Tools/debounce.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (canvas, audio) =&gt; &#123;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">// 快速傅立叶变换（Fast Fourier Transform），一定要是2的倍数，默认为2048</span></span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">FFT</span> = <span class="number">512</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 实例化AudioContext音频上下文对象</span></span><br><span class="line">  <span class="keyword">const</span> audioCtx = <span class="keyword">new</span> (<span class="variable language_">window</span>.<span class="property">AudioContext</span> || <span class="variable language_">window</span>.<span class="property">webkitAudioContext</span>)()</span><br><span class="line">  <span class="comment">// 创建AnalyserNode节点</span></span><br><span class="line">  <span class="keyword">const</span> analyser = audioCtx.<span class="title function_">createAnalyser</span>()</span><br><span class="line">  <span class="comment">// 让fft变小可以使每个频率条有一定宽度</span></span><br><span class="line">  analyser.<span class="property">fftSize</span> = <span class="variable constant_">FFT</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将AnalyserNode节点和声源连接</span></span><br><span class="line">  <span class="comment">// 从audio中获取声音源文件</span></span><br><span class="line">  <span class="keyword">const</span> audioSrc = audioCtx.<span class="title function_">createMediaElementSource</span>(audio)</span><br><span class="line">  audioSrc.<span class="title function_">connect</span>(analyser)</span><br><span class="line">  analyser.<span class="title function_">connect</span>(audioCtx.<span class="property">destination</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// AnalyserNode数据解析，获得瞬时音频数据</span></span><br><span class="line">  <span class="keyword">const</span> bufferLength = analyser.<span class="property">frequencyBinCount</span></span><br><span class="line">  <span class="keyword">const</span> dataArray = <span class="keyword">new</span> <span class="title class_">Uint8Array</span>(bufferLength)</span><br><span class="line">  analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// -------------------------------------</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 画布大小响应（因为要铺满整个背景）</span></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">canvasResize</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">    canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span></span><br><span class="line">    canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">canvasResize</span>()</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, <span class="title function_">debounce</span>(canvasResize,<span class="number">100</span>))</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (canvas.<span class="property">getContext</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 开画</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">draw</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="comment">// 动画帧</span></span><br><span class="line">      <span class="title function_">requestAnimationFrame</span>(draw)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 获取该帧的音频信息</span></span><br><span class="line">      analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 每一帧都要先清空画布，不然旧内容会保留</span></span><br><span class="line">      ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 设置条的宽高</span></span><br><span class="line">      <span class="keyword">const</span> barWidth = (canvas.<span class="property">width</span> / bufferLength)</span><br><span class="line">      <span class="keyword">let</span> barHeight</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 记录条当前位置</span></span><br><span class="line">      <span class="keyword">let</span> x = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 遍历每一条（每一个音频信息）</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; bufferLength; i++) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 给条高赋值</span></span><br><span class="line">        barHeight = ((dataArray[i] * <span class="number">3</span>) / (<span class="variable constant_">FFT</span>)) * canvas.<span class="property">height</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 给条上喜欢的颜色，因为我是人类所以使用hsl颜色</span></span><br><span class="line">        ctx.<span class="property">fillStyle</span> = <span class="string">`hsl(<span class="subst">$&#123;<span class="number">120</span> + (x / canvas.width) * <span class="number">120</span>&#125;</span>,<span class="subst">$&#123;<span class="number">10</span> + (barHeight / canvas.height) * <span class="number">90</span>&#125;</span>%,60%)`</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将条绘制到画布伤</span></span><br><span class="line">        ctx.<span class="title function_">fillRect</span>(x, canvas.<span class="property">height</span> - barHeight / <span class="number">2</span>, barWidth, barHeight)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 每个条之间留个间距</span></span><br><span class="line">        x += barWidth + <span class="number">3</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">draw</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后是笨办法之轮询等播放器初始化（</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> makeVisual <span class="keyword">from</span> <span class="string">&quot;./makeVisual.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;load&quot;</span>, <span class="function">()=&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> timer = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">fixedap</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> audio = <span class="variable language_">window</span>.<span class="property">fixedap</span>.<span class="property">audio</span></span><br><span class="line">      <span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;music-visualization&quot;</span>)</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 浏览器策略不准自动播放音频，总之音频解析行为必须放在用户确认之后</span></span><br><span class="line">      <span class="keyword">const</span> <span class="title function_">canplay</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">        <span class="title function_">makeVisual</span>(canvas,audio)</span><br><span class="line">        <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      <span class="built_in">clearInterval</span>(timer)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">500</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在Meting.js中的恰当位置加一句，否则不能跨域获取音频信息</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">aplayers.<span class="title function_">forEach</span>(<span class="function"><span class="params">ap</span>=&gt;</span> &#123;ap.<span class="property">audio</span>.<span class="property">crossOrigin</span>=<span class="string">&quot;anonymous&quot;</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>最后就是把canvas标签加进butterfly inject配置项</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="comment"># ......省略</span></span><br><span class="line">    <span class="string">&lt;canvas</span> <span class="string">id=&quot;music-visualization&quot;</span> <span class="string">style=&quot;position:fixed;z-index:-900&quot;&gt;&lt;/canvas&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>为了让可视化效果更好看，我顺便把原本页面上纯色的内容块改成了半透明，感觉还不错~</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202309071817861.png"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>DIY</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>hexo</tag>
+        <tag>音乐</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>简评《格调》</title>
     <url>/evaluate/books/%E7%AE%80%E8%AF%84%E3%80%8A%E6%A0%BC%E8%B0%83%E3%80%8B.html</url>
     <content><![CDATA[<h2 id="梗概"><a href="#梗概" class="headerlink" title="梗概"></a>梗概</h2><p>副标题：社会等级与生活品味</p>
@@ -859,140 +891,6 @@
         <tag>评论</tag>
         <tag>书籍</tag>
         <tag>简评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>简评《消费社会》</title>
-    <url>/evaluate/books/%E7%AE%80%E8%AF%84%E3%80%8A%E6%B6%88%E8%B4%B9%E7%A4%BE%E4%BC%9A%E3%80%8B.html</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
-<p>摘自豆瓣，因为我懒得自己写了XD。<a href="https://book.douban.com/subject/25900948/">消费社会 (豆瓣) (douban.com)</a></p>
-</blockquote>
-<p>《消费社会》是鲍德里亚早期的代表性著作，对国际哲学、社会学以及新兴的文化研究领域产生了广泛而深远的影响，被公认为该主题的重要经典之一，在马克思主义理论、社会学、政治学、文艺学以及相关领域，该书亦是最流行的教学参考书。</p>
-<p>在这本书中，鲍德里亚将政治经济学批判理论、符号学理论、精神分析理论等整合在一起，形成了消费社会批判理论。鲍德里亚指出：与过去将消费看作经济活动中的一环不同，在消费社会中，消费是一种主动的结构，商品的符号价值推动着人们在消费中对自身、对社会的想象性认同，确证了现代社会的合法性。要透视这一社会，就需要从政治经济学批判走向符号政治经济学批判。</p>
-<p>鲍德里亚关于消费社会的分析，不仅构成了他思想发展中的重要环节，对于我们理解当代西方以及我国现阶段的社会、文化，也具有重要的借鉴意义。</p>
-<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>《消费社会》受到《景观社会》和情境主义的影响，而我在之前看过盖 · 德波的《景观社会》（虽然挺晦涩难懂的我这种菜鸡真的读不懂），所以这稍微给我降低了一点阅读这本书的门槛（然而也没降多少）。</p>
-<p>鲍德里亚承接了《物体系》（虽然我没看过）中对客体系统的分析，开始对眼花缭乱的商品之丰盛，以及陷于其中的人进行分析。</p>
-<p>他认为现在的资本主义社会是一种“消费社会”，在之中，人和物都失去了本身而被“符号化”了，购买物品变成了消费符号。这些符号有着它自己的运作逻辑，成为一种语言表达着消费社会：它可以彰显社会地位、区分不同的群体（其实这让我想起了<a href="/evaluate/books/%E7%AE%80%E8%AF%84%E3%80%8A%E6%A0%BC%E8%B0%83%E3%80%8B">这个</a>）。</p>
-<p>消费社会中的人们，渴望着使用符号标榜自己，于是不停地为自己贴上符号，就像是为了装逼买了一部8848钛金手机。而且，商品符号之间具有着一种紧密的关系网，这促使人们不断地给自己贴上新的符号：购买与8848适配的谜之hi-fi耳机、土豪金手机壳等，最后甚至是8848钛金电脑。这一切都是“自愿”的，只是在这个过程中，人们已经失去了差异性。</p>
-<p>以消费而非生产为主导的消费社会中，大众传媒、性和休闲无孔不入，孜孜不倦地向人们扩散、渗透着符号，篡改、隐藏着现实。在广告、时尚、“性解放”、商业艺术甚至身体中，符号无处不在。</p>
-<p>这本书给了我很多启发，而且因为它的措辞相对易懂，所以也反过来帮助我能复盘一遍《消费社会》的思想。</p>
-]]></content>
-      <categories>
-        <category>评论</category>
-      </categories>
-      <tags>
-        <tag>评论</tag>
-        <tag>书籍</tag>
-        <tag>简评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>简评《童年的消逝》</title>
-    <url>/evaluate/books/%E7%AE%80%E8%AF%84%E3%80%8A%E7%AB%A5%E5%B9%B4%E7%9A%84%E6%B6%88%E9%80%9D%E3%80%8B.html</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
-<p>同样是摘自豆瓣，摸鱼真爽xxx。<a href="https://book.douban.com/subject/26319794/">童年的消逝 (豆瓣) (douban.com)</a></p>
-</blockquote>
-<p>《童年的消逝》初版于1982年，是尼尔·波兹曼的代表作之一。</p>
-<p>“童年”是一个被发明出来的概念，印刷术普及之前，儿童与成人之间靠口语传播，彼此分享基本相同的文化世界，所以人类并没有“童年”；印刷术普及之后，文字成为主导，成人掌握着文字和知识的世界，儿童与成人之 间出现了一道文化鸿沟，“童年”诞生了。</p>
-<p>电视时代，一切信息都能够在成人和儿童之间共享，成人和儿童之间的界限逐渐模糊，儿童几乎都被迫提早进入充满冲突、战争、性爱、暴力的成人世界，“童年”逐渐消逝。</p>
-<p>波兹曼同时指出，在成人和儿童共同成为电视观众的文化里，政治、商业、教育等最终蜕变成幼稚和肤浅的弱智文化，人类的文化精神逐渐枯萎。</p>
-<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>《童年的消逝》是“儿童”这一（社会性）概念的简史，同时它也和《娱乐至死》一样，是对现代媒体传播的批判。</p>
-<p>中世纪时的知识被教会这类少数人垄断，普通人作为文盲只拥有语言的听说能力，所有人都共享着同样的、以图像视觉和听觉为主的、具象的、只存在于瞬间的内容载体，因此当时的“儿童”和“成人”的思想和学识并没有什么不同，“儿童”在那里不过是“缩小的成人”，没什么特别的。</p>
-<p>印刷术的发明，使曾经的垄断被打破，知识变得唾手可得，个人及其表达的地位得到空前提升。当人们开始尊重理性、尊重逻辑、尊重知识、尊重人类时，就会开始重视文字读写。文字是一种抽象的内容载体，学习它的过程也是一种思维导向变化的过程，因此儿童概念开始被重视，因为他们若想获得知识，需要先学习读写文字。人们同时在这一过程中发现了儿童与成人的更多区别，并开始在各个方面保护儿童。</p>
-<p>但电视的发明又使“儿童”这一概念开起了历史倒车，因为电视是一种以图像为导向的媒体，看电视几乎不需要抽象的逻辑能力，只需在瞬时和市场导向的噱头中狂欢。儿童变得越来越“成熟”，而成人也变得越来越像巨婴。</p>
-<hr>
-<p>就我个人而言我是不太喜欢电视&#x2F;收音机这类媒介，首先是上述的原因，其次几乎所有用户在使用它们时都是被动地接收信息。</p>
-<p>在作者写作此书时，计算机技术才刚起步，想使用电脑必须拥有编程能力，而作者确实有高瞻远见，预料到电脑可能在未来（我们的现在）也变得图像导向起来。根据纯粹的个人经验也能感受到，现在的小孩更是“猖狂”。</p>
-<p>但我不认为电脑，或者说移动互联网会比电视更差（从应用逻辑抽象能力获取知识的角度看），理由很简单：在网络上每个人都可以是参与者，不仅照样可以发布自己的想法，而且能传播得更广，而web2.0时代更是变成了全民参与，所以网络中包含着大量文字内容或深度内容可供低成本查阅。虽然过于短平快的弊端也随之显现，而且网络空间中的人们是否能真实的表露自我尚且存疑（用《景观社会》的名词来说，里面应该存在着大量的混合式景观）。但如果对这一状态不满，破圈的过程确实比电视时代简单多了（只是你首先需要预料到自己可能是温水里的青蛙）</p>
-]]></content>
-      <categories>
-        <category>评论</category>
-      </categories>
-      <tags>
-        <tag>评论</tag>
-        <tag>书籍</tag>
-        <tag>简评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>医院预约挂号统一平台练习</title>
-    <url>/web/practice/%E5%8C%BB%E9%99%A2%E9%A2%84%E7%BA%A6%E6%8C%82%E5%8F%B7%E7%BB%9F%E4%B8%80%E5%B9%B3%E5%8F%B0%E7%BB%83%E4%B9%A0.html</url>
-    <content><![CDATA[<p>一个练习，使用了Vue全家桶、TypeScript、Element+三件套</p>
-<a class="btn-beautify outline green larger" href="https://github.com/CherikoM/hospital" 
-  title="代码"><span>代码</span></a> <a class="btn-beautify outline blue larger" href="http://hospital.cheriko.fun/" 
-  title="效果"><span>效果</span></a>
-
-<h2 id="页面结构"><a href="#页面结构" class="headerlink" title="页面结构"></a>页面结构</h2><p>采用头部+中间主要内容+底部的结构</p>
-<ul>
-<li>头部：logo、标题和用户（如果没登陆则是登录入口）</li>
-<li>中间主要内容：路由</li>
-<li>底部：没啥特殊的</li>
-</ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311807823.png"></p>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><h3 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h3><p>根据筛选条件显示北京市医院</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311301890.png"></p>
-<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>只有登录才能进行挂号流程、访问会员中心</p>
-<p>可以使用手机号或微信登录，若手机号&#x2F;微信没有对应账号则会自动注册</p>
-<p>因为没有开通短信服务（贵），所以只是模拟了一下过程（六位验证码会自动回显）</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311345120.png"></p>
-<h3 id="医院详情"><a href="#医院详情" class="headerlink" title="医院详情"></a>医院详情</h3><p>查看医院的一些详情</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311319731.png"></p>
-<p>只有已登录用户才能进行挂号</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311343453.png"></p>
-<p>选择就诊人、确认订单</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311323304.png"></p>
-<h3 id="会员中心"><a href="#会员中心" class="headerlink" title="会员中心"></a>会员中心</h3><p>订单详情，分为待支付、已支付、已取消三个状态</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311341248.png"></p>
-<p>所有订单</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311337633.png"></p>
-<p>实名认证，一个账号只需认证一次</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311338892.png"></p>
-<p>就诊人管理，用于增删修改就诊人</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311340754.png"></p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311340126.png"></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>项目练习</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>项目</tag>
-        <tag>Vue</tag>
-        <tag>TypeScript</tag>
-        <tag>Element+</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>可视化音频背景</title>
-    <url>/web/diy/%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9F%B3%E9%A2%91%E8%83%8C%E6%99%AF.html</url>
-    <content><![CDATA[<p>书又接上文，感觉逼格不够大，所以鼓捣了个音频可视化</p>
-<h2 id="Web-Audio-API"><a href="#Web-Audio-API" class="headerlink" title="Web Audio API"></a>Web Audio API</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API">Web Audio API</a>可以获取音频的包括频率、波形的信息，能用于选频、加特效、做可视化、添加空间效果等，就像是音频版的canvas</p>
-<p>MDN网站已经给出<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API">音频可视化案例</a>了，我只需魔改一下就行了</p>
-<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>在MDN的案例基础上加了点自己的个性化需求</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> debounce <span class="keyword">from</span> <span class="string">&quot;../Tools/debounce.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (canvas, audio) =&gt; &#123;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">// 快速傅立叶变换（Fast Fourier Transform），一定要是2的倍数，默认为2048</span></span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">FFT</span> = <span class="number">512</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 实例化AudioContext音频上下文对象</span></span><br><span class="line">  <span class="keyword">const</span> audioCtx = <span class="keyword">new</span> (<span class="variable language_">window</span>.<span class="property">AudioContext</span> || <span class="variable language_">window</span>.<span class="property">webkitAudioContext</span>)()</span><br><span class="line">  <span class="comment">// 创建AnalyserNode节点</span></span><br><span class="line">  <span class="keyword">const</span> analyser = audioCtx.<span class="title function_">createAnalyser</span>()</span><br><span class="line">  <span class="comment">// 让fft变小可以使每个频率条有一定宽度</span></span><br><span class="line">  analyser.<span class="property">fftSize</span> = <span class="variable constant_">FFT</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将AnalyserNode节点和声源连接</span></span><br><span class="line">  <span class="comment">// 从audio中获取声音源文件</span></span><br><span class="line">  <span class="keyword">const</span> audioSrc = audioCtx.<span class="title function_">createMediaElementSource</span>(audio)</span><br><span class="line">  audioSrc.<span class="title function_">connect</span>(analyser)</span><br><span class="line">  analyser.<span class="title function_">connect</span>(audioCtx.<span class="property">destination</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// AnalyserNode数据解析，获得瞬时音频数据</span></span><br><span class="line">  <span class="keyword">const</span> bufferLength = analyser.<span class="property">frequencyBinCount</span></span><br><span class="line">  <span class="keyword">const</span> dataArray = <span class="keyword">new</span> <span class="title class_">Uint8Array</span>(bufferLength)</span><br><span class="line">  analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// -------------------------------------</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 画布大小响应（因为要铺满整个背景）</span></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">canvasResize</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">    canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span></span><br><span class="line">    canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">canvasResize</span>()</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, <span class="title function_">debounce</span>(canvasResize,<span class="number">100</span>))</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (canvas.<span class="property">getContext</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 开画</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">draw</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="comment">// 动画帧</span></span><br><span class="line">      <span class="title function_">requestAnimationFrame</span>(draw)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 获取该帧的音频信息</span></span><br><span class="line">      analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 每一帧都要先清空画布，不然旧内容会保留</span></span><br><span class="line">      ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 设置条的宽高</span></span><br><span class="line">      <span class="keyword">const</span> barWidth = (canvas.<span class="property">width</span> / bufferLength)</span><br><span class="line">      <span class="keyword">let</span> barHeight</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 记录条当前位置</span></span><br><span class="line">      <span class="keyword">let</span> x = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 遍历每一条（每一个音频信息）</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; bufferLength; i++) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 给条高赋值</span></span><br><span class="line">        barHeight = ((dataArray[i] * <span class="number">3</span>) / (<span class="variable constant_">FFT</span>)) * canvas.<span class="property">height</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 给条上喜欢的颜色，因为我是人类所以使用hsl颜色</span></span><br><span class="line">        ctx.<span class="property">fillStyle</span> = <span class="string">`hsl(<span class="subst">$&#123;<span class="number">120</span> + (x / canvas.width) * <span class="number">120</span>&#125;</span>,<span class="subst">$&#123;<span class="number">10</span> + (barHeight / canvas.height) * <span class="number">90</span>&#125;</span>%,60%)`</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将条绘制到画布伤</span></span><br><span class="line">        ctx.<span class="title function_">fillRect</span>(x, canvas.<span class="property">height</span> - barHeight / <span class="number">2</span>, barWidth, barHeight)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 每个条之间留个间距</span></span><br><span class="line">        x += barWidth + <span class="number">3</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">draw</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后是笨办法之轮询等播放器初始化（</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> makeVisual <span class="keyword">from</span> <span class="string">&quot;./makeVisual.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;load&quot;</span>, <span class="function">()=&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> timer = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">fixedap</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> audio = <span class="variable language_">window</span>.<span class="property">fixedap</span>.<span class="property">audio</span></span><br><span class="line">      <span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;music-visualization&quot;</span>)</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 浏览器策略不准自动播放音频，总之音频解析行为必须放在用户确认之后</span></span><br><span class="line">      <span class="keyword">const</span> <span class="title function_">canplay</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">        <span class="title function_">makeVisual</span>(canvas,audio)</span><br><span class="line">        <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      <span class="built_in">clearInterval</span>(timer)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">500</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>在Meting.js中的恰当位置加一句，否则不能跨域获取音频信息</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">aplayers.<span class="title function_">forEach</span>(<span class="function"><span class="params">ap</span>=&gt;</span> &#123;ap.<span class="property">audio</span>.<span class="property">crossOrigin</span>=<span class="string">&quot;anonymous&quot;</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>最后就是把canvas标签加进butterfly inject配置项</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="comment"># ......省略</span></span><br><span class="line">    <span class="string">&lt;canvas</span> <span class="string">id=&quot;music-visualization&quot;</span> <span class="string">style=&quot;position:fixed;z-index:-900&quot;&gt;&lt;/canvas&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>为了让可视化效果更好看，我顺便把原本页面上纯色的内容块改成了半透明，感觉还不错~</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202309071817861.png"></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>DIY</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>hexo</tag>
-        <tag>音乐</tag>
-        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -1062,6 +960,59 @@
         <tag>hexo</tag>
         <tag>音乐</tag>
         <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简评《消费社会》</title>
+    <url>/evaluate/books/%E7%AE%80%E8%AF%84%E3%80%8A%E6%B6%88%E8%B4%B9%E7%A4%BE%E4%BC%9A%E3%80%8B.html</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>摘自豆瓣，因为我懒得自己写了XD。<a href="https://book.douban.com/subject/25900948/">消费社会 (豆瓣) (douban.com)</a></p>
+</blockquote>
+<p>《消费社会》是鲍德里亚早期的代表性著作，对国际哲学、社会学以及新兴的文化研究领域产生了广泛而深远的影响，被公认为该主题的重要经典之一，在马克思主义理论、社会学、政治学、文艺学以及相关领域，该书亦是最流行的教学参考书。</p>
+<p>在这本书中，鲍德里亚将政治经济学批判理论、符号学理论、精神分析理论等整合在一起，形成了消费社会批判理论。鲍德里亚指出：与过去将消费看作经济活动中的一环不同，在消费社会中，消费是一种主动的结构，商品的符号价值推动着人们在消费中对自身、对社会的想象性认同，确证了现代社会的合法性。要透视这一社会，就需要从政治经济学批判走向符号政治经济学批判。</p>
+<p>鲍德里亚关于消费社会的分析，不仅构成了他思想发展中的重要环节，对于我们理解当代西方以及我国现阶段的社会、文化，也具有重要的借鉴意义。</p>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>《消费社会》受到《景观社会》和情境主义的影响，而我在之前看过盖 · 德波的《景观社会》（虽然挺晦涩难懂的我这种菜鸡真的读不懂），所以这稍微给我降低了一点阅读这本书的门槛（然而也没降多少）。</p>
+<p>鲍德里亚承接了《物体系》（虽然我没看过）中对客体系统的分析，开始对眼花缭乱的商品之丰盛，以及陷于其中的人进行分析。</p>
+<p>他认为现在的资本主义社会是一种“消费社会”，在之中，人和物都失去了本身而被“符号化”了，购买物品变成了消费符号。这些符号有着它自己的运作逻辑，成为一种语言表达着消费社会：它可以彰显社会地位、区分不同的群体（其实这让我想起了<a href="/evaluate/books/%E7%AE%80%E8%AF%84%E3%80%8A%E6%A0%BC%E8%B0%83%E3%80%8B">这个</a>）。</p>
+<p>消费社会中的人们，渴望着使用符号标榜自己，于是不停地为自己贴上符号，就像是为了装逼买了一部8848钛金手机。而且，商品符号之间具有着一种紧密的关系网，这促使人们不断地给自己贴上新的符号：购买与8848适配的谜之hi-fi耳机、土豪金手机壳等，最后甚至是8848钛金电脑。这一切都是“自愿”的，只是在这个过程中，人们已经失去了差异性。</p>
+<p>以消费而非生产为主导的消费社会中，大众传媒、性和休闲无孔不入，孜孜不倦地向人们扩散、渗透着符号，篡改、隐藏着现实。在广告、时尚、“性解放”、商业艺术甚至身体中，符号无处不在。</p>
+<p>这本书给了我很多启发，而且因为它的措辞相对易懂，所以也反过来帮助我能复盘一遍《消费社会》的思想。</p>
+]]></content>
+      <categories>
+        <category>评论</category>
+      </categories>
+      <tags>
+        <tag>评论</tag>
+        <tag>书籍</tag>
+        <tag>简评</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简评《童年的消逝》</title>
+    <url>/evaluate/books/%E7%AE%80%E8%AF%84%E3%80%8A%E7%AB%A5%E5%B9%B4%E7%9A%84%E6%B6%88%E9%80%9D%E3%80%8B.html</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>同样是摘自豆瓣，摸鱼真爽xxx。<a href="https://book.douban.com/subject/26319794/">童年的消逝 (豆瓣) (douban.com)</a></p>
+</blockquote>
+<p>《童年的消逝》初版于1982年，是尼尔·波兹曼的代表作之一。</p>
+<p>“童年”是一个被发明出来的概念，印刷术普及之前，儿童与成人之间靠口语传播，彼此分享基本相同的文化世界，所以人类并没有“童年”；印刷术普及之后，文字成为主导，成人掌握着文字和知识的世界，儿童与成人之 间出现了一道文化鸿沟，“童年”诞生了。</p>
+<p>电视时代，一切信息都能够在成人和儿童之间共享，成人和儿童之间的界限逐渐模糊，儿童几乎都被迫提早进入充满冲突、战争、性爱、暴力的成人世界，“童年”逐渐消逝。</p>
+<p>波兹曼同时指出，在成人和儿童共同成为电视观众的文化里，政治、商业、教育等最终蜕变成幼稚和肤浅的弱智文化，人类的文化精神逐渐枯萎。</p>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>《童年的消逝》是“儿童”这一（社会性）概念的简史，同时它也和《娱乐至死》一样，是对现代媒体传播的批判。</p>
+<p>中世纪时的知识被教会这类少数人垄断，普通人作为文盲只拥有语言的听说能力，所有人都共享着同样的、以图像视觉和听觉为主的、具象的、只存在于瞬间的内容载体，因此当时的“儿童”和“成人”的思想和学识并没有什么不同，“儿童”在那里不过是“缩小的成人”，没什么特别的。</p>
+<p>印刷术的发明，使曾经的垄断被打破，知识变得唾手可得，个人及其表达的地位得到空前提升。当人们开始尊重理性、尊重逻辑、尊重知识、尊重人类时，就会开始重视文字读写。文字是一种抽象的内容载体，学习它的过程也是一种思维导向变化的过程，因此儿童概念开始被重视，因为他们若想获得知识，需要先学习读写文字。人们同时在这一过程中发现了儿童与成人的更多区别，并开始在各个方面保护儿童。</p>
+<p>但电视的发明又使“儿童”这一概念开起了历史倒车，因为电视是一种以图像为导向的媒体，看电视几乎不需要抽象的逻辑能力，只需在瞬时和市场导向的噱头中狂欢。儿童变得越来越“成熟”，而成人也变得越来越像巨婴。</p>
+<hr>
+<p>就我个人而言我是不太喜欢电视&#x2F;收音机这类媒介，首先是上述的原因，其次几乎所有用户在使用它们时都是被动地接收信息。</p>
+<p>在作者写作此书时，计算机技术才刚起步，想使用电脑必须拥有编程能力，而作者确实有高瞻远见，预料到电脑可能在未来（我们的现在）也变得图像导向起来。根据纯粹的个人经验也能感受到，现在的小孩更是“猖狂”。</p>
+<p>但我不认为电脑，或者说移动互联网会比电视更差（从应用逻辑抽象能力获取知识的角度看），理由很简单：在网络上每个人都可以是参与者，不仅照样可以发布自己的想法，而且能传播得更广，而web2.0时代更是变成了全民参与，所以网络中包含着大量文字内容或深度内容可供低成本查阅。虽然过于短平快的弊端也随之显现，而且网络空间中的人们是否能真实的表露自我尚且存疑（用《景观社会》的名词来说，里面应该存在着大量的混合式景观）。但如果对这一状态不满，破圈的过程确实比电视时代简单多了（只是你首先需要预料到自己可能是温水里的青蛙）</p>
+]]></content>
+      <categories>
+        <category>评论</category>
+      </categories>
+      <tags>
+        <tag>评论</tag>
+        <tag>书籍</tag>
+        <tag>简评</tag>
       </tags>
   </entry>
   <entry>
@@ -1141,6 +1092,55 @@
       </tags>
   </entry>
   <entry>
+    <title>医院预约挂号统一平台练习</title>
+    <url>/web/practice/%E5%8C%BB%E9%99%A2%E9%A2%84%E7%BA%A6%E6%8C%82%E5%8F%B7%E7%BB%9F%E4%B8%80%E5%B9%B3%E5%8F%B0%E7%BB%83%E4%B9%A0.html</url>
+    <content><![CDATA[<p>一个练习，使用了Vue全家桶、TypeScript、Element+三件套</p>
+<a class="btn-beautify outline green larger" href="https://github.com/CherikoM/hospital" 
+  title="代码"><span>代码</span></a> <a class="btn-beautify outline blue larger" href="http://hospital.cheriko.fun/" 
+  title="效果"><span>效果</span></a>
+
+<h2 id="页面结构"><a href="#页面结构" class="headerlink" title="页面结构"></a>页面结构</h2><p>采用头部+中间主要内容+底部的结构</p>
+<ul>
+<li>头部：logo、标题和用户（如果没登陆则是登录入口）</li>
+<li>中间主要内容：路由</li>
+<li>底部：没啥特殊的</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311807823.png"></p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><h3 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h3><p>根据筛选条件显示北京市医院</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311301890.png"></p>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>只有登录才能进行挂号流程、访问会员中心</p>
+<p>可以使用手机号或微信登录，若手机号&#x2F;微信没有对应账号则会自动注册</p>
+<p>因为没有开通短信服务（贵），所以只是模拟了一下过程（六位验证码会自动回显）</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311345120.png"></p>
+<h3 id="医院详情"><a href="#医院详情" class="headerlink" title="医院详情"></a>医院详情</h3><p>查看医院的一些详情</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311319731.png"></p>
+<p>只有已登录用户才能进行挂号</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311343453.png"></p>
+<p>选择就诊人、确认订单</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311323304.png"></p>
+<h3 id="会员中心"><a href="#会员中心" class="headerlink" title="会员中心"></a>会员中心</h3><p>订单详情，分为待支付、已支付、已取消三个状态</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311341248.png"></p>
+<p>所有订单</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311337633.png"></p>
+<p>实名认证，一个账号只需认证一次</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311338892.png"></p>
+<p>就诊人管理，用于增删修改就诊人</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311340754.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202310311340126.png"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>项目练习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>项目</tag>
+        <tag>Vue</tag>
+        <tag>TypeScript</tag>
+        <tag>Element+</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>前端面试题搜集</title>
     <url>/web/study/Practice/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%90%9C%E9%9B%86.html</url>
     <content><![CDATA[<p><del>岁 月 史 书</del></p>
@@ -1169,6 +1169,89 @@
 <li>根据W3C标准，浏览器实现计时器时，如果计时器嵌套层级超过5层，更深的计时器实际上会有至少4毫秒的计时，这在计时时间少于4毫秒时又会带来偏差</li>
 <li>受事件循环的影响，计时器的回调函数只能在渲染主线程空闲时运行，这又带来了偏差</li>
 </ol>
+<hr>
+<blockquote>
+<p>以下问题参见<a href="web/study/Browser/页面的渲染">页面的渲染</a></p>
+</blockquote>
+<p><strong>浏览器是如何渲染页面的？</strong></p>
+<p>当浏览器的网络线程收到HTML文档后，会产生一个渲染任务，并将其传递给染主线程的消息队列。</p>
+<p>在事件循环机制的作用下，渲染主线程取出消息队列中的渲染任务，开启渲染流程。</p>
+<p>整个渲染流程分为多个阶段，分别是：HTML解析、样式计算、布局、分层、绘制、分块、光栅化、画。</p>
+<p>每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入,这样，整个渲染流程就形成了一套组织严密的生产流水线。</p>
+<ol>
+<li><p>第一步：解析HTML</p>
+<p>解析过程中，遇到CSS则解析CSS，遇到JS则执行JS。</p>
+<p>为了提高解析效率，浏览器在开始解析前，会启动一个预解析线程，率先下载HTML中的外部CSS文件和外部JS文件。</p>
+<ul>
+<li>如果主线程解析到<code>&lt;link&gt;</code>（遇到CSS）<ul>
+<li>即使外部的CSS文件尚未下载解析好，主程不会等待，而是继续解析后续的HTML。</li>
+<li>下载和解析CSS的工作都是在预解析线程中进行的，这就是CSS不会阻塞HTML解析的根本原因</li>
+</ul>
+</li>
+<li>如果主线程解析到<code>&lt;script&gt;</code>（遇到JS）<ul>
+<li>会停止解析HTML，且等待JS文件下载好，并将全局代码解析执行完成后，才继续解析HTML。</li>
+<li>因为JS代码的执行过程可能会修改当前DOM树，所以DOM树的生成必须暂停，这就是JS会阻塞HTML解析的根本原因。</li>
+</ul>
+</li>
+</ul>
+<p>第一步完成后，会得到DOM树和CSSOM树，浏览器的默认样式、内部样式、外部样式、行内样式均会包含在CSSOM树中。</p>
+</li>
+<li><p>第二步：样式计算</p>
+<p>主线程会遍历上一步得到的DOM树，依次为树中的每个节点计算出它的最终样式Computed Style</p>
+<p>在这一过程中，很多预设值会变成绝对值，例如red变成rgb(255,0,0)；相对单位会变成绝对单位，例如em变成px</p>
+<p>第二步完成后，会得到带有样式的DOM树。</p>
+</li>
+<li><p>第三步：布局</p>
+<p>主线程会遍历上一步获取的DOM树的每一个节点，计算每个节点的几何信息，例如节点的宽高、相对包含块的位置。</p>
+<p>大部分情况下，DOM树和布局树并非一一对应，例如</p>
+<ul>
+<li>display:none的节点没有几何信息，因此不会生成到布局树</li>
+<li>使用伪元素选择器时，虽然DOM树中不存在这些伪元素节点，但它们拥有几何信息，所以会生成到布局树中</li>
+<li>还有产生匿名行盒、匿名块盒等的情况</li>
+</ul>
+<p>第三步完成后，会得到布局(Layout)树。</p>
+</li>
+<li><p>第四步：分层</p>
+<p>主线程会根据Layout树，使用一套复杂的策略对布局树进行分层。</p>
+<p>分层的好处是，将来某一层改变后，浏览器仅需对该层进行后续处理，从而提升效率。</p>
+<p>层叠上下文样式都会或多或少的影响分层结果，也可以通过will-change属性更大程度的影响分层结果，但它们都不能直接决定分层</p>
+<p>第四步完成后，会得到分层信息。</p>
+</li>
+<li><p>第五步：绘制</p>
+<p>主线程会根据分层信息，为每个层单独生成绘制指令集，用于描述这一层的内容该如何画出来。</p>
+<p>第五步完成后，会得到绘制信息（绘制指令集）。</p>
+</li>
+<li><p>第六步：分块</p>
+<p>主线程会将每个图层的绘制信息提交给合成线程，剩余工作将由合成线程完成。</p>
+<p>合成线程会对每个图层进行分块，将其划分为更多的小区域。它会从线程池中拿取多个线程来完成分块工作。</p>
+<p>第六步完成后，会得到分块信息。</p>
+</li>
+<li><p>第七步：光栅化</p>
+<p>合成线程会将块信息交给GPU进程，以极高的速度完成光栅化。</p>
+<p>GPU进程会开启多个线程来完成光栅化，并且优先处理靠近视口区域的块。</p>
+<p>第七步完成后，会得到一块一块的位图。</p>
+</li>
+<li><p>第八步：画</p>
+<p>合成线程根据每个层、每个块的位图，生成一个个指引(quad)信息。</p>
+<p>quad会标识出每个位图应该画到屏幕的哪个位置，同时会考虑到旋转、缩放等变形操作。</p>
+<p>变形发生在合成线程，与渲染主线程无关，这就是transform效率高的根本原因。<br>合成线程会把quad提交给GPU进程，GPU进程再产生系统调用，将quad提交给GPU硬件，完成最终的屏幕成像。</p>
+<p>所有渲染步骤就完成了。</p>
+</li>
+</ol>
+<hr>
+<p><strong>什么是reflow？</strong></p>
+<p>reflow的本质就是重新计算layout树。</p>
+<p>当进行了会影响布局树的操作后，就需要重新计算布局树，引发渲染页面时的布局步骤。</p>
+<p>为了避免连续的多次操作导致布局树反复计算，浏览器会合并这些操作：当JS代码全部完成后再进行统一计算，所以，改动属性造成的reflow是异步完成的。</p>
+<p>也正因为如此，当JS获取布局属性时，就可能造成无法获取到最新的布局信息，最终浏览器在反复权衡下，将机制变为获取属性时立即进行reflow。</p>
+<hr>
+<p><strong>什么是repaint？</strong></p>
+<p>repaint的本质就是重新根据分层信息计算绘制指令，当改动了可见样式后，就需要重新计算，这会引发repaint。</p>
+<p>由于元素的布局信息也属于可见样式，所以reflow一定会引起repaint。</p>
+<hr>
+<p><strong>为什么transform的效率高？</strong></p>
+<p>因为transform既不影响布局，也不影响绘制指令，它影响的只是流程的最后一个步骤：draw。</p>
+<p>由于draw在合成线程中进行，所以transform的变化几乎不会影响渲染主线程。反之，渲染王线程无论如何忙碌，也不会影响transform的变化。</p>
 ]]></content>
       <categories>
         <category>前端</category>
