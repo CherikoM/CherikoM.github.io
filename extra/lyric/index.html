@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head><title>Document</title><link rel="stylesheet" href="./css/index.css"></head><body><div class="container"><div class="player"><audio controls src="./assets/Electric Lady (feat. XO ELIZA).flac"></audio></div><div class="lyric"><ul></ul></div></div><script type="module">
+    import lrcStr from './js/data.js'
+
+    /**
+     * 元素
+     */
+    const DOMs = {
+      lyricContainer: document.querySelector('.lyric'),
+      lyricUl: document.querySelector('ul'),
+      audio: document.querySelector('audio')
+    }
+
+    /**
+     * 数据处理
+     */
+    // #region
+    /**
+     * 解析歌词字符串，得到歌词对象数组
+     * @param {string} lrcStr 歌词字符串
+     * @return {[{time: number, words: string}]} 歌词时间，歌词内容
+     */
+    const parseLrc = (lrcStr) => {
+      return lrcStr.split('\n').map(l => {
+        let [time, words] = l.split(']')
+        time = parseTime(time.substring(1))
+        return { time, words }
+      })
+    }
+
+    /**
+     * 解析时间字符串，得到时间（毫秒）
+     * @param {string} timeStr 时间字符串
+     * @return {number} 时间
+     */
+    const parseTime = (timeStr) => {
+      const [minute, second] = timeStr.split(':')
+      return minute * 60 + +second
+    }
+
+    /**
+     * 计算当前应高亮显示的歌词
+     * @param {[{time: number, words: string}]} lyric
+     * @return {number} 需高亮的歌词坐标，若无任何歌词需显示则返回-1
+     */
+    const findIndex = (lyric) => {
+      const currentTime = DOMs.audio.currentTime
+      for (let i = 0; i < lyric.length; i++) {
+        if (currentTime < lyric[i].time) {
+          return i - 1
+        }
+      }
+      return lyric.length - 1
+    }
+    // #endregion
+
+    /**
+     * 页面展现
+     */
+    // #region
+    // 歌词信息数组
+    const lyric = parseLrc(lrcStr)
+    /**
+     * 创建歌词元素
+     */
+    const init = () => {
+      const frag = document.createDocumentFragment()
+
+      lyric.forEach(l => {
+        const li = document.createElement('li')
+        li.textContent = l.words
+        li.dataset.time = l.time
+        frag.appendChild(li)
+      })
+
+      DOMs.lyricUl.appendChild(frag)
+    }
+    init()
+    // #endregion
+
+    /**
+     * 事件处理
+     */
+    // #region
+    // 歌词容器高度
+    let containerHeight
+    // 所有歌词高度
+    let lrcUlHeight
+    // 所有歌词上内边距
+    let lrcUlPaddingT
+    // 所有歌词最大偏移量
+    let maxUlOffset
+    // 每句歌词高度
+    let lrcLiHeight
+
+    // 计算所需属性
+    const computeData = () => {
+      containerHeight = DOMs.lyricContainer.clientHeight
+      lrcUlHeight = DOMs.lyricUl.clientHeight
+      lrcUlPaddingT = Number(getComputedStyle(DOMs.lyricUl)['padding-top'].split('p')[0])
+      maxUlOffset = lrcUlHeight - containerHeight < 0 ? 0 : lrcUlHeight - containerHeight
+      lrcLiHeight = DOMs.lyricUl.children[0].clientHeight
+    }
+
+    /**
+     * 监听容器高度变化
+     */
+    const observer = new ResizeObserver(computeData)
+    observer.observe(DOMs.lyricContainer, {
+      box: 'border-box'
+    })
+
+    // 初始化数值
+    computeData()
+    /**
+     * 设置偏移量
+     */
+    const setOffset = () => {
+      // 高亮歌词
+      const index = findIndex(lyric)
+      // 歌词所在高度
+      const lrcHeight = lrcLiHeight * index + lrcLiHeight / 2
+
+      // ul偏移量
+      let ulOffset = lrcUlPaddingT + lrcHeight - containerHeight / 2
+      // 边界控制
+      if (ulOffset < 0) ulOffset = 0
+      if (ulOffset > maxUlOffset) ulOffset = maxUlOffset
+
+      // 进行偏移
+      DOMs.lyricUl.style.transform = `translateY(-${ulOffset}px)`
+
+      // 去除旧高亮
+      const oldLi = DOMs.lyricUl.querySelector('.active')
+      if (oldLi) oldLi.classList.remove('active')
+
+      // 添加新高亮
+      const newLi = DOMs.lyricUl.children[index]
+      if (newLi) newLi.classList.add('active')
+    }
+
+    /**
+     * 绑定音乐播放时间改变事件
+     */
+    DOMs.audio.addEventListener('timeupdate', setOffset)
+    // #endregion
+  </script></body></html>
