@@ -28,10 +28,12 @@ window.addEventListener("click", async (event) => {
     })
 
     const ap = window.fixedap
-    ap.options.order = dataset.order
 
     if (ap) {
       if (target.classList.contains("play-album")) {
+        if(dataset.order === 'list' || dataset.order === 'random') {
+          ap.options.order = dataset.order
+        } 
         // debugger
         // 清空并添加
         ap.list.clear()
@@ -39,6 +41,7 @@ window.addEventListener("click", async (event) => {
         ap.setMode("normal")
         ap.play()
         useSnackbar("让你见识见识我珍藏已久的好曲子（〃｀ 3′〃）")
+
       } else if (target.classList.contains("add-album")) {
         // 目前的播放列表
         const nowList = ap.list.audios
