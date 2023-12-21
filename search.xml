@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>这是本站点的第一个页面</title>
+    <url>/selfTalking/firstPage.html</url>
+    <content><![CDATA[<p>之前曾经试着搞过……</p>
+<p>首先是用的第三方图床崩了</p>
+<p>接着工程自己也崩了（始终没找到是哪里崩的）</p>
+<p>正好要做毕设，没时间整这玩意</p>
+<p>这下毕设做完了，干脆重新整一个吧（</p>
+<p>于是你就见到了这个新站点……</p>
+<p>框架：hexo、主题：butterfly、现在以及今后可能都会出现各种魔改（</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>碎碎念</tag>
+        <tag>本站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>（传教）Disciple大法好！</title>
     <url>/EDM/%EF%BC%88%E4%BC%A0%E6%95%99%EF%BC%89Disciple%E5%A4%A7%E6%B3%95%E5%A5%BD%EF%BC%81%EF%BC%81%EF%BC%81.html</url>
     <content><![CDATA[<p>事先声明：本文是为不了解US Bass甚至不了解奠子阴乐的人准备的暴力传教材料。如果你是奠阴老油条，请当看乐子版油库里地对待本贴，谢谢合作~</p>
@@ -681,6 +700,34 @@
       </tags>
   </entry>
   <entry>
+    <title>木木最近在读什么？(1)</title>
+    <url>/evaluate/books/%E6%9C%A8%E6%9C%A8%E6%9C%80%E8%BF%91%E5%9C%A8%E8%AF%BB%E4%BB%80%E4%B9%88%EF%BC%9F(1).html</url>
+    <content><![CDATA[<p><del>其实主要是因为我发现自己才疏学浅没那个能力也懒得去b一大堆读后感，那就报菜名吧</del></p>
+<p>本系列为汇总式贴子，每篇文章最多包含10本书并作出<del>极</del>简单感想，不定期更新</p>
+<h2 id="致命元素-毒药的历史"><a href="#致命元素-毒药的历史" class="headerlink" title="致命元素 毒药的历史"></a>致命元素 毒药的历史</h2><p>著：[英]约翰 · 埃姆斯利</p>
+<p>一本科普书，介绍了例如汞、铅、铊之类的有毒元素的特性以及与之相关的投毒案&#x2F;卫生事件</p>
+<p>如果你是一个想写点故事的作者，这本书也许可以给你一些关于谋杀情节的灵感和参考原型</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312131813050.jpg"></p>
+<h2 id="算法图解"><a href="#算法图解" class="headerlink" title="算法图解"></a>算法图解</h2><p>著：[美]Aditya Bhargava</p>
+<p>绝对有趣易理解的科普&#x2F;入门书，将算法与实际问题结合（贯彻了”算法就是为了解决问题“），有明确的导向目标而非灌汤，轻松自然</p>
+<p>当然只有这本书绝对不够学算法，但本书谈及的拓展内容，可以当作进一步学习的参考目录</p>
+<p>如果我早点知道这本书该多好！</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312131818414.jpg"></p>
+<h2 id="What-if-2"><a href="#What-if-2" class="headerlink" title="What if? 2"></a>What if? 2</h2><p>著：[美]兰道尔·门罗</p>
+<p>之前看过同作者之前的两本（What if? 和 How To?），可以说这些都是很适合杀时间同时又异想天开大开的科普读物</p>
+<p>我觉得这个也可以给小孩看，培养他们的科学兴趣，至于我这种无聊又笨的人看个乐就够了XD</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312201717459.jpg"></p>
+]]></content>
+      <categories>
+        <category>评论</category>
+      </categories>
+      <tags>
+        <tag>评论</tag>
+        <tag>书籍</tag>
+        <tag>简评</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>不靠谱的女性主义及其相关流派小简述（文字版）</title>
     <url>/tattle/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E7%9A%84%E5%A5%B3%E6%80%A7%E4%B8%BB%E4%B9%89%E5%8F%8A%E5%85%B6%E7%9B%B8%E5%85%B3%E6%B5%81%E6%B4%BE%E5%B0%8F%E7%AE%80%E8%BF%B0%EF%BC%88%E6%96%87%E5%AD%97%E7%89%88%EF%BC%89.html</url>
     <content><![CDATA[<h2 id="观前提醒"><a href="#观前提醒" class="headerlink" title="观前提醒"></a>观前提醒</h2><a class="btn-beautify outline pink larger" href="/gallery/draw/Feminism" 
@@ -920,22 +967,31 @@
       </tags>
   </entry>
   <entry>
-    <title>这是本站点的第一个页面</title>
-    <url>/selfTalking/firstPage.html</url>
-    <content><![CDATA[<p>之前曾经试着搞过……</p>
-<p>首先是用的第三方图床崩了</p>
-<p>接着工程自己也崩了（始终没找到是哪里崩的）</p>
-<p>正好要做毕设，没时间整这玩意</p>
-<p>这下毕设做完了，干脆重新整一个吧（</p>
-<p>于是你就见到了这个新站点……</p>
-<p>框架：hexo、主题：butterfly、现在以及今后可能都会出现各种魔改（</p>
+    <title>简评《童年的消逝》</title>
+    <url>/evaluate/books/%E7%AE%80%E8%AF%84%E3%80%8A%E7%AB%A5%E5%B9%B4%E7%9A%84%E6%B6%88%E9%80%9D%E3%80%8B.html</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>同样是摘自豆瓣，摸鱼真爽xxx。<a href="https://book.douban.com/subject/26319794/">童年的消逝 (豆瓣) (douban.com)</a></p>
+</blockquote>
+<p>《童年的消逝》初版于1982年，是尼尔·波兹曼的代表作之一。</p>
+<p>“童年”是一个被发明出来的概念，印刷术普及之前，儿童与成人之间靠口语传播，彼此分享基本相同的文化世界，所以人类并没有“童年”；印刷术普及之后，文字成为主导，成人掌握着文字和知识的世界，儿童与成人之 间出现了一道文化鸿沟，“童年”诞生了。</p>
+<p>电视时代，一切信息都能够在成人和儿童之间共享，成人和儿童之间的界限逐渐模糊，儿童几乎都被迫提早进入充满冲突、战争、性爱、暴力的成人世界，“童年”逐渐消逝。</p>
+<p>波兹曼同时指出，在成人和儿童共同成为电视观众的文化里，政治、商业、教育等最终蜕变成幼稚和肤浅的弱智文化，人类的文化精神逐渐枯萎。</p>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>《童年的消逝》是“儿童”这一（社会性）概念的简史，同时它也和《娱乐至死》一样，是对现代媒体传播的批判。</p>
+<p>中世纪时的知识被教会这类少数人垄断，普通人作为文盲只拥有语言的听说能力，所有人都共享着同样的、以图像视觉和听觉为主的、具象的、只存在于瞬间的内容载体，因此当时的“儿童”和“成人”的思想和学识并没有什么不同，“儿童”在那里不过是“缩小的成人”，没什么特别的。</p>
+<p>印刷术的发明，使曾经的垄断被打破，知识变得唾手可得，个人及其表达的地位得到空前提升。当人们开始尊重理性、尊重逻辑、尊重知识、尊重人类时，就会开始重视文字读写。文字是一种抽象的内容载体，学习它的过程也是一种思维导向变化的过程，因此儿童概念开始被重视，因为他们若想获得知识，需要先学习读写文字。人们同时在这一过程中发现了儿童与成人的更多区别，并开始在各个方面保护儿童。</p>
+<p>但电视的发明又使“儿童”这一概念开起了历史倒车，因为电视是一种以图像为导向的媒体，看电视几乎不需要抽象的逻辑能力，只需在瞬时和市场导向的噱头中狂欢。儿童变得越来越“成熟”，而成人也变得越来越像巨婴。</p>
+<hr>
+<p>就我个人而言我是不太喜欢电视&#x2F;收音机这类媒介，首先是上述的原因，其次几乎所有用户在使用它们时都是被动地接收信息。</p>
+<p>在作者写作此书时，计算机技术才刚起步，想使用电脑必须拥有编程能力，而作者确实有高瞻远见，预料到电脑可能在未来（我们的现在）也变得图像导向起来。根据纯粹的个人经验也能感受到，现在的小孩更是“猖狂”。</p>
+<p>但我不认为电脑，或者说移动互联网会比电视更差（从应用逻辑抽象能力获取知识的角度看），理由很简单：在网络上每个人都可以是参与者，不仅照样可以发布自己的想法，而且能传播得更广，而web2.0时代更是变成了全民参与，所以网络中包含着大量文字内容或深度内容可供低成本查阅。虽然过于短平快的弊端也随之显现，而且网络空间中的人们是否能真实的表露自我尚且存疑（用《景观社会》的名词来说，里面应该存在着大量的混合式景观）。但如果对这一状态不满，破圈的过程确实比电视时代简单多了（只是你首先需要预料到自己可能是温水里的青蛙）</p>
 ]]></content>
       <categories>
-        <category>日常</category>
+        <category>评论</category>
       </categories>
       <tags>
-        <tag>碎碎念</tag>
-        <tag>本站</tag>
+        <tag>评论</tag>
+        <tag>书籍</tag>
+        <tag>简评</tag>
       </tags>
   </entry>
   <entry>
@@ -1007,62 +1063,6 @@
       </tags>
   </entry>
   <entry>
-    <title>木木最近在读什么？(1)</title>
-    <url>/evaluate/books/%E6%9C%A8%E6%9C%A8%E6%9C%80%E8%BF%91%E5%9C%A8%E8%AF%BB%E4%BB%80%E4%B9%88%EF%BC%9F(1).html</url>
-    <content><![CDATA[<p><del>其实主要是因为我发现自己才疏学浅没那个能力也懒得去b一大堆读后感，那就报菜名吧</del></p>
-<p>本系列为汇总式贴子，每篇文章最多包含10本书并作出<del>极</del>简单感想，不定期更新</p>
-<h2 id="致命元素-毒药的历史"><a href="#致命元素-毒药的历史" class="headerlink" title="致命元素 毒药的历史"></a>致命元素 毒药的历史</h2><p>著：[英]约翰 · 埃姆斯利</p>
-<p>一本科普书，介绍了例如汞、铅、铊之类的有毒元素的特性以及与之相关的投毒案&#x2F;卫生事件</p>
-<p>如果你是一个想写点故事的作者，这本书也许可以给你一些关于谋杀情节的灵感和参考原型</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312131813050.jpg"></p>
-<h2 id="算法图解"><a href="#算法图解" class="headerlink" title="算法图解"></a>算法图解</h2><p>著：[美]Aditya Bhargava</p>
-<p>绝对有趣易理解的科普&#x2F;入门书，将算法与实际问题结合（贯彻了”算法就是为了解决问题“），有明确的导向目标而非灌汤，轻松自然</p>
-<p>当然只有这本书绝对不够学算法，但本书谈及的拓展内容，可以当作进一步学习的参考目录</p>
-<p>如果我早点知道这本书该多好！</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312131818414.jpg"></p>
-<h2 id="What-if-2"><a href="#What-if-2" class="headerlink" title="What if? 2"></a>What if? 2</h2><p>著：[美]兰道尔·门罗</p>
-<p>之前看过同作者之前的两本（What if? 和 How To?），可以说这些都是很适合杀时间同时又异想天开大开的科普读物</p>
-<p>我觉得这个也可以给小孩看，培养他们的科学兴趣，至于我这种无聊又笨的人看个乐就够了XD</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312201717459.jpg"></p>
-]]></content>
-      <categories>
-        <category>评论</category>
-      </categories>
-      <tags>
-        <tag>评论</tag>
-        <tag>书籍</tag>
-        <tag>简评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>简评《童年的消逝》</title>
-    <url>/evaluate/books/%E7%AE%80%E8%AF%84%E3%80%8A%E7%AB%A5%E5%B9%B4%E7%9A%84%E6%B6%88%E9%80%9D%E3%80%8B.html</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
-<p>同样是摘自豆瓣，摸鱼真爽xxx。<a href="https://book.douban.com/subject/26319794/">童年的消逝 (豆瓣) (douban.com)</a></p>
-</blockquote>
-<p>《童年的消逝》初版于1982年，是尼尔·波兹曼的代表作之一。</p>
-<p>“童年”是一个被发明出来的概念，印刷术普及之前，儿童与成人之间靠口语传播，彼此分享基本相同的文化世界，所以人类并没有“童年”；印刷术普及之后，文字成为主导，成人掌握着文字和知识的世界，儿童与成人之 间出现了一道文化鸿沟，“童年”诞生了。</p>
-<p>电视时代，一切信息都能够在成人和儿童之间共享，成人和儿童之间的界限逐渐模糊，儿童几乎都被迫提早进入充满冲突、战争、性爱、暴力的成人世界，“童年”逐渐消逝。</p>
-<p>波兹曼同时指出，在成人和儿童共同成为电视观众的文化里，政治、商业、教育等最终蜕变成幼稚和肤浅的弱智文化，人类的文化精神逐渐枯萎。</p>
-<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>《童年的消逝》是“儿童”这一（社会性）概念的简史，同时它也和《娱乐至死》一样，是对现代媒体传播的批判。</p>
-<p>中世纪时的知识被教会这类少数人垄断，普通人作为文盲只拥有语言的听说能力，所有人都共享着同样的、以图像视觉和听觉为主的、具象的、只存在于瞬间的内容载体，因此当时的“儿童”和“成人”的思想和学识并没有什么不同，“儿童”在那里不过是“缩小的成人”，没什么特别的。</p>
-<p>印刷术的发明，使曾经的垄断被打破，知识变得唾手可得，个人及其表达的地位得到空前提升。当人们开始尊重理性、尊重逻辑、尊重知识、尊重人类时，就会开始重视文字读写。文字是一种抽象的内容载体，学习它的过程也是一种思维导向变化的过程，因此儿童概念开始被重视，因为他们若想获得知识，需要先学习读写文字。人们同时在这一过程中发现了儿童与成人的更多区别，并开始在各个方面保护儿童。</p>
-<p>但电视的发明又使“儿童”这一概念开起了历史倒车，因为电视是一种以图像为导向的媒体，看电视几乎不需要抽象的逻辑能力，只需在瞬时和市场导向的噱头中狂欢。儿童变得越来越“成熟”，而成人也变得越来越像巨婴。</p>
-<hr>
-<p>就我个人而言我是不太喜欢电视&#x2F;收音机这类媒介，首先是上述的原因，其次几乎所有用户在使用它们时都是被动地接收信息。</p>
-<p>在作者写作此书时，计算机技术才刚起步，想使用电脑必须拥有编程能力，而作者确实有高瞻远见，预料到电脑可能在未来（我们的现在）也变得图像导向起来。根据纯粹的个人经验也能感受到，现在的小孩更是“猖狂”。</p>
-<p>但我不认为电脑，或者说移动互联网会比电视更差（从应用逻辑抽象能力获取知识的角度看），理由很简单：在网络上每个人都可以是参与者，不仅照样可以发布自己的想法，而且能传播得更广，而web2.0时代更是变成了全民参与，所以网络中包含着大量文字内容或深度内容可供低成本查阅。虽然过于短平快的弊端也随之显现，而且网络空间中的人们是否能真实的表露自我尚且存疑（用《景观社会》的名词来说，里面应该存在着大量的混合式景观）。但如果对这一状态不满，破圈的过程确实比电视时代简单多了（只是你首先需要预料到自己可能是温水里的青蛙）</p>
-]]></content>
-      <categories>
-        <category>评论</category>
-      </categories>
-      <tags>
-        <tag>评论</tag>
-        <tag>书籍</tag>
-        <tag>简评</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>医院预约挂号统一平台练习</title>
     <url>/web/practice/%E5%8C%BB%E9%99%A2%E9%A2%84%E7%BA%A6%E6%8C%82%E5%8F%B7%E7%BB%9F%E4%B8%80%E5%B9%B3%E5%8F%B0%E7%BB%83%E4%B9%A0.html</url>
     <content><![CDATA[<p>一个练习，使用了Vue全家桶、TypeScript、Element+三件套</p>
@@ -1113,6 +1113,38 @@
       </tags>
   </entry>
   <entry>
+    <title>可视化音频背景</title>
+    <url>/web/site/%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9F%B3%E9%A2%91%E8%83%8C%E6%99%AF.html</url>
+    <content><![CDATA[<p>书又接上文，感觉逼格不够大，所以鼓捣了个音频可视化</p>
+<h2 id="Web-Audio-API"><a href="#Web-Audio-API" class="headerlink" title="Web Audio API"></a>Web Audio API</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API">Web Audio API</a>可以获取音频的包括频率、波形的信息，能用于选频、加特效、做可视化、添加空间效果等，就像是音频版的canvas</p>
+<p>MDN网站已经给出<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API">音频可视化案例</a>了，我只需魔改一下就行了</p>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>在MDN的案例基础上加了点自己的个性化需求</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> debounce <span class="keyword">from</span> <span class="string">&quot;../Tools/debounce.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (canvas, audio) =&gt; &#123;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">// 快速傅立叶变换（Fast Fourier Transform），一定要是2的倍数，默认为2048</span></span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">FFT</span> = <span class="number">512</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 实例化AudioContext音频上下文对象</span></span><br><span class="line">  <span class="keyword">const</span> audioCtx = <span class="keyword">new</span> (<span class="variable language_">window</span>.<span class="property">AudioContext</span> || <span class="variable language_">window</span>.<span class="property">webkitAudioContext</span>)()</span><br><span class="line">  <span class="comment">// 创建AnalyserNode节点</span></span><br><span class="line">  <span class="keyword">const</span> analyser = audioCtx.<span class="title function_">createAnalyser</span>()</span><br><span class="line">  <span class="comment">// 让fft变小可以使每个频率条有一定宽度</span></span><br><span class="line">  analyser.<span class="property">fftSize</span> = <span class="variable constant_">FFT</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将AnalyserNode节点和声源连接</span></span><br><span class="line">  <span class="comment">// 从audio中获取声音源文件</span></span><br><span class="line">  <span class="keyword">const</span> audioSrc = audioCtx.<span class="title function_">createMediaElementSource</span>(audio)</span><br><span class="line">  audioSrc.<span class="title function_">connect</span>(analyser)</span><br><span class="line">  analyser.<span class="title function_">connect</span>(audioCtx.<span class="property">destination</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// AnalyserNode数据解析，获得瞬时音频数据</span></span><br><span class="line">  <span class="keyword">const</span> bufferLength = analyser.<span class="property">frequencyBinCount</span></span><br><span class="line">  <span class="keyword">const</span> dataArray = <span class="keyword">new</span> <span class="title class_">Uint8Array</span>(bufferLength)</span><br><span class="line">  analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// -------------------------------------</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 画布大小响应（因为要铺满整个背景）</span></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">canvasResize</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">    canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span></span><br><span class="line">    canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">canvasResize</span>()</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, <span class="title function_">debounce</span>(canvasResize,<span class="number">100</span>))</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (canvas.<span class="property">getContext</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 开画</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">draw</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="comment">// 动画帧</span></span><br><span class="line">      <span class="title function_">requestAnimationFrame</span>(draw)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 获取该帧的音频信息</span></span><br><span class="line">      analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 每一帧都要先清空画布，不然旧内容会保留</span></span><br><span class="line">      ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 设置条的宽高</span></span><br><span class="line">      <span class="keyword">const</span> barWidth = (canvas.<span class="property">width</span> / bufferLength)</span><br><span class="line">      <span class="keyword">let</span> barHeight</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 记录条当前位置</span></span><br><span class="line">      <span class="keyword">let</span> x = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 遍历每一条（每一个音频信息）</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; bufferLength; i++) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 给条高赋值</span></span><br><span class="line">        barHeight = ((dataArray[i] * <span class="number">3</span>) / (<span class="variable constant_">FFT</span>)) * canvas.<span class="property">height</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 给条上喜欢的颜色，因为我是人类所以使用hsl颜色</span></span><br><span class="line">        ctx.<span class="property">fillStyle</span> = <span class="string">`hsl(<span class="subst">$&#123;<span class="number">120</span> + (x / canvas.width) * <span class="number">120</span>&#125;</span>,<span class="subst">$&#123;<span class="number">10</span> + (barHeight / canvas.height) * <span class="number">90</span>&#125;</span>%,60%)`</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将条绘制到画布伤</span></span><br><span class="line">        ctx.<span class="title function_">fillRect</span>(x, canvas.<span class="property">height</span> - barHeight / <span class="number">2</span>, barWidth, barHeight)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 每个条之间留个间距</span></span><br><span class="line">        x += barWidth + <span class="number">3</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">draw</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后是笨办法之轮询等播放器初始化（</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> makeVisual <span class="keyword">from</span> <span class="string">&quot;./makeVisual.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;load&quot;</span>, <span class="function">()=&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> timer = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">fixedap</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> audio = <span class="variable language_">window</span>.<span class="property">fixedap</span>.<span class="property">audio</span></span><br><span class="line">      <span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;music-visualization&quot;</span>)</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 浏览器策略不准自动播放音频，总之音频解析行为必须放在用户确认之后</span></span><br><span class="line">      <span class="keyword">const</span> <span class="title function_">canplay</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">        <span class="title function_">makeVisual</span>(canvas,audio)</span><br><span class="line">        <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      <span class="built_in">clearInterval</span>(timer)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">500</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在Meting.js中的恰当位置加一句，否则不能跨域获取音频信息</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">aplayers.<span class="title function_">forEach</span>(<span class="function"><span class="params">ap</span>=&gt;</span> &#123;ap.<span class="property">audio</span>.<span class="property">crossOrigin</span>=<span class="string">&quot;anonymous&quot;</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>最后就是把canvas标签加进butterfly inject配置项</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="comment"># ......省略</span></span><br><span class="line">    <span class="string">&lt;canvas</span> <span class="string">id=&quot;music-visualization&quot;</span> <span class="string">style=&quot;position:fixed;z-index:-900&quot;&gt;&lt;/canvas&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>为了让可视化效果更好看，我顺便把原本页面上纯色的内容块改成了半透明，感觉还不错~</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202309071817861.png"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>本站</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>hexo</tag>
+        <tag>音乐</tag>
+        <tag>DIY</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>歌词滚动效果</title>
     <url>/web/practice/%E6%AD%8C%E8%AF%8D%E6%BB%9A%E5%8A%A8%E6%95%88%E6%9E%9C.html</url>
     <content><![CDATA[<p>这不是打算用于本站的东西（如果有需要，我会直接修改aplayer的样式），只是一个小练习</p>
@@ -1147,38 +1179,6 @@
       <tags>
         <tag>前端</tag>
         <tag>DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>可视化音频背景</title>
-    <url>/web/site/%E5%8F%AF%E8%A7%86%E5%8C%96%E9%9F%B3%E9%A2%91%E8%83%8C%E6%99%AF.html</url>
-    <content><![CDATA[<p>书又接上文，感觉逼格不够大，所以鼓捣了个音频可视化</p>
-<h2 id="Web-Audio-API"><a href="#Web-Audio-API" class="headerlink" title="Web Audio API"></a>Web Audio API</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API">Web Audio API</a>可以获取音频的包括频率、波形的信息，能用于选频、加特效、做可视化、添加空间效果等，就像是音频版的canvas</p>
-<p>MDN网站已经给出<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API">音频可视化案例</a>了，我只需魔改一下就行了</p>
-<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>在MDN的案例基础上加了点自己的个性化需求</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> debounce <span class="keyword">from</span> <span class="string">&quot;../Tools/debounce.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (canvas, audio) =&gt; &#123;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">// 快速傅立叶变换（Fast Fourier Transform），一定要是2的倍数，默认为2048</span></span><br><span class="line">  <span class="keyword">const</span> <span class="variable constant_">FFT</span> = <span class="number">512</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 实例化AudioContext音频上下文对象</span></span><br><span class="line">  <span class="keyword">const</span> audioCtx = <span class="keyword">new</span> (<span class="variable language_">window</span>.<span class="property">AudioContext</span> || <span class="variable language_">window</span>.<span class="property">webkitAudioContext</span>)()</span><br><span class="line">  <span class="comment">// 创建AnalyserNode节点</span></span><br><span class="line">  <span class="keyword">const</span> analyser = audioCtx.<span class="title function_">createAnalyser</span>()</span><br><span class="line">  <span class="comment">// 让fft变小可以使每个频率条有一定宽度</span></span><br><span class="line">  analyser.<span class="property">fftSize</span> = <span class="variable constant_">FFT</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将AnalyserNode节点和声源连接</span></span><br><span class="line">  <span class="comment">// 从audio中获取声音源文件</span></span><br><span class="line">  <span class="keyword">const</span> audioSrc = audioCtx.<span class="title function_">createMediaElementSource</span>(audio)</span><br><span class="line">  audioSrc.<span class="title function_">connect</span>(analyser)</span><br><span class="line">  analyser.<span class="title function_">connect</span>(audioCtx.<span class="property">destination</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// AnalyserNode数据解析，获得瞬时音频数据</span></span><br><span class="line">  <span class="keyword">const</span> bufferLength = analyser.<span class="property">frequencyBinCount</span></span><br><span class="line">  <span class="keyword">const</span> dataArray = <span class="keyword">new</span> <span class="title class_">Uint8Array</span>(bufferLength)</span><br><span class="line">  analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// -------------------------------------</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 画布大小响应（因为要铺满整个背景）</span></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">canvasResize</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">    canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span></span><br><span class="line">    canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">canvasResize</span>()</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, <span class="title function_">debounce</span>(canvasResize,<span class="number">100</span>))</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (canvas.<span class="property">getContext</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 开画</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">draw</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="comment">// 动画帧</span></span><br><span class="line">      <span class="title function_">requestAnimationFrame</span>(draw)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 获取该帧的音频信息</span></span><br><span class="line">      analyser.<span class="title function_">getByteFrequencyData</span>(dataArray)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 每一帧都要先清空画布，不然旧内容会保留</span></span><br><span class="line">      ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 设置条的宽高</span></span><br><span class="line">      <span class="keyword">const</span> barWidth = (canvas.<span class="property">width</span> / bufferLength)</span><br><span class="line">      <span class="keyword">let</span> barHeight</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 记录条当前位置</span></span><br><span class="line">      <span class="keyword">let</span> x = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 遍历每一条（每一个音频信息）</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; bufferLength; i++) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 给条高赋值</span></span><br><span class="line">        barHeight = ((dataArray[i] * <span class="number">3</span>) / (<span class="variable constant_">FFT</span>)) * canvas.<span class="property">height</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 给条上喜欢的颜色，因为我是人类所以使用hsl颜色</span></span><br><span class="line">        ctx.<span class="property">fillStyle</span> = <span class="string">`hsl(<span class="subst">$&#123;<span class="number">120</span> + (x / canvas.width) * <span class="number">120</span>&#125;</span>,<span class="subst">$&#123;<span class="number">10</span> + (barHeight / canvas.height) * <span class="number">90</span>&#125;</span>%,60%)`</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将条绘制到画布伤</span></span><br><span class="line">        ctx.<span class="title function_">fillRect</span>(x, canvas.<span class="property">height</span> - barHeight / <span class="number">2</span>, barWidth, barHeight)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 每个条之间留个间距</span></span><br><span class="line">        x += barWidth + <span class="number">3</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">draw</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后是笨办法之轮询等播放器初始化（</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> makeVisual <span class="keyword">from</span> <span class="string">&quot;./makeVisual.js&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;load&quot;</span>, <span class="function">()=&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> timer = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">fixedap</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> audio = <span class="variable language_">window</span>.<span class="property">fixedap</span>.<span class="property">audio</span></span><br><span class="line">      <span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;music-visualization&quot;</span>)</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 浏览器策略不准自动播放音频，总之音频解析行为必须放在用户确认之后</span></span><br><span class="line">      <span class="keyword">const</span> <span class="title function_">canplay</span> = (<span class="params"></span>)=&gt; &#123;</span><br><span class="line">        <span class="title function_">makeVisual</span>(canvas,audio)</span><br><span class="line">        <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, canplay)</span><br><span class="line">      <span class="built_in">clearInterval</span>(timer)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">500</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>在Meting.js中的恰当位置加一句，否则不能跨域获取音频信息</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">aplayers.<span class="title function_">forEach</span>(<span class="function"><span class="params">ap</span>=&gt;</span> &#123;ap.<span class="property">audio</span>.<span class="property">crossOrigin</span>=<span class="string">&quot;anonymous&quot;</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>最后就是把canvas标签加进butterfly inject配置项</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="comment"># ......省略</span></span><br><span class="line">    <span class="string">&lt;canvas</span> <span class="string">id=&quot;music-visualization&quot;</span> <span class="string">style=&quot;position:fixed;z-index:-900&quot;&gt;&lt;/canvas&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>为了让可视化效果更好看，我顺便把原本页面上纯色的内容块改成了半透明，感觉还不错~</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202309071817861.png"></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>本站</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>DIY</tag>
-        <tag>hexo</tag>
-        <tag>音乐</tag>
       </tags>
   </entry>
   <entry>
@@ -1245,9 +1245,9 @@
       </categories>
       <tags>
         <tag>前端</tag>
-        <tag>DIY</tag>
         <tag>hexo</tag>
         <tag>音乐</tag>
+        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -1353,8 +1353,8 @@
       </categories>
       <tags>
         <tag>前端</tag>
-        <tag>DIY</tag>
         <tag>hexo</tag>
+        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -1428,9 +1428,9 @@
       </categories>
       <tags>
         <tag>前端</tag>
-        <tag>DIY</tag>
         <tag>hexo</tag>
         <tag>音乐</tag>
+        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>

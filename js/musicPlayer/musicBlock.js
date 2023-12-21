@@ -7,7 +7,15 @@ import addCoverColor from "./addCoverColor.js"
 
 // 播放事件委托（
 window.addEventListener("click", async (event) => {
-  const target = event.target
+  let target = event.target
+
+  while (target) {
+    if (target.classList?.contains("music-play-btn")) break
+    target = target.parentNode
+  }
+
+  if (!target) return
+
   const tagName = target.tagName
 
   const dataset = target.dataset
@@ -18,65 +26,66 @@ window.addEventListener("click", async (event) => {
   }
 
   // 点击操作按钮
-  if (tagName.toUpperCase() == "BUTTON" && target.classList.contains("music-play-btn")) {
-   
-    // 获得音乐列表
-    const res = await getMusicList({
-      server: dataset.server,
-      type: dataset.type,
-      id: dataset.id,
-    })
 
-    const ap = window.fixedap
+  // 获得音乐列表
+  const res = await getMusicList({
+    server: dataset.server,
+    type: dataset.type,
+    id: dataset.id,
+  })
 
-    if (ap) {
-      if (target.classList.contains("play-album")) {
-        if(dataset.order === 'list' || dataset.order === 'random') {
-          ap.options.order = dataset.order
-        } 
-        // debugger
-        // 清空并添加
-        ap.list.clear()
-        ap.list.add(res)
-        ap.setMode("normal")
-        ap.play()
-        useSnackbar("让你见识见识我珍藏已久的好曲子（〃｀ 3′〃）")
+  const ap = window.fixedap
 
-      } else if (target.classList.contains("add-album")) {
-        // 目前的播放列表
-        const nowList = ap.list.audios
-        // 去重
-        const res2 = res.filter(r => {
-          return !nowList.some(n => {
-            return n.url === r.url
-          })
-        })
-
-        // 全是重复
-        if (res2.length === 0) {
-          useSnackbar("添加过的就不要再加啦w(ﾟДﾟ)w")
-          return
-        }
-
-        // 添加
-        ap.list.add(res2)
-        ap.setMode("normal")
-
-        // 滚动音乐列表
-        const apDOM = ap.options.container
-        const apolDOM = apDOM.querySelector("ol")
-        const scrollHeight = apolDOM.scrollHeight
-        apolDOM.scrollTo({ top: scrollHeight, behavior: "smooth" })
-
-        useSnackbar("加到播放列表里啦，慢慢听ᕕ( ᐛ )ᕗ")
+  if (ap) {
+    if (target.classList.contains("play-album")) {
+      if (dataset.order === 'list' || dataset.order === 'random') {
+        ap.options.order = dataset.order
       }
-    } else {
-      return
-    }
-  }
+      // debugger
+      // 清空并添加
+      ap.list.clear()
+      ap.list.add(res)
+      ap.setMode("normal")
+      ap.play()
+      useSnackbar("让你见识见识我珍藏已久的好曲子（〃｀ 3′〃）")
 
-  // 点击标题
-  else if (target.classList.contains("music-to-site")) {
+    } else if (target.classList.contains("add-album")) {
+      // 目前的播放列表
+      const nowList = ap.list.audios
+      // 去重
+      const res2 = res.filter(r => {
+        return !nowList.some(n => {
+          return n.url === r.url
+        })
+      })
+
+      // 全是重复
+      if (res2.length === 0) {
+        useSnackbar("添加过的就不要再加啦w(ﾟДﾟ)w")
+        return
+      }
+
+      // 添加
+      ap.list.add(res2)
+      ap.setMode("normal")
+
+      // 滚动音乐列表
+      const apDOM = ap.options.container
+      const apolDOM = apDOM.querySelector("ol")
+      const scrollHeight = apolDOM.scrollHeight
+      apolDOM.scrollTo({ top: scrollHeight, behavior: "smooth" })
+
+      useSnackbar("加到播放列表里啦，慢慢听ᕕ( ᐛ )ᕗ")
+    }
+  } else {
+    return
+  }
+}, true)
+
+// 前往平台事件委托
+window.addEventListener("click", async (event) => {
+
+  if (event.target.classList.contains("music-to-site")) {
     let href
 
     switch (dataset.server) {
