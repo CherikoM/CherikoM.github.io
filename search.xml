@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>这是本站点的第一个页面</title>
-    <url>/selfTalking/firstPage.html</url>
-    <content><![CDATA[<p>之前曾经试着搞过……</p>
-<p>首先是用的第三方图床崩了</p>
-<p>接着工程自己也崩了</p>
-<p>正好要做毕设，没时间整这玩意</p>
-<p>这下毕设做完了，也早就忘记是哪里崩的了，干脆重新整一个吧（</p>
-<p>于是你就见到了这个新站点……</p>
-<p>框架：hexo、主题：butterfly、现在以及今后可能都会出现各种魔改（</p>
-<p><del>话说以前的post都被我丢掉了呢……虽然也没什么好看的（笑）</del></p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>碎碎念</tag>
-        <tag>本站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>不靠谱的女性主义及其相关流派小简述（文字版）</title>
     <url>/tattle/%E4%B8%8D%E9%9D%A0%E8%B0%B1%E7%9A%84%E5%A5%B3%E6%80%A7%E4%B8%BB%E4%B9%89%E5%8F%8A%E5%85%B6%E7%9B%B8%E5%85%B3%E6%B5%81%E6%B4%BE%E5%B0%8F%E7%AE%80%E8%BF%B0%EF%BC%88%E6%96%87%E5%AD%97%E7%89%88%EF%BC%89.html</url>
     <content><![CDATA[<h2 id="观前提醒"><a href="#观前提醒" class="headerlink" title="观前提醒"></a>观前提醒</h2><a class="btn-beautify outline pink larger" href="/gallery/draw/Feminism" 
@@ -260,6 +240,179 @@
       </tags>
   </entry>
   <entry>
+    <title>这是本站点的第一个页面</title>
+    <url>/selfTalking/firstPage.html</url>
+    <content><![CDATA[<p>之前曾经试着搞过……</p>
+<p>首先是用的第三方图床崩了</p>
+<p>接着工程自己也崩了</p>
+<p>正好要做毕设，没时间整这玩意</p>
+<p>这下毕设做完了，也早就忘记是哪里崩的了，干脆重新整一个吧（</p>
+<p>于是你就见到了这个新站点……</p>
+<p>框架：hexo、主题：butterfly、现在以及今后可能都会出现各种魔改（</p>
+<p><del>话说以前的post都被我丢掉了呢……虽然也没什么好看的（笑）</del></p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>碎碎念</tag>
+        <tag>本站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>星之卡比系列入坑小指南</title>
+    <url>/introduce/Kirby/%E6%98%9F%E4%B9%8B%E5%8D%A1%E6%AF%94%E7%B3%BB%E5%88%97%E5%85%A5%E5%9D%91%E5%B0%8F%E6%8C%87%E5%8D%97.html</url>
+    <content><![CDATA[<p>站主是个星之卡比系列的粉丝，虽然只是个小年轻，但也已经至少粉了15年:D，可惜站主不会画画.jpg，也没有什么其他技能，对这个系列的粉丝圈贡献有限</p>
+<p>但我还是要在星之卡比系列32周年这天做点杂谈，也算是做点贡献啦;D，以后应该也会做更多系列杂谈的<del>，前提是我不被鸽子附体XD</del></p>
+<p>顺便一提，站主主要是游戏粉丝，不怎么了解其他衍生作品XD，所以这篇博客主要就是讲入坑游戏的，不过这系列本身就是以游戏为主的嘛</p>
+<h2 id="星之卡比是啥呀？"><a href="#星之卡比是啥呀？" class="headerlink" title="星之卡比是啥呀？"></a>星之卡比是啥呀？</h2><p>星之卡比系列（JP: 星のカービィ &#x2F; EN: Kirby）是由<del>狗蛋</del>HAL研究所开发，<del>世界主宰</del>任天堂发行的动作游戏系列，也算是个人气系列了哈，在任天堂IP里应该属于二线之上，一线未满的级别</p>
+<p>1992年发售首部作品并一炮走红，在当时以难度为美的游戏界里靠着简单取得了惊人的成功，于是这个IP一直发展到今天，除了游戏外还有动画、漫画、轻小说等一系列衍生作品</p>
+<h2 id="星之卡比有啥呀？"><a href="#星之卡比有啥呀？" class="headerlink" title="星之卡比有啥呀？"></a>星之卡比有啥呀？</h2><p>现任系列总监将星之卡比系列的特点总结为“平易近人且深邃”，还是蛮有道理的</p>
+<h3 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h3><p>目前星之卡比系列有着四位主角</p>
+<ul>
+<li>卡比<ul>
+<li>本系列的绝对主角，年轻的旅行者，天真、友好、随遇而安、喜欢各种简单的快乐</li>
+<li>能够吸入物体或敌人，以便吐出攻击或获得能力，也有飞行、滑垒、游泳等各种动作，系列的玩法基础</li>
+<li>在大多数作品里，他都需要为了保卫家园或帮助伙伴而与敌人战斗</li>
+</ul>
+</li>
+<li>帝帝帝大王<ul>
+<li>卡比的劲敌一号，自我中心、贪婪<del>、傲娇</del>，但却意外的聪明，关键时刻很靠得住</li>
+<li>霸了个山头自称大王，有一座城堡和一群手下</li>
+<li>擅长使用锤子，实力不凡<del>但永远比不过卡比</del>，不知怎的经常被附身</li>
+</ul>
+</li>
+<li>魅塔骑士<ul>
+<li>卡比的劲敌二号，神秘、严于律己，但其实意外的情绪化，冲动、易怒</li>
+<li>有一架飞船，主导着一个骑士团和一群手下</li>
+<li>擅长使用剑术，实力不凡<del>但也永远比不过卡比</del>，很怕被别人看到素颜</li>
+</ul>
+</li>
+<li>头巾瓦豆鲁迪<ul>
+<li>卡比的朋友兼帝帝帝大王的手下，善良、勇敢、刻苦，是大家的偶像<del>为了拯救波普之星……</del></li>
+<li>擅长使用枪和伞，瓦豆鲁迪中最能打的那个<del>但还是永远比不过卡比</del></li>
+</ul>
+</li>
+</ul>
+<p>还有各种各样个性鲜明的可爱配角等您发现</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308131854407.jpg"></p>
+<h3 id="玩法"><a href="#玩法" class="headerlink" title="玩法"></a>玩法</h3><p>星之卡比系列有着13款主系列游戏（还有3款复刻）和数款番外</p>
+<p>主系列是任系平台跳跃动作游戏，玩家需要操纵主角卡比，熟练运用吸入和各种复制能力闯关，而番外则有着五花八门的玩法，只是通常保留了卡比的基本设定</p>
+<p>当然一个游戏IP的重点肯定还是主系列，作为任系平台跳跃游戏，星之卡比系列自然具备着平台动作、收集、解谜等要素，同时这个系列的绝大多数游戏都是关卡制</p>
+<p>那么在任系游戏一抓一大把的情况下，星之卡比系列的差异化是啥呢？在我看来差不多就是吸纳了一点格斗游戏的要素，也就是能搓招（虽然是非常简化的搓招机制）</p>
+<p>星之卡比系列的难度确实这总体难度低于市面上的绝大多数同类型游戏，而且卡比非常的萌萌哒，所以小朋友和女生更可能喜欢它，但这个系列不仅赚了蓝海的钱，实际上星卡厨宅男也真的不少，谁不喜欢萌萌哒呢</p>
+<p>当然系列的难度设置也是经典从易到难渐进式的，老实说一些二周目挑战还是有点难度的</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202404171635045.webp"></p>
+<h3 id="世界观"><a href="#世界观" class="headerlink" title="世界观"></a>世界观</h3><p>星之卡比系列的表面世界观和剧情大概就是一片祥和，卡比打败了坏人拯救了世界，算是王道童话风格</p>
+<p>但实际上还是有很多可以挖掘的点的，总之就是有一个还蛮庞大的世界观，一个武德充沛的宇宙，冥冥之中很多事物都有着某种不为人知的联系，只不过从来就不给你说明白了到底是啥，谜语人</p>
+<p>有一些剧情也算比较扎心的，可能有人会说”不就是合家欢大团圆藏点阴暗要素吗？“，其实3ds两作星之卡比的隐藏剧情确实就是悲剧（如果以某个关键角色的视角看），我感觉还挺扎心的</p>
+<p>只是这些世界观和剧情不会在游戏里明着介绍给你，你需要体验二周目内容，读游戏内（你可能通关了都不一定注意得到）的说明文本，有一些也会在官方访谈或社媒中透露</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308071925277.png"></p>
+<h3 id="艺术风格"><a href="#艺术风格" class="headerlink" title="艺术风格"></a>艺术风格</h3><p>画面高饱和且多彩，轻松、可爱、梦幻；角色通常都是球或二球身的小东西；配乐通常轻快、洗脑，都挺可爱的，至少我个人喜欢</p>
+<p>虽然有些场景和BOSS确实有点儿童鞋垫，但可以很明显地感受到，制作组已经很努力地把这些东西做得尽量符合星卡风格了（）</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308081616364.png"></p>
+<h2 id="哪些人适合入坑星之卡比呀？"><a href="#哪些人适合入坑星之卡比呀？" class="headerlink" title="哪些人适合入坑星之卡比呀？"></a>哪些人适合入坑星之卡比呀？</h2><p>星之卡比系列游戏分级通常是CERO A&#x2F;ESRB E，有部分作品是ESRB E10+，当然几乎所有人都可以玩</p>
+<p>不过任何游戏都有人喜欢、有人不喜欢，所以站主来总结一下适合&#x2F;不适合玩星之卡比系列的人群:D</p>
+<h3 id="不妨来试试？"><a href="#不妨来试试？" class="headerlink" title="不妨来试试？"></a>不妨来试试？</h3><ul>
+<li>想要入坑平台跳跃游戏的伙计，尤其是没有动作游戏经验的那种<ul>
+<li>这类人我是强烈推荐他们试一试的，因为星之卡比系列的游戏难度要比马力欧系列还低一些</li>
+<li><del>除了抖M外</del>没有人喜欢屡屡碰壁，即使你毫无经验，玩星之卡比还是能玩得下去的</li>
+<li>你可以将星之卡比系列当作一个启程，玩的没那么菜后就可以尝试其他平台跳跃游戏啦</li>
+</ul>
+</li>
+<li>想要玩点什么放松的伙计<ul>
+<li>因为可爱而且足够简单，所以玩着不累，适合苦逼打工人业余时间调理</li>
+<li>只要你不扒拉隐藏要素或不玩二周目，那这玩意就是挺治愈的</li>
+</ul>
+</li>
+<li>想要撩妹或带孩子的伙计<ul>
+<li>可爱的角色和花花绿绿的画面更容易吸引小朋友和多数女孩（防杠，多数不是全部） </li>
+<li>因为难度亲民，也可以更容易让他们愿意玩，没准也可以成为他们入坑更多游戏的契机</li>
+<li>如果你已经有家庭了也可以全家一起玩，有些作品是支持多人游玩的</li>
+</ul>
+</li>
+<li>无聊想要琢磨点东西的<ul>
+<li>来当星学家吧，你会发现你死抠细节引经据典的琢磨也不知道发生了啥（</li>
+</ul>
+</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308081814271.jpg"></p>
+<h3 id="请三思！"><a href="#请三思！" class="headerlink" title="请三思！"></a>请三思！</h3><ul>
+<li><p>追求技术流高难挑战的伙计</p>
+<ul>
+<li><p>虽然星之卡比系列游戏通常会给你一些有点挑战性的二周目内容，但老实说这些内容也并不是特别难</p>
+</li>
+<li><p>当然你可以靠自定规则增加挑战难度，不过其实你玩任何游戏都可以这样做</p>
+</li>
+</ul>
+</li>
+<li><p>完全接受不了线性流程的伙计</p>
+<ul>
+<li>星之卡比系列绝大部分游戏都是线性流程关卡制的，当然你也不是不能试试几个非线性的作品或番外</li>
+</ul>
+</li>
+<li><p>对萌物过敏的伙计</p>
+<ul>
+<li>其实我觉得如果你无法接受星之卡比风格的话，你大概率也接受不了其他很多任系游戏的风格</li>
+</ul>
+</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308081543004.jpg"></p>
+<h2 id="该怎么开始入坑星之卡比呀？"><a href="#该怎么开始入坑星之卡比呀？" class="headerlink" title="该怎么开始入坑星之卡比呀？"></a>该怎么开始入坑星之卡比呀？</h2><p>有的伙计可能已经蠢蠢欲动了，迫不及待想要尝试一下，所以站主来给你点入坑建议</p>
+<h3 id="适合的入坑作"><a href="#适合的入坑作" class="headerlink" title="适合的入坑作"></a>适合的入坑作</h3><p>篇幅所限，站主不会在这里挨个介绍星之卡比各作的玩点和槽点，可能以后会专门出一或两篇新博客来讲它</p>
+<p>但是适合入坑的作品肯定是最能代表这个系列特点的作品，站主我作为老粉就来推几个</p>
+<ul>
+<li>星之卡比Wii &#x2F; 星之卡比Wii豪华版<ul>
+<li>绝对的现代2D卡比代表</li>
+<li>难度设置适中，一周目后期和二周目稍微有一点点棘手</li>
+<li>如果你是剧情党，这一作对星卡宇宙的形成起到了非常重要的作用</li>
+<li>最多支持本地四人，可以顺便当个派对游戏玩</li>
+<li>如果有条件最好玩豪华版，想全清（玩过所有模式）的话，内容还是不少的</li>
+</ul>
+</li>
+<li>星之卡比 探索发现<ul>
+<li>绝对的3D卡比代表，也是目前销量最好的卡比</li>
+<li>作为系列的第一部正统3D作品，表现出的效果却接近成熟</li>
+<li>全清流程稍微有点短，难度非常亲民，但关卡设计足够有趣</li>
+<li>支持本地双人游玩，但双人体验不是特别好</li>
+</ul>
+</li>
+<li>星之卡比 梦之泉物语 &#x2F; 星之卡比 梦之泉豪华版<ul>
+<li>老作品但也是绝对代表性的2D卡比，喜欢情怀感的人可以先玩这个</li>
+<li>玩原版还是和豪华版按个人风格喜好二选一，因为除了画面、手感和部分关卡外，大部分都是一样的</li>
+</ul>
+</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308081601772.jpg"></p>
+<h3 id="游戏心态"><a href="#游戏心态" class="headerlink" title="游戏心态"></a>游戏心态</h3><p>作为经典任系平台跳跃，玩星之卡比系列时的游戏心态也和玩其他很多任系游戏一样，需要你抱有一颗童心，多好奇、多探索、多感受</p>
+<p>此外，虽然你可以靠直觉轻松愉快的通关，但如果你想入坑而不仅仅是体验，站主给出的建议是多看游戏内的说明，说明分为两种：操作说明和背景说明</p>
+<p>卡比的特点就是复制能力，而操作说明会告诉你复制能力的出招表，帮你玩得更熟练</p>
+<p>星卡宇宙暗藏玄机，而背景说明会给你提供这个故事的各种线索，帮你更进一步挖掘真相</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308071925273.png"></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>星之卡比是一个以游戏为主的IP，所以游戏世界观才是正式的，动画、轻小说、漫画这些，如无特殊情况，都是平行世界，请不要把世界观混淆咯</li>
+<li>游戏作品中，标题有”星之卡比“四个字的就是主系列作品，不过你实际上手玩一些应该也能分辨得出来</li>
+<li>如果你的手头拮据，买不到年代久远的正版游戏，你可以选择玩Switch的会免；如果你还没有Switch，也可以玩模拟器，提倡支持正版的同时，也建议你量力而行</li>
+<li>国内很多卡比周边商品都是山寨货，买不买见仁见智，但如果你特别想为正版货贡献信仰，可以在官网查阅周边清单，根据工厂、大小、价格判断想买的是不是正版货</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308081616344.png"></p>
+<h3 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h3><ul>
+<li><a href="https://www.kirby.jp/">官网</a></li>
+<li><a href="https://twitter.com/Kirby_JP">官推</a></li>
+<li><a href="https://wikirby.com/wiki/Kirby_Wiki">wiki</a></li>
+<li><a href="https://wiki.biligame.com/kirby/%E9%A6%96%E9%A1%B5">中文wiki</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>介绍</category>
+      </categories>
+      <tags>
+        <tag>介绍</tag>
+        <tag>安利</tag>
+        <tag>星之卡比</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>简评《格调》</title>
     <url>/introduce/books/%E3%80%8A%E6%A0%BC%E8%B0%83%E3%80%8B.html</url>
     <content><![CDATA[<h2 id="梗概"><a href="#梗概" class="headerlink" title="梗概"></a>梗概</h2><p>副标题：社会等级与生活品味</p>
@@ -292,6 +445,90 @@
 <p>阶级问题一定是一个大问题，但本书深入浅出：用讲现象的方式含沙射影。作者通过统计观察，使用贴标签的形式制造群体画像，让你在阅读过程中，时不时感觉”膝盖中了一箭“，时不时又让你想”清算“一下身边的人，代入感很强。原来，这本书描述的几十年前的美国现象，在如今的拆那也能找到极其相似的版本。</p>
 <p>它作为一个描述现象的书，可能并没有非常多的深入讨论（因为这样分析每一个现象会导致篇幅非常多？），但这些现象都很有意思，可以把它们作为切入点，进行后续的思考。</p>
 <p>需要注意的是，tag是较为静态的，实际情况可能会因时间的推移而改变，这些tag只能概括作者写作时期的社会状况，不一定能全盘对应现在的美国或拆那。同时群体的tag不能决断性地等同于个人，人和人的差距比群体和群体的差距大。但即使部分现象归纳出现过时，只要阶级仍然存在，就仍然可以借鉴本书的内容主旨。</p>
+]]></content>
+      <categories>
+        <category>评论</category>
+      </categories>
+      <tags>
+        <tag>评论</tag>
+        <tag>书籍</tag>
+        <tag>简评</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简评《消费社会》</title>
+    <url>/introduce/books/%E3%80%8A%E6%B6%88%E8%B4%B9%E7%A4%BE%E4%BC%9A%E3%80%8B.html</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>摘自豆瓣，因为我懒得自己写了XD。<a href="https://book.douban.com/subject/25900948/">消费社会 (豆瓣) (douban.com)</a></p>
+</blockquote>
+<p>《消费社会》是鲍德里亚早期的代表性著作，对国际哲学、社会学以及新兴的文化研究领域产生了广泛而深远的影响，被公认为该主题的重要经典之一，在马克思主义理论、社会学、政治学、文艺学以及相关领域，该书亦是最流行的教学参考书。</p>
+<p>在这本书中，鲍德里亚将政治经济学批判理论、符号学理论、精神分析理论等整合在一起，形成了消费社会批判理论。鲍德里亚指出：与过去将消费看作经济活动中的一环不同，在消费社会中，消费是一种主动的结构，商品的符号价值推动着人们在消费中对自身、对社会的想象性认同，确证了现代社会的合法性。要透视这一社会，就需要从政治经济学批判走向符号政治经济学批判。</p>
+<p>鲍德里亚关于消费社会的分析，不仅构成了他思想发展中的重要环节，对于我们理解当代西方以及我国现阶段的社会、文化，也具有重要的借鉴意义。</p>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>《消费社会》受到《景观社会》和情境主义的影响，而我在之前看过盖 · 德波的《景观社会》（虽然挺晦涩难懂的我这种菜鸡真的读不懂），所以这稍微给我降低了一点阅读这本书的门槛（然而也没降多少）。</p>
+<p>鲍德里亚承接了《物体系》（虽然我没看过）中对客体系统的分析，开始对眼花缭乱的商品之丰盛，以及陷于其中的人进行分析。</p>
+<p>他认为现在的资本主义社会是一种“消费社会”，在之中，人和物都失去了本身而被“符号化”了，购买物品变成了消费符号。这些符号有着它自己的运作逻辑，成为一种语言表达着消费社会：它可以彰显社会地位、区分不同的群体（其实这让我想起了<a href="/introduce/books/%E7%AE%80%E8%AF%84%E3%80%8A%E6%A0%BC%E8%B0%83%E3%80%8B">这个</a>）。</p>
+<p>消费社会中的人们，渴望着使用符号标榜自己，于是不停地为自己贴上符号，就像是为了装逼买了一部8848钛金手机。而且，商品符号之间具有着一种紧密的关系网，这促使人们不断地给自己贴上新的符号：购买与8848适配的谜之hi-fi耳机、土豪金手机壳等，最后甚至是8848钛金电脑。这一切都是“自愿”的，只是在这个过程中，人们已经失去了差异性。</p>
+<p>以消费而非生产为主导的消费社会中，大众传媒、性和休闲无孔不入，孜孜不倦地向人们扩散、渗透着符号，篡改、隐藏着现实。在广告、时尚、“性解放”、商业艺术甚至身体中，符号无处不在。</p>
+<p>这本书给了我很多启发，而且因为它的措辞相对易懂，所以也反过来帮助我能复盘一遍《消费社会》的思想。</p>
+]]></content>
+      <categories>
+        <category>评论</category>
+      </categories>
+      <tags>
+        <tag>评论</tag>
+        <tag>书籍</tag>
+        <tag>简评</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简评《童年的消逝》</title>
+    <url>/introduce/books/%E3%80%8A%E7%AB%A5%E5%B9%B4%E7%9A%84%E6%B6%88%E9%80%9D%E3%80%8B.html</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>同样是摘自豆瓣，摸鱼真爽xxx。<a href="https://book.douban.com/subject/26319794/">童年的消逝 (豆瓣) (douban.com)</a></p>
+</blockquote>
+<p>《童年的消逝》初版于1982年，是尼尔·波兹曼的代表作之一。</p>
+<p>“童年”是一个被发明出来的概念，印刷术普及之前，儿童与成人之间靠口语传播，彼此分享基本相同的文化世界，所以人类并没有“童年”；印刷术普及之后，文字成为主导，成人掌握着文字和知识的世界，儿童与成人之 间出现了一道文化鸿沟，“童年”诞生了。</p>
+<p>电视时代，一切信息都能够在成人和儿童之间共享，成人和儿童之间的界限逐渐模糊，儿童几乎都被迫提早进入充满冲突、战争、性爱、暴力的成人世界，“童年”逐渐消逝。</p>
+<p>波兹曼同时指出，在成人和儿童共同成为电视观众的文化里，政治、商业、教育等最终蜕变成幼稚和肤浅的弱智文化，人类的文化精神逐渐枯萎。</p>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>《童年的消逝》是“儿童”这一（社会性）概念的简史，同时它也和《娱乐至死》一样，是对现代媒体传播的批判。</p>
+<p>中世纪时的知识被教会这类少数人垄断，普通人作为文盲只拥有语言的听说能力，所有人都共享着同样的、以图像视觉和听觉为主的、具象的、只存在于瞬间的内容载体，因此当时的“儿童”和“成人”的思想和学识并没有什么不同，“儿童”在那里不过是“缩小的成人”，没什么特别的。</p>
+<p>印刷术的发明，使曾经的垄断被打破，知识变得唾手可得，个人及其表达的地位得到空前提升。当人们开始尊重理性、尊重逻辑、尊重知识、尊重人类时，就会开始重视文字读写。文字是一种抽象的内容载体，学习它的过程也是一种思维导向变化的过程，因此儿童概念开始被重视，因为他们若想获得知识，需要先学习读写文字。人们同时在这一过程中发现了儿童与成人的更多区别，并开始在各个方面保护儿童。</p>
+<p>但电视的发明又使“儿童”这一概念开起了历史倒车，因为电视是一种以图像为导向的媒体，看电视几乎不需要抽象的逻辑能力，只需在瞬时和市场导向的噱头中狂欢。儿童变得越来越“成熟”，而成人也变得越来越像巨婴。</p>
+<hr>
+<p>就我个人而言我是不太喜欢电视&#x2F;收音机这类媒介，首先是上述的原因，其次几乎所有用户在使用它们时都是被动地接收信息。</p>
+<p>在作者写作此书时，计算机技术才刚起步，想使用电脑必须拥有编程能力，而作者确实有高瞻远见，预料到电脑可能在未来（我们的现在）也变得图像导向起来。根据纯粹的个人经验也能感受到，现在的小孩更是“猖狂”。</p>
+<p>但我不认为电脑，或者说移动互联网会比电视更差（从应用逻辑抽象能力获取知识的角度看），理由很简单：在网络上每个人都可以是参与者，不仅照样可以发布自己的想法，而且能传播得更广，而web2.0时代更是变成了全民参与，所以网络中包含着大量文字内容或深度内容可供低成本查阅。虽然过于短平快的弊端也随之显现，而且网络空间中的人们是否能真实的表露自我尚且存疑（用《景观社会》的名词来说，里面应该存在着大量的混合式景观）。但如果对这一状态不满，破圈的过程确实比电视时代简单多了（只是你首先需要预料到自己可能是温水里的青蛙）</p>
+]]></content>
+      <categories>
+        <category>评论</category>
+      </categories>
+      <tags>
+        <tag>评论</tag>
+        <tag>书籍</tag>
+        <tag>简评</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>木木最近在读什么？(1)</title>
+    <url>/introduce/books/%E6%9C%A8%E6%9C%A8%E6%9C%80%E8%BF%91%E5%9C%A8%E8%AF%BB%E4%BB%80%E4%B9%88%EF%BC%9F(1).html</url>
+    <content><![CDATA[<div class="note warning modern"><p>此系列暂停更新</p>
+</div>
+
+<p><del>其实主要是因为我发现自己才疏学浅没那个能力也懒得去b一大堆读后感，那就报菜名吧</del></p>
+<p>本系列为汇总式贴子，每篇文章最多包含10本书并作出<del>极</del>简单感想，不定期更新</p>
+<h2 id="致命元素-毒药的历史"><a href="#致命元素-毒药的历史" class="headerlink" title="致命元素 毒药的历史"></a>致命元素 毒药的历史</h2><p>著：[英]约翰 · 埃姆斯利</p>
+<p>一本科普书，介绍了例如汞、铅、铊之类的有毒元素的特性以及与之相关的投毒案&#x2F;卫生事件</p>
+<p>如果你是一个想写点故事的作者，这本书也许可以给你一些关于谋杀情节的灵感和参考原型</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312131813050.jpg"></p>
+<h2 id="算法图解"><a href="#算法图解" class="headerlink" title="算法图解"></a>算法图解</h2><p>著：[美]Aditya Bhargava</p>
+<p>绝对有趣易理解的科普&#x2F;入门书，将算法与实际问题结合（贯彻了”算法就是为了解决问题“），有明确的导向目标而非灌汤，轻松自然</p>
+<p>当然只有这本书绝对不够学算法，但本书谈及的拓展内容，可以当作进一步学习的参考目录</p>
+<p>如果我早点知道这本书该多好！</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312131818414.jpg"></p>
+<h2 id="What-if-2"><a href="#What-if-2" class="headerlink" title="What if? 2"></a>What if? 2</h2><p>著：[美]兰道尔·门罗</p>
+<p>之前看过同作者之前的两本（What if? 和 How To?），可以说这些都是很适合杀时间同时又异想天开大开的科普读物</p>
+<p>我觉得这个也可以给小孩看，培养他们的科学兴趣，至于我这种无聊又笨的人看个乐就够了XD</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312201717459.jpg"></p>
 ]]></content>
       <categories>
         <category>评论</category>
@@ -983,243 +1220,6 @@
       </tags>
   </entry>
   <entry>
-    <title>星之卡比系列入坑小指南</title>
-    <url>/introduce/Kirby/%E6%98%9F%E4%B9%8B%E5%8D%A1%E6%AF%94%E7%B3%BB%E5%88%97%E5%85%A5%E5%9D%91%E5%B0%8F%E6%8C%87%E5%8D%97.html</url>
-    <content><![CDATA[<p>站主是个星之卡比系列的粉丝，虽然只是个小年轻，但也已经至少粉了15年:D，可惜站主不会画画.jpg，也没有什么其他技能，对这个系列的粉丝圈贡献有限</p>
-<p>但我还是要在星之卡比系列32周年这天做点杂谈，也算是做点贡献啦;D，以后应该也会做更多系列杂谈的<del>，前提是我不被鸽子附体XD</del></p>
-<p>顺便一提，站主主要是游戏粉丝，不怎么了解其他衍生作品XD，所以这篇博客主要就是讲入坑游戏的，不过这系列本身就是以游戏为主的嘛</p>
-<h2 id="星之卡比是啥呀？"><a href="#星之卡比是啥呀？" class="headerlink" title="星之卡比是啥呀？"></a>星之卡比是啥呀？</h2><p>星之卡比系列（JP: 星のカービィ &#x2F; EN: Kirby）是由<del>狗蛋</del>HAL研究所开发，<del>世界主宰</del>任天堂发行的动作游戏系列，也算是个人气系列了哈，在任天堂IP里应该属于二线之上，一线未满的级别</p>
-<p>1992年发售首部作品并一炮走红，在当时以难度为美的游戏界里靠着简单取得了惊人的成功，于是这个IP一直发展到今天，除了游戏外还有动画、漫画、轻小说等一系列衍生作品</p>
-<h2 id="星之卡比有啥呀？"><a href="#星之卡比有啥呀？" class="headerlink" title="星之卡比有啥呀？"></a>星之卡比有啥呀？</h2><p>现任系列总监将星之卡比系列的特点总结为“平易近人且深邃”，还是蛮有道理的</p>
-<h3 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h3><p>目前星之卡比系列有着四位主角</p>
-<ul>
-<li>卡比<ul>
-<li>本系列的绝对主角，年轻的旅行者，天真、友好、随遇而安、喜欢各种简单的快乐</li>
-<li>能够吸入物体或敌人，以便吐出攻击或获得能力，也有飞行、滑垒、游泳等各种动作，系列的玩法基础</li>
-<li>在大多数作品里，他都需要为了保卫家园或帮助伙伴而与敌人战斗</li>
-</ul>
-</li>
-<li>帝帝帝大王<ul>
-<li>卡比的劲敌一号，自我中心、贪婪<del>、傲娇</del>，但却意外的聪明，关键时刻很靠得住</li>
-<li>霸了个山头自称大王，有一座城堡和一群手下</li>
-<li>擅长使用锤子，实力不凡<del>但永远比不过卡比</del>，不知怎的经常被附身</li>
-</ul>
-</li>
-<li>魅塔骑士<ul>
-<li>卡比的劲敌二号，神秘、严于律己，但其实意外的情绪化，冲动、易怒</li>
-<li>有一架飞船，主导着一个骑士团和一群手下</li>
-<li>擅长使用剑术，实力不凡<del>但也永远比不过卡比</del>，很怕被别人看到素颜</li>
-</ul>
-</li>
-<li>头巾瓦豆鲁迪<ul>
-<li>卡比的朋友兼帝帝帝大王的手下，善良、勇敢、刻苦，是大家的偶像<del>为了拯救波普之星……</del></li>
-<li>擅长使用枪和伞，瓦豆鲁迪中最能打的那个<del>但还是永远比不过卡比</del></li>
-</ul>
-</li>
-</ul>
-<p>还有各种各样个性鲜明的可爱配角等您发现</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308131854407.jpg"></p>
-<h3 id="玩法"><a href="#玩法" class="headerlink" title="玩法"></a>玩法</h3><p>星之卡比系列有着13款主系列游戏（还有3款复刻）和数款番外</p>
-<p>主系列是任系平台跳跃动作游戏，玩家需要操纵主角卡比，熟练运用吸入和各种复制能力闯关，而番外则有着五花八门的玩法，只是通常保留了卡比的基本设定</p>
-<p>当然一个游戏IP的重点肯定还是主系列，作为任系平台跳跃游戏，星之卡比系列自然具备着平台动作、收集、解谜等要素，同时这个系列的绝大多数游戏都是关卡制</p>
-<p>那么在任系游戏一抓一大把的情况下，星之卡比系列的差异化是啥呢？在我看来差不多就是吸纳了一点格斗游戏的要素，也就是能搓招（虽然是非常简化的搓招机制）</p>
-<p>星之卡比系列的难度确实这总体难度低于市面上的绝大多数同类型游戏，而且卡比非常的萌萌哒，所以小朋友和女生更可能喜欢它，但这个系列不仅赚了蓝海的钱，实际上星卡厨宅男也真的不少，谁不喜欢萌萌哒呢</p>
-<p>当然系列的难度设置也是经典从易到难渐进式的，老实说一些二周目挑战还是有点难度的</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202404171635045.webp"></p>
-<h3 id="世界观"><a href="#世界观" class="headerlink" title="世界观"></a>世界观</h3><p>星之卡比系列的表面世界观和剧情大概就是一片祥和，卡比打败了坏人拯救了世界，算是王道童话风格</p>
-<p>但实际上还是有很多可以挖掘的点的，总之就是有一个还蛮庞大的世界观，一个武德充沛的宇宙，冥冥之中很多事物都有着某种不为人知的联系，只不过从来就不给你说明白了到底是啥，谜语人</p>
-<p>有一些剧情也算比较扎心的，可能有人会说”不就是合家欢大团圆藏点阴暗要素吗？“，其实3ds两作星之卡比的隐藏剧情确实就是悲剧（如果以某个关键角色的视角看），我感觉还挺扎心的</p>
-<p>只是这些世界观和剧情不会在游戏里明着介绍给你，你需要体验二周目内容，读游戏内（你可能通关了都不一定注意得到）的说明文本，有一些也会在官方访谈或社媒中透露</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308071925277.png"></p>
-<h3 id="艺术风格"><a href="#艺术风格" class="headerlink" title="艺术风格"></a>艺术风格</h3><p>画面高饱和且多彩，轻松、可爱、梦幻；角色通常都是球或二球身的小东西；配乐通常轻快、洗脑，都挺可爱的，至少我个人喜欢</p>
-<p>虽然有些场景和BOSS确实有点儿童鞋垫，但可以很明显地感受到，制作组已经很努力地把这些东西做得尽量符合星卡风格了（）</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308081616364.png"></p>
-<h2 id="哪些人适合入坑星之卡比呀？"><a href="#哪些人适合入坑星之卡比呀？" class="headerlink" title="哪些人适合入坑星之卡比呀？"></a>哪些人适合入坑星之卡比呀？</h2><p>星之卡比系列游戏分级通常是CERO A&#x2F;ESRB E，有部分作品是ESRB E10+，当然几乎所有人都可以玩</p>
-<p>不过任何游戏都有人喜欢、有人不喜欢，所以站主来总结一下适合&#x2F;不适合玩星之卡比系列的人群:D</p>
-<h3 id="不妨来试试？"><a href="#不妨来试试？" class="headerlink" title="不妨来试试？"></a>不妨来试试？</h3><ul>
-<li>想要入坑平台跳跃游戏的伙计，尤其是没有动作游戏经验的那种<ul>
-<li>这类人我是强烈推荐他们试一试的，因为星之卡比系列的游戏难度要比马力欧系列还低一些</li>
-<li><del>除了抖M外</del>没有人喜欢屡屡碰壁，即使你毫无经验，玩星之卡比还是能玩得下去的</li>
-<li>你可以将星之卡比系列当作一个启程，玩的没那么菜后就可以尝试其他平台跳跃游戏啦</li>
-</ul>
-</li>
-<li>想要玩点什么放松的伙计<ul>
-<li>因为可爱而且足够简单，所以玩着不累，适合苦逼打工人业余时间调理</li>
-<li>只要你不扒拉隐藏要素或不玩二周目，那这玩意就是挺治愈的</li>
-</ul>
-</li>
-<li>想要撩妹或带孩子的伙计<ul>
-<li>可爱的角色和花花绿绿的画面更容易吸引小朋友和多数女孩（防杠，多数不是全部） </li>
-<li>因为难度亲民，也可以更容易让他们愿意玩，没准也可以成为他们入坑更多游戏的契机</li>
-<li>如果你已经有家庭了也可以全家一起玩，有些作品是支持多人游玩的</li>
-</ul>
-</li>
-<li>无聊想要琢磨点东西的<ul>
-<li>来当星学家吧，你会发现你死抠细节引经据典的琢磨也不知道发生了啥（</li>
-</ul>
-</li>
-</ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308081814271.jpg"></p>
-<h3 id="请三思！"><a href="#请三思！" class="headerlink" title="请三思！"></a>请三思！</h3><ul>
-<li><p>追求技术流高难挑战的伙计</p>
-<ul>
-<li><p>虽然星之卡比系列游戏通常会给你一些有点挑战性的二周目内容，但老实说这些内容也并不是特别难</p>
-</li>
-<li><p>当然你可以靠自定规则增加挑战难度，不过其实你玩任何游戏都可以这样做</p>
-</li>
-</ul>
-</li>
-<li><p>完全接受不了线性流程的伙计</p>
-<ul>
-<li>星之卡比系列绝大部分游戏都是线性流程关卡制的，当然你也不是不能试试几个非线性的作品或番外</li>
-</ul>
-</li>
-<li><p>对萌物过敏的伙计</p>
-<ul>
-<li>其实我觉得如果你无法接受星之卡比风格的话，你大概率也接受不了其他很多任系游戏的风格</li>
-</ul>
-</li>
-</ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308081543004.jpg"></p>
-<h2 id="该怎么开始入坑星之卡比呀？"><a href="#该怎么开始入坑星之卡比呀？" class="headerlink" title="该怎么开始入坑星之卡比呀？"></a>该怎么开始入坑星之卡比呀？</h2><p>有的伙计可能已经蠢蠢欲动了，迫不及待想要尝试一下，所以站主来给你点入坑建议</p>
-<h3 id="适合的入坑作"><a href="#适合的入坑作" class="headerlink" title="适合的入坑作"></a>适合的入坑作</h3><p>篇幅所限，站主不会在这里挨个介绍星之卡比各作的玩点和槽点，可能以后会专门出一或两篇新博客来讲它</p>
-<p>但是适合入坑的作品肯定是最能代表这个系列特点的作品，站主我作为老粉就来推几个</p>
-<ul>
-<li>星之卡比Wii &#x2F; 星之卡比Wii豪华版<ul>
-<li>绝对的现代2D卡比代表</li>
-<li>难度设置适中，一周目后期和二周目稍微有一点点棘手</li>
-<li>如果你是剧情党，这一作对星卡宇宙的形成起到了非常重要的作用</li>
-<li>最多支持本地四人，可以顺便当个派对游戏玩</li>
-<li>如果有条件最好玩豪华版，想全清（玩过所有模式）的话，内容还是不少的</li>
-</ul>
-</li>
-<li>星之卡比 探索发现<ul>
-<li>绝对的3D卡比代表，也是目前销量最好的卡比</li>
-<li>作为系列的第一部正统3D作品，表现出的效果却接近成熟</li>
-<li>全清流程稍微有点短，难度非常亲民，但关卡设计足够有趣</li>
-<li>支持本地双人游玩，但双人体验不是特别好</li>
-</ul>
-</li>
-<li>星之卡比 梦之泉物语 &#x2F; 星之卡比 梦之泉豪华版<ul>
-<li>老作品但也是绝对代表性的2D卡比，喜欢情怀感的人可以先玩这个</li>
-<li>玩原版还是和豪华版按个人风格喜好二选一，因为除了画面、手感和部分关卡外，大部分都是一样的</li>
-</ul>
-</li>
-</ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308081601772.jpg"></p>
-<h3 id="游戏心态"><a href="#游戏心态" class="headerlink" title="游戏心态"></a>游戏心态</h3><p>作为经典任系平台跳跃，玩星之卡比系列时的游戏心态也和玩其他很多任系游戏一样，需要你抱有一颗童心，多好奇、多探索、多感受</p>
-<p>此外，虽然你可以靠直觉轻松愉快的通关，但如果你想入坑而不仅仅是体验，站主给出的建议是多看游戏内的说明，说明分为两种：操作说明和背景说明</p>
-<p>卡比的特点就是复制能力，而操作说明会告诉你复制能力的出招表，帮你玩得更熟练</p>
-<p>星卡宇宙暗藏玄机，而背景说明会给你提供这个故事的各种线索，帮你更进一步挖掘真相</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308071925273.png"></p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>星之卡比是一个以游戏为主的IP，所以游戏世界观才是正式的，动画、轻小说、漫画这些，如无特殊情况，都是平行世界，请不要把世界观混淆咯</li>
-<li>游戏作品中，标题有”星之卡比“四个字的就是主系列作品，不过你实际上手玩一些应该也能分辨得出来</li>
-<li>如果你的手头拮据，买不到年代久远的正版游戏，你可以选择玩Switch的会免；如果你还没有Switch，也可以玩模拟器，提倡支持正版的同时，也建议你量力而行</li>
-<li>国内很多卡比周边商品都是山寨货，买不买见仁见智，但如果你特别想为正版货贡献信仰，可以在官网查阅周边清单，根据工厂、大小、价格判断想买的是不是正版货</li>
-</ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202308081616344.png"></p>
-<h3 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h3><ul>
-<li><a href="https://www.kirby.jp/">官网</a></li>
-<li><a href="https://twitter.com/Kirby_JP">官推</a></li>
-<li><a href="https://wikirby.com/wiki/Kirby_Wiki">wiki</a></li>
-<li><a href="https://wiki.biligame.com/kirby/%E9%A6%96%E9%A1%B5">中文wiki</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>介绍</category>
-      </categories>
-      <tags>
-        <tag>介绍</tag>
-        <tag>安利</tag>
-        <tag>星之卡比</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>简评《消费社会》</title>
-    <url>/introduce/books/%E3%80%8A%E6%B6%88%E8%B4%B9%E7%A4%BE%E4%BC%9A%E3%80%8B.html</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
-<p>摘自豆瓣，因为我懒得自己写了XD。<a href="https://book.douban.com/subject/25900948/">消费社会 (豆瓣) (douban.com)</a></p>
-</blockquote>
-<p>《消费社会》是鲍德里亚早期的代表性著作，对国际哲学、社会学以及新兴的文化研究领域产生了广泛而深远的影响，被公认为该主题的重要经典之一，在马克思主义理论、社会学、政治学、文艺学以及相关领域，该书亦是最流行的教学参考书。</p>
-<p>在这本书中，鲍德里亚将政治经济学批判理论、符号学理论、精神分析理论等整合在一起，形成了消费社会批判理论。鲍德里亚指出：与过去将消费看作经济活动中的一环不同，在消费社会中，消费是一种主动的结构，商品的符号价值推动着人们在消费中对自身、对社会的想象性认同，确证了现代社会的合法性。要透视这一社会，就需要从政治经济学批判走向符号政治经济学批判。</p>
-<p>鲍德里亚关于消费社会的分析，不仅构成了他思想发展中的重要环节，对于我们理解当代西方以及我国现阶段的社会、文化，也具有重要的借鉴意义。</p>
-<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>《消费社会》受到《景观社会》和情境主义的影响，而我在之前看过盖 · 德波的《景观社会》（虽然挺晦涩难懂的我这种菜鸡真的读不懂），所以这稍微给我降低了一点阅读这本书的门槛（然而也没降多少）。</p>
-<p>鲍德里亚承接了《物体系》（虽然我没看过）中对客体系统的分析，开始对眼花缭乱的商品之丰盛，以及陷于其中的人进行分析。</p>
-<p>他认为现在的资本主义社会是一种“消费社会”，在之中，人和物都失去了本身而被“符号化”了，购买物品变成了消费符号。这些符号有着它自己的运作逻辑，成为一种语言表达着消费社会：它可以彰显社会地位、区分不同的群体（其实这让我想起了<a href="/introduce/books/%E7%AE%80%E8%AF%84%E3%80%8A%E6%A0%BC%E8%B0%83%E3%80%8B">这个</a>）。</p>
-<p>消费社会中的人们，渴望着使用符号标榜自己，于是不停地为自己贴上符号，就像是为了装逼买了一部8848钛金手机。而且，商品符号之间具有着一种紧密的关系网，这促使人们不断地给自己贴上新的符号：购买与8848适配的谜之hi-fi耳机、土豪金手机壳等，最后甚至是8848钛金电脑。这一切都是“自愿”的，只是在这个过程中，人们已经失去了差异性。</p>
-<p>以消费而非生产为主导的消费社会中，大众传媒、性和休闲无孔不入，孜孜不倦地向人们扩散、渗透着符号，篡改、隐藏着现实。在广告、时尚、“性解放”、商业艺术甚至身体中，符号无处不在。</p>
-<p>这本书给了我很多启发，而且因为它的措辞相对易懂，所以也反过来帮助我能复盘一遍《消费社会》的思想。</p>
-]]></content>
-      <categories>
-        <category>评论</category>
-      </categories>
-      <tags>
-        <tag>评论</tag>
-        <tag>书籍</tag>
-        <tag>简评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>简评《童年的消逝》</title>
-    <url>/introduce/books/%E3%80%8A%E7%AB%A5%E5%B9%B4%E7%9A%84%E6%B6%88%E9%80%9D%E3%80%8B.html</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
-<p>同样是摘自豆瓣，摸鱼真爽xxx。<a href="https://book.douban.com/subject/26319794/">童年的消逝 (豆瓣) (douban.com)</a></p>
-</blockquote>
-<p>《童年的消逝》初版于1982年，是尼尔·波兹曼的代表作之一。</p>
-<p>“童年”是一个被发明出来的概念，印刷术普及之前，儿童与成人之间靠口语传播，彼此分享基本相同的文化世界，所以人类并没有“童年”；印刷术普及之后，文字成为主导，成人掌握着文字和知识的世界，儿童与成人之 间出现了一道文化鸿沟，“童年”诞生了。</p>
-<p>电视时代，一切信息都能够在成人和儿童之间共享，成人和儿童之间的界限逐渐模糊，儿童几乎都被迫提早进入充满冲突、战争、性爱、暴力的成人世界，“童年”逐渐消逝。</p>
-<p>波兹曼同时指出，在成人和儿童共同成为电视观众的文化里，政治、商业、教育等最终蜕变成幼稚和肤浅的弱智文化，人类的文化精神逐渐枯萎。</p>
-<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>《童年的消逝》是“儿童”这一（社会性）概念的简史，同时它也和《娱乐至死》一样，是对现代媒体传播的批判。</p>
-<p>中世纪时的知识被教会这类少数人垄断，普通人作为文盲只拥有语言的听说能力，所有人都共享着同样的、以图像视觉和听觉为主的、具象的、只存在于瞬间的内容载体，因此当时的“儿童”和“成人”的思想和学识并没有什么不同，“儿童”在那里不过是“缩小的成人”，没什么特别的。</p>
-<p>印刷术的发明，使曾经的垄断被打破，知识变得唾手可得，个人及其表达的地位得到空前提升。当人们开始尊重理性、尊重逻辑、尊重知识、尊重人类时，就会开始重视文字读写。文字是一种抽象的内容载体，学习它的过程也是一种思维导向变化的过程，因此儿童概念开始被重视，因为他们若想获得知识，需要先学习读写文字。人们同时在这一过程中发现了儿童与成人的更多区别，并开始在各个方面保护儿童。</p>
-<p>但电视的发明又使“儿童”这一概念开起了历史倒车，因为电视是一种以图像为导向的媒体，看电视几乎不需要抽象的逻辑能力，只需在瞬时和市场导向的噱头中狂欢。儿童变得越来越“成熟”，而成人也变得越来越像巨婴。</p>
-<hr>
-<p>就我个人而言我是不太喜欢电视&#x2F;收音机这类媒介，首先是上述的原因，其次几乎所有用户在使用它们时都是被动地接收信息。</p>
-<p>在作者写作此书时，计算机技术才刚起步，想使用电脑必须拥有编程能力，而作者确实有高瞻远见，预料到电脑可能在未来（我们的现在）也变得图像导向起来。根据纯粹的个人经验也能感受到，现在的小孩更是“猖狂”。</p>
-<p>但我不认为电脑，或者说移动互联网会比电视更差（从应用逻辑抽象能力获取知识的角度看），理由很简单：在网络上每个人都可以是参与者，不仅照样可以发布自己的想法，而且能传播得更广，而web2.0时代更是变成了全民参与，所以网络中包含着大量文字内容或深度内容可供低成本查阅。虽然过于短平快的弊端也随之显现，而且网络空间中的人们是否能真实的表露自我尚且存疑（用《景观社会》的名词来说，里面应该存在着大量的混合式景观）。但如果对这一状态不满，破圈的过程确实比电视时代简单多了（只是你首先需要预料到自己可能是温水里的青蛙）</p>
-]]></content>
-      <categories>
-        <category>评论</category>
-      </categories>
-      <tags>
-        <tag>评论</tag>
-        <tag>书籍</tag>
-        <tag>简评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>木木最近在读什么？(1)</title>
-    <url>/introduce/books/%E6%9C%A8%E6%9C%A8%E6%9C%80%E8%BF%91%E5%9C%A8%E8%AF%BB%E4%BB%80%E4%B9%88%EF%BC%9F(1).html</url>
-    <content><![CDATA[<div class="note warning modern"><p>此系列暂停更新</p>
-</div>
-
-<p><del>其实主要是因为我发现自己才疏学浅没那个能力也懒得去b一大堆读后感，那就报菜名吧</del></p>
-<p>本系列为汇总式贴子，每篇文章最多包含10本书并作出<del>极</del>简单感想，不定期更新</p>
-<h2 id="致命元素-毒药的历史"><a href="#致命元素-毒药的历史" class="headerlink" title="致命元素 毒药的历史"></a>致命元素 毒药的历史</h2><p>著：[英]约翰 · 埃姆斯利</p>
-<p>一本科普书，介绍了例如汞、铅、铊之类的有毒元素的特性以及与之相关的投毒案&#x2F;卫生事件</p>
-<p>如果你是一个想写点故事的作者，这本书也许可以给你一些关于谋杀情节的灵感和参考原型</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312131813050.jpg"></p>
-<h2 id="算法图解"><a href="#算法图解" class="headerlink" title="算法图解"></a>算法图解</h2><p>著：[美]Aditya Bhargava</p>
-<p>绝对有趣易理解的科普&#x2F;入门书，将算法与实际问题结合（贯彻了”算法就是为了解决问题“），有明确的导向目标而非灌汤，轻松自然</p>
-<p>当然只有这本书绝对不够学算法，但本书谈及的拓展内容，可以当作进一步学习的参考目录</p>
-<p>如果我早点知道这本书该多好！</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312131818414.jpg"></p>
-<h2 id="What-if-2"><a href="#What-if-2" class="headerlink" title="What if? 2"></a>What if? 2</h2><p>著：[美]兰道尔·门罗</p>
-<p>之前看过同作者之前的两本（What if? 和 How To?），可以说这些都是很适合杀时间同时又异想天开大开的科普读物</p>
-<p>我觉得这个也可以给小孩看，培养他们的科学兴趣，至于我这种无聊又笨的人看个乐就够了XD</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312201717459.jpg"></p>
-]]></content>
-      <categories>
-        <category>评论</category>
-      </categories>
-      <tags>
-        <tag>评论</tag>
-        <tag>书籍</tag>
-        <tag>简评</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>医院预约挂号统一平台练习</title>
     <url>/web/practice/%E5%8C%BB%E9%99%A2%E9%A2%84%E7%BA%A6%E6%8C%82%E5%8F%B7%E7%BB%9F%E4%B8%80%E5%B9%B3%E5%8F%B0%E7%BB%83%E4%B9%A0.html</url>
     <content><![CDATA[<p>一个练习，使用了Vue全家桶、TypeScript、Element+三件套</p>
@@ -1267,43 +1267,6 @@
         <tag>Vue</tag>
         <tag>TypeScript</tag>
         <tag>Element+</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歌词滚动效果</title>
-    <url>/web/practice/%E6%AD%8C%E8%AF%8D%E6%BB%9A%E5%8A%A8%E6%95%88%E6%9E%9C.html</url>
-    <content><![CDATA[<p>这不是打算用于本站的东西（如果有需要，我会直接修改aplayer的样式），只是一个小练习</p>
-<p>很简单的小练习，请各位大佬海涵</p>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>当音乐播放到某一特定位置时，歌词出现滚动高亮<a href="/extra/lyric/index.html" target="_blank">效果</a></p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312101845163.png"></p>
-<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100vw</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#222</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.player</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.player</span> <span class="selector-tag">audio</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50vw</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.lyric</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#888</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.lyric</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">0px</span>);</span><br><span class="line">  <span class="attribute">transition</span>: <span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.lyric</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">transition</span>: <span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.lyric</span> <span class="selector-tag">li</span><span class="selector-class">.active</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.25</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="结构与行为"><a href="#结构与行为" class="headerlink" title="结构与行为"></a>结构与行为</h2><p>测试数据：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="string">`[00:13.445]Digital affection</span></span><br><span class="line"><span class="string">[00:17.693]Mechanical perfection</span></span><br><span class="line"><span class="string">[00:20.688]I was made for you</span></span><br><span class="line"><span class="string">[00:26.691]Outer world dimension</span></span><br><span class="line"><span class="string">[00:30.185]Hardwired connection</span></span><br><span class="line"><span class="string">[00:38.124]We can have it all tonight</span></span><br><span class="line"><span class="string">[00:38.623]</span></span><br><span class="line"><span class="string">[00:39.122]Nothing matters when I&#x27;m with you baby</span></span><br><span class="line"><span class="string">[00:41.876]Plug me in like your electric lady</span></span><br><span class="line"><span class="string">[00:45.825]Nothing matters when I’m with you baby</span></span><br><span class="line"><span class="string">[00:47.833]Plug me in like your electric lady</span></span><br><span class="line"><span class="string">[01:01.324]Let me in like you electric baby</span></span><br><span class="line"><span class="string">[01:19.074]</span></span><br><span class="line"><span class="string">[01:19.331]Electric</span></span><br><span class="line"><span class="string">[01:23.825]Nothing matters when I&#x27;m with you baby</span></span><br><span class="line"><span class="string">[01:26.574]Let me in like you electric baby</span></span><br><span class="line"><span class="string">[01:29.581]</span></span><br><span class="line"><span class="string">[01:40.333]Let me in like you electric baby</span></span><br><span class="line"><span class="string">[01:55.833]</span></span><br><span class="line"><span class="string">[01:56.331]Your electric</span></span><br><span class="line"><span class="string">[02:02.577]Nothing matters when I&#x27;m with you baby</span></span><br><span class="line"><span class="string">[02:05.073]Let me in like you electric baby`</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>这是我从网易云音乐弄来的，这个平台的歌词就是这种格式，不知道这是不是通用的</p>
-</blockquote>
-<p>编码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./css/index.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;player&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">audio</span> <span class="attr">controls</span> <span class="attr">src</span>=<span class="string">&quot;./assets/Electric Lady (feat. XO ELIZA).flac&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;lyric&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> lrcStr <span class="keyword">from</span> <span class="string">&#x27;./js/data.js&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 元素</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title class_">DOMs</span> = &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">lyricContainer</span>: <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.lyric&#x27;</span>),</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">lyricUl</span>: <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;ul&#x27;</span>),</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">audio</span>: <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;audio&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 数据处理</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #region</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 解析歌词字符串，得到歌词对象数组</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; lrcStr 歌词字符串</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@return</span> &#123;<span class="type">[&#123;time: number, words: string</span>&#125;]&#125; 歌词时间，歌词内容</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">parseLrc</span> = (<span class="params">lrcStr</span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> lrcStr.<span class="title function_">split</span>(<span class="string">&#x27;\n&#x27;</span>).<span class="title function_">map</span>(<span class="function"><span class="params">l</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">let</span> [time, words] = l.<span class="title function_">split</span>(<span class="string">&#x27;]&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        time = <span class="title function_">parseTime</span>(time.<span class="title function_">substring</span>(<span class="number">1</span>))</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span> &#123; time, words &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 解析时间字符串，得到时间（毫秒）</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; timeStr 时间字符串</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125; 时间</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">parseTime</span> = (<span class="params">timeStr</span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> [minute, second] = timeStr.<span class="title function_">split</span>(<span class="string">&#x27;:&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> minute * <span class="number">60</span> + +second</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 计算当前应高亮显示的歌词</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@param</span> &#123;<span class="type">[&#123;time: number, words: string</span>&#125;]&#125; lyric</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125; 需高亮的歌词坐标，若无任何歌词需显示则返回-1</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">findIndex</span> = (<span class="params">lyric</span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> currentTime = <span class="title class_">DOMs</span>.<span class="property">audio</span>.<span class="property">currentTime</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; lyric.<span class="property">length</span>; i++) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (currentTime &lt; lyric[i].<span class="property">time</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="keyword">return</span> i - <span class="number">1</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> lyric.<span class="property">length</span> - <span class="number">1</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #endregion</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 页面展现</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #region</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 歌词信息数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> lyric = <span class="title function_">parseLrc</span>(lrcStr)</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 创建歌词元素</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">init</span> = (<span class="params"></span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> frag = <span class="variable language_">document</span>.<span class="title function_">createDocumentFragment</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      lyric.<span class="title function_">forEach</span>(<span class="function"><span class="params">l</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        li.<span class="property">textContent</span> = l.<span class="property">words</span></span></span><br><span class="line"><span class="language-javascript">        li.<span class="property">dataset</span>.<span class="property">time</span> = l.<span class="property">time</span></span></span><br><span class="line"><span class="language-javascript">        frag.<span class="title function_">appendChild</span>(li)</span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="title function_">appendChild</span>(frag)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">init</span>()</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #endregion</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 事件处理</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #region</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 歌词容器高度</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> containerHeight</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 所有歌词高度</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> lrcUlHeight</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 所有歌词上内边距</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> lrcUlPaddingT</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 所有歌词最大偏移量</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> maxUlOffset</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 每句歌词高度</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> lrcLiHeight</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 计算所需属性</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">computeData</span> = (<span class="params"></span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      containerHeight = <span class="title class_">DOMs</span>.<span class="property">lyricContainer</span>.<span class="property">clientHeight</span></span></span><br><span class="line"><span class="language-javascript">      lrcUlHeight = <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="property">clientHeight</span></span></span><br><span class="line"><span class="language-javascript">      lrcUlPaddingT = <span class="title class_">Number</span>(<span class="title function_">getComputedStyle</span>(<span class="title class_">DOMs</span>.<span class="property">lyricUl</span>)[<span class="string">&#x27;padding-top&#x27;</span>].<span class="title function_">split</span>(<span class="string">&#x27;p&#x27;</span>)[<span class="number">0</span>])</span></span><br><span class="line"><span class="language-javascript">      maxUlOffset = lrcUlHeight - containerHeight &lt; <span class="number">0</span> ? <span class="number">0</span> : lrcUlHeight - containerHeight</span></span><br><span class="line"><span class="language-javascript">      lrcLiHeight = <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="property">children</span>[<span class="number">0</span>].<span class="property">clientHeight</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 监听容器高度变化</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> observer = <span class="keyword">new</span> <span class="title class_">ResizeObserver</span>(computeData)</span></span><br><span class="line"><span class="language-javascript">    observer.<span class="title function_">observe</span>(<span class="title class_">DOMs</span>.<span class="property">lyricContainer</span>, &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">box</span>: <span class="string">&#x27;border-box&#x27;</span></span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 初始化数值</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">computeData</span>()</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 设置偏移量</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">setOffset</span> = (<span class="params"></span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 高亮歌词</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> index = <span class="title function_">findIndex</span>(lyric)</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 歌词所在高度</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> lrcHeight = lrcLiHeight * index + lrcLiHeight / <span class="number">2</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// ul偏移量</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">let</span> ulOffset = lrcUlPaddingT + lrcHeight - containerHeight / <span class="number">2</span></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 边界控制</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (ulOffset &lt; <span class="number">0</span>) ulOffset = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (ulOffset &gt; maxUlOffset) ulOffset = maxUlOffset</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 进行偏移</span></span></span><br><span class="line"><span class="language-javascript">      <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`translateY(-<span class="subst">$&#123;ulOffset&#125;</span>px)`</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 去除旧高亮</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> oldLi = <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.active&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (oldLi) oldLi.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 添加新高亮</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> newLi = <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="property">children</span>[index]</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (newLi) newLi.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 绑定播放时间改变事件</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">DOMs</span>.<span class="property">audio</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;timeupdate&#x27;</span>, setOffset)</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #endregion</span></span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>因为要确保高亮歌词显示在中心（除非它位于开头或结尾），所以需要监听歌词容器的高度，每当它发生变化时，需要重新计算这些与偏移量相关的数值</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/ResizeObserver">ResizeObserver</a>类似于<code>MutationObserver</code>，但它专门监听元素的几何尺寸，主流电脑端浏览器都已兼容</p>
-</blockquote>
-<h2 id="发散"><a href="#发散" class="headerlink" title="发散"></a>发散</h2><p>如果需要允许用户滚动歌词怎么办？</p>
-<p>那就把偏移量实现换成滚动条实现，应该是这样</p>
-<p>但用户在浏览所有歌词时，由于播放时间改变事件持续触发，很有可能出现内容动不动就滑走的情况</p>
-<p>所以我认为可能需要一个计时器控制flag，这个flag应该代表用户是否有在浏览歌词，正在浏览时则不允许播放时间改变事件滑动歌词</p>
-<p>用户滑动歌词就相当于正在浏览，若用户若干秒内没有再进行滑动，则相当于用户并未在浏览</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>练习</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -1357,6 +1320,43 @@
         <tag>Element+</tag>
         <tag>Java</tag>
         <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>歌词滚动效果</title>
+    <url>/web/practice/%E6%AD%8C%E8%AF%8D%E6%BB%9A%E5%8A%A8%E6%95%88%E6%9E%9C.html</url>
+    <content><![CDATA[<p>这不是打算用于本站的东西（如果有需要，我会直接修改aplayer的样式），只是一个小练习</p>
+<p>很简单的小练习，请各位大佬海涵</p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>当音乐播放到某一特定位置时，歌词出现滚动高亮<a href="/extra/lyric/index.html" target="_blank">效果</a></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://image.cheriko.fun/post/202312101845163.png"></p>
+<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100vw</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#222</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.player</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.player</span> <span class="selector-tag">audio</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50vw</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.lyric</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#888</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.lyric</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">0px</span>);</span><br><span class="line">  <span class="attribute">transition</span>: <span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.lyric</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">transition</span>: <span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.lyric</span> <span class="selector-tag">li</span><span class="selector-class">.active</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.25</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="结构与行为"><a href="#结构与行为" class="headerlink" title="结构与行为"></a>结构与行为</h2><p>测试数据：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="string">`[00:13.445]Digital affection</span></span><br><span class="line"><span class="string">[00:17.693]Mechanical perfection</span></span><br><span class="line"><span class="string">[00:20.688]I was made for you</span></span><br><span class="line"><span class="string">[00:26.691]Outer world dimension</span></span><br><span class="line"><span class="string">[00:30.185]Hardwired connection</span></span><br><span class="line"><span class="string">[00:38.124]We can have it all tonight</span></span><br><span class="line"><span class="string">[00:38.623]</span></span><br><span class="line"><span class="string">[00:39.122]Nothing matters when I&#x27;m with you baby</span></span><br><span class="line"><span class="string">[00:41.876]Plug me in like your electric lady</span></span><br><span class="line"><span class="string">[00:45.825]Nothing matters when I’m with you baby</span></span><br><span class="line"><span class="string">[00:47.833]Plug me in like your electric lady</span></span><br><span class="line"><span class="string">[01:01.324]Let me in like you electric baby</span></span><br><span class="line"><span class="string">[01:19.074]</span></span><br><span class="line"><span class="string">[01:19.331]Electric</span></span><br><span class="line"><span class="string">[01:23.825]Nothing matters when I&#x27;m with you baby</span></span><br><span class="line"><span class="string">[01:26.574]Let me in like you electric baby</span></span><br><span class="line"><span class="string">[01:29.581]</span></span><br><span class="line"><span class="string">[01:40.333]Let me in like you electric baby</span></span><br><span class="line"><span class="string">[01:55.833]</span></span><br><span class="line"><span class="string">[01:56.331]Your electric</span></span><br><span class="line"><span class="string">[02:02.577]Nothing matters when I&#x27;m with you baby</span></span><br><span class="line"><span class="string">[02:05.073]Let me in like you electric baby`</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这是我从网易云音乐弄来的，这个平台的歌词就是这种格式，不知道这是不是通用的</p>
+</blockquote>
+<p>编码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./css/index.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;player&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">audio</span> <span class="attr">controls</span> <span class="attr">src</span>=<span class="string">&quot;./assets/Electric Lady (feat. XO ELIZA).flac&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;lyric&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> lrcStr <span class="keyword">from</span> <span class="string">&#x27;./js/data.js&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 元素</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title class_">DOMs</span> = &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">lyricContainer</span>: <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.lyric&#x27;</span>),</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">lyricUl</span>: <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;ul&#x27;</span>),</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">audio</span>: <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;audio&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 数据处理</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #region</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 解析歌词字符串，得到歌词对象数组</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; lrcStr 歌词字符串</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@return</span> &#123;<span class="type">[&#123;time: number, words: string</span>&#125;]&#125; 歌词时间，歌词内容</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">parseLrc</span> = (<span class="params">lrcStr</span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> lrcStr.<span class="title function_">split</span>(<span class="string">&#x27;\n&#x27;</span>).<span class="title function_">map</span>(<span class="function"><span class="params">l</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">let</span> [time, words] = l.<span class="title function_">split</span>(<span class="string">&#x27;]&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        time = <span class="title function_">parseTime</span>(time.<span class="title function_">substring</span>(<span class="number">1</span>))</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span> &#123; time, words &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 解析时间字符串，得到时间（毫秒）</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; timeStr 时间字符串</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125; 时间</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">parseTime</span> = (<span class="params">timeStr</span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> [minute, second] = timeStr.<span class="title function_">split</span>(<span class="string">&#x27;:&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> minute * <span class="number">60</span> + +second</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 计算当前应高亮显示的歌词</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@param</span> &#123;<span class="type">[&#123;time: number, words: string</span>&#125;]&#125; lyric</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125; 需高亮的歌词坐标，若无任何歌词需显示则返回-1</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">findIndex</span> = (<span class="params">lyric</span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> currentTime = <span class="title class_">DOMs</span>.<span class="property">audio</span>.<span class="property">currentTime</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; lyric.<span class="property">length</span>; i++) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (currentTime &lt; lyric[i].<span class="property">time</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="keyword">return</span> i - <span class="number">1</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> lyric.<span class="property">length</span> - <span class="number">1</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #endregion</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 页面展现</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #region</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 歌词信息数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> lyric = <span class="title function_">parseLrc</span>(lrcStr)</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 创建歌词元素</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">init</span> = (<span class="params"></span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> frag = <span class="variable language_">document</span>.<span class="title function_">createDocumentFragment</span>()</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      lyric.<span class="title function_">forEach</span>(<span class="function"><span class="params">l</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        li.<span class="property">textContent</span> = l.<span class="property">words</span></span></span><br><span class="line"><span class="language-javascript">        li.<span class="property">dataset</span>.<span class="property">time</span> = l.<span class="property">time</span></span></span><br><span class="line"><span class="language-javascript">        frag.<span class="title function_">appendChild</span>(li)</span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="title function_">appendChild</span>(frag)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">init</span>()</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #endregion</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 事件处理</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #region</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 歌词容器高度</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> containerHeight</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 所有歌词高度</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> lrcUlHeight</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 所有歌词上内边距</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> lrcUlPaddingT</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 所有歌词最大偏移量</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> maxUlOffset</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 每句歌词高度</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> lrcLiHeight</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 计算所需属性</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">computeData</span> = (<span class="params"></span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      containerHeight = <span class="title class_">DOMs</span>.<span class="property">lyricContainer</span>.<span class="property">clientHeight</span></span></span><br><span class="line"><span class="language-javascript">      lrcUlHeight = <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="property">clientHeight</span></span></span><br><span class="line"><span class="language-javascript">      lrcUlPaddingT = <span class="title class_">Number</span>(<span class="title function_">getComputedStyle</span>(<span class="title class_">DOMs</span>.<span class="property">lyricUl</span>)[<span class="string">&#x27;padding-top&#x27;</span>].<span class="title function_">split</span>(<span class="string">&#x27;p&#x27;</span>)[<span class="number">0</span>])</span></span><br><span class="line"><span class="language-javascript">      maxUlOffset = lrcUlHeight - containerHeight &lt; <span class="number">0</span> ? <span class="number">0</span> : lrcUlHeight - containerHeight</span></span><br><span class="line"><span class="language-javascript">      lrcLiHeight = <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="property">children</span>[<span class="number">0</span>].<span class="property">clientHeight</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 监听容器高度变化</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> observer = <span class="keyword">new</span> <span class="title class_">ResizeObserver</span>(computeData)</span></span><br><span class="line"><span class="language-javascript">    observer.<span class="title function_">observe</span>(<span class="title class_">DOMs</span>.<span class="property">lyricContainer</span>, &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">box</span>: <span class="string">&#x27;border-box&#x27;</span></span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 初始化数值</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">computeData</span>()</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 设置偏移量</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> <span class="title function_">setOffset</span> = (<span class="params"></span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 高亮歌词</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> index = <span class="title function_">findIndex</span>(lyric)</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 歌词所在高度</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> lrcHeight = lrcLiHeight * index + lrcLiHeight / <span class="number">2</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// ul偏移量</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">let</span> ulOffset = lrcUlPaddingT + lrcHeight - containerHeight / <span class="number">2</span></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 边界控制</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (ulOffset &lt; <span class="number">0</span>) ulOffset = <span class="number">0</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (ulOffset &gt; maxUlOffset) ulOffset = maxUlOffset</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 进行偏移</span></span></span><br><span class="line"><span class="language-javascript">      <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`translateY(-<span class="subst">$&#123;ulOffset&#125;</span>px)`</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 去除旧高亮</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> oldLi = <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.active&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (oldLi) oldLi.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 添加新高亮</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> newLi = <span class="title class_">DOMs</span>.<span class="property">lyricUl</span>.<span class="property">children</span>[index]</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (newLi) newLi.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/**</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     * 绑定播放时间改变事件</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">     */</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">DOMs</span>.<span class="property">audio</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;timeupdate&#x27;</span>, setOffset)</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// #endregion</span></span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>因为要确保高亮歌词显示在中心（除非它位于开头或结尾），所以需要监听歌词容器的高度，每当它发生变化时，需要重新计算这些与偏移量相关的数值</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/ResizeObserver">ResizeObserver</a>类似于<code>MutationObserver</code>，但它专门监听元素的几何尺寸，主流电脑端浏览器都已兼容</p>
+</blockquote>
+<h2 id="发散"><a href="#发散" class="headerlink" title="发散"></a>发散</h2><p>如果需要允许用户滚动歌词怎么办？</p>
+<p>那就把偏移量实现换成滚动条实现，应该是这样</p>
+<p>但用户在浏览所有歌词时，由于播放时间改变事件持续触发，很有可能出现内容动不动就滑走的情况</p>
+<p>所以我认为可能需要一个计时器控制flag，这个flag应该代表用户是否有在浏览歌词，正在浏览时则不允许播放时间改变事件滑动歌词</p>
+<p>用户滑动歌词就相当于正在浏览，若用户若干秒内没有再进行滑动，则相当于用户并未在浏览</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>练习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>DIY</tag>
       </tags>
   </entry>
   <entry>
